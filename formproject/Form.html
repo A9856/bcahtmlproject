@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admission Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+    display:flex;
+    justify-content:center;
+    /* align-items:flex-start; */
+    min-height:100vh;
+    padding:40px 0;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0px 0px 20px rgba(0,0,0,.3);
+}
+
+h1{
+    text-align:center;
+    color:#ff6600;
+    margin-bottom:20px;
+}
+
+hr{
+    border:3px solid green;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    color:#333;
+}
+
+input[type=text],
+input[type=password],
+input[type=date],
+select,
+input[type=file]{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+fieldset{
+    padding:15px;
+    margin-bottom:15px;
+    border:2px solid green;
+    border-radius:8px;
+}
+
+legend{
+    color:green;
+    font-weight:bold;
+}
+
+.btn{
+    display:flex;
+    justify-content:space-between;
+}
+
+input[type=submit]{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    width:48%;
+}
+
+input[type=reset]{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    width:48%;
+}
+
+input[type=submit]:hover{
+    background:#218838;
+}
+
+input[type=reset]:hover{
+    background:#c82333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Admission Form</h1>
+
+<hr>
+
+<form>
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Father Name</label>
+<input type="text" name="father"required>
+
+<label>Mother Name</label>
+<input type="text" name="mother"required>
+
+<label>Date of Birth</label>
+<input type="date" name="dob" required>
+
+<label>Password</label>
+<input type="password" name="password"required>
+
+<label>City</label>
+<select>
+<option>Select City</option>
+<option>Prayagraj</option>
+<option>Jaunpur</option>
+<option>Kanpur</option>
+</select>
+
+<label>Upload Photo</label>
+<input type="file" required>
+
+<fieldset>
+
+<legend>Gender</legend>
+
+<input type="radio" name="gender" required> Male
+&nbsp;&nbsp;
+
+<input type="radio" name="gender" required> Female
+
+<br><br>
+
+<label>Language</label><br>
+
+<input type="checkbox" > English
+&nbsp;&nbsp;
+<input type="checkbox"> Hindi
+
+</fieldset>
+
+<label>Payment Card</label>
+
+<select>
+
+<option>Select Card</option>
+
+<option>Visa</option>
+
+<option>RuPay</option>
+
+<option>MasterCard</option>
+
+</select>
+
+<div class="btn">
+
+<input type="submit" value="Submit">
+
+<input type="reset" value="Reset">
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+
+CSS Selectors के प्रकार (Exam)
+Universal Selector → *
+Element Selector → p, h1, div
+ID Selector → #header
+Class Selector → .box
+Grouping Selector → h1, p
+Attribute Selector → input[type=text]
+Pseudo-class Selector → :hover, :focus
+Pseudo-element Selector → ::before, ::after
