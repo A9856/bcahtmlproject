@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Height Width Practice</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .box {
+            width: 300px;
+            border: 3px solid black;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: lightgray;
+        }
+
+        /* 1. HEIGHT */
+        .height-box {
+            height: 150px;
+            background-color: lightblue;
+        }
+
+        /* 2. MIN-HEIGHT */
+        .min-height-box {
+            min-height: 150px;
+            background-color: lightgreen;
+        }
+
+        /* 3. MAX-HEIGHT */
+        .max-height-box {
+            max-height: 150px;
+            background-color: lightcoral;
+            overflow: auto;
+        }
+
+        /* 4. WIDTH */
+        .width-box {
+            width: 600px;
+            height: 100px;
+            background-color: lightyellow;
+        }
+
+        /* 5. MIN-WIDTH */
+        .min-width-box {
+            min-width: 200px;
+       width:600px;
+          
+            background-color: lightpink;
+        }
+
+        /* 6. MAX-WIDTH */
+        .max-width-box {
+            max-width: 500px;
+            height: 100px;
+            background-color: lightcyan;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Height & Width Properties</h1>
+
+
+    <!-- 1. HEIGHT -->
+
+    <div class="box height-box">
+
+        <h2>1. height</h2>
+
+        <p>
+            Height property element ki fixed height set karti hai.
+            Is box ki height 150px hai.
+        </p>
+
+    </div>
+
+
+    <!-- 2. MIN-HEIGHT -->
+
+    <div class="box min-height-box">
+
+        <h2>2. min-height</h2>
+
+        <p>
+            min-height element ki minimum height set karta hai.
+            Is box ki minimum height 150px hai.
+            Agar content kam hai tab bhi box 150px se chhota nahi hoga.
+        </p>
+
+    </div>
+
+
+    <!-- 3. MAX-HEIGHT -->
+
+    <div class="box max-height-box">
+
+        <h2>3. max-height</h2>
+
+        <p>
+            max-height element ki maximum height set karta hai.
+            Is box ki maximum height 150px hai.
+            Agar content bahut zyada hai to box 150px se bada nahi hoga.
+            Extra content ke liye scrollbar aa sakta hai.
+            Ye extra text max-height ko clearly demonstrate karta hai.
+            Aur bhi text add kiya gaya hai taaki overflow clearly dikhe.
+        </p>
+
+    </div>
+
+
+    <!-- 4. WIDTH -->
+
+    <div class="box width-box">
+
+        <h2>4. width</h2>
+
+        <p>
+            Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai.
+            Is box ki width 500px hai.
+        </p>
+
+    </div>
+
+
+    <!-- 5. MIN-WIDTH -->
+
+    <div class="box min-width-box">
+
+        <h2>5. min-width</h2>
+
+        <p>
+            min-width element ki minimum width set karta hai.
+            Is box ki minimum width 500px hai.
+             Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai. Width property element ki fixed width set karti hai.
+        </p>
+        <img src="image/image2.webp"width="100px"height="50px"style="float:right;margin-top:-200px">
+
+    </div>
+
+
+    <!-- 6. MAX-WIDTH -->
+
+    <div class="box max-width-box">
+
+        <h2>6. max-width</h2>
+
+        <p>
+            max-width element ki maximum width set karta hai.
+            Is box ki maximum width 500px hai.
+        </p>
+
+    </div>
+
+</body>
+</html>
