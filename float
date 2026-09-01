@@ -1,0 +1,79 @@
+1. CSS Float — Definition
+
+float is a CSS property used to move an element to the left or right side of its container, allowing other content such as text to flow around it.
+
+float CSS property का उपयोग किसी element को उसके container के left या right side में रखने के लिए किया जाता है, जिससे दूसरा content, जैसे text, उसके चारों ओर flow कर सके।
+
+Easy Word
+
+किसी element को left या right तरफ तैराकर रखना, ताकि उसके आसपास दूसरा content आ सके।
+
+Example:
+
+img {
+    float: left;
+}
+
+
+2. Float Important Values
+
+float main values:
+
+float: none;
+float: left;
+float: right;
+float: inline-start;
+float: inline-end;
+
+
+2.1 float: none - none means the element does not float.
+
+none का मतलब element float नहीं होगा और normal document flow में रहेगा।
+
+img {
+    float: none;
+}
+
+ use--जब किसी element से पहले लगाया गया float हटाना हो।
+
+3. float: left
+
+float: left moves the element to the left side of its container and allows surrounding content to flow around it.
+
+float: left element को उसके container के left side में रखता है और दूसरा content उसके आसपास flow करता है।
+
+img {
+    float: left;
+}
+
+4. float: right
+
+float: right moves the element to the right side of its container and allows surrounding content to flow around it.
+
+float: right element को उसके container के right side में रखता है और text/content उसके आसपास flow करता है।
+
+img {
+    float: right;
+}
+
+5. float: inline-start
+
+inline-start floats the element toward the start side of the current writing direction.
+
+inline-start element को current writing direction की शुरुआत वाली side पर float करता है।
+
+Left-to-right - inline-start = LEFT
+
+.box {
+    float: inline-start;
+}
+
+6. float: inline-end--
+inline-end floats the element toward the end side of the current writing direction.
+
+inline-end element को current writing direction की अंत वाली side पर float करता है।
+
+such as-- inline-end = RIGHT
+.box {
+    float: inline-end;
+}

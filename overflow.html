@@ -1,0 +1,743 @@
+<!--1. CSS Overflow — Definition
+
+overflow is a CSS property used to control what happens when the content of an element becomes larger than its specified width or height.
+
+overflow CSS property का उपयोग तब किया जाता है जब किसी element के अंदर का content उसकी निर्धारित width या height से बड़ा हो जाए। यह तय करता है कि extra content को दिखाना है, छिपाना है या scroll करना है।
+
+Easy 
+DIV की Height = 200px
+
+┌─────────────────────┐
+│ Content             │
+│ Content             │
+│ Content             │
+│ Content             │
+└─────────────────────┘
+        ↓
+Content ज्यादा है
+        ↓
+OVERFLOW
+
+2. Overflow Main Values
+overflow: visible;
+overflow: hidden;
+overflow: scroll;
+overflow: auto;
+
+advance - modern css available
+overflow: clip;
+
+
+3. overflow: visible
+visible allows overflowing content to remain visible outside the element.
+
+visible में extra content element के बाहर भी दिखाई देता है। यह सामान्य/default behavior है।
+
+.box {
+    width: 300px;
+    height: 100px;
+    overflow: visible;
+}
+कब use करें?
+
+जब आप चाहते हैं कि extra content cut या scroll न हो और बाहर दिखाई दे।
+
+4. overflow: hidden
+
+hidden hides the content that overflows outside the element.
+hidden extra content को छिपा देता है। Scrollbar दिखाई नहीं देता।
+
+.box {
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+}
+कब use करें?
+Image को container के अंदर crop करना
+Extra content hide करना
+Cards में unwanted overflow रोकना
+
+5. overflow: scroll
+
+scroll provides scrollbars for overflowing content, allowing the user to scroll horizontally or vertically.
+scroll overflow होने पर scrollbar provide करता है, जिससे user hidden/extra content को scroll करके देख सकता है।
+
+.box {
+    width: 300px;
+    height: 100px;
+    overflow: scroll;
+}
+Important
+
+scroll में कई browsers में horizontal और vertical scrollbar दोनों दिखाई दे सकते हैं, चाहे एक direction में overflow न भी हो।
+
+6. overflow: auto
+
+auto automatically adds a scrollbar only when the content actually overflows.
+auto जरूरत के अनुसार automatically scrollbar लगाता है।
+
+.box {
+    width: 300px;
+    height: 100px;
+    overflow: auto;
+}
+कब use करें?
+
+यह सबसे practical values में से एक है।
+
+जैसे:
+
+Chat box
+Table container
+Long content
+Dashboard
+Sidebar
+
+7. overflow: clip
+
+clip clips the overflowing content and does not provide scrolling.
+clip extra content को कट/छिपा देता है और scrolling भी allow नहीं करता।
+
+.box {
+    width: 300px;
+    height: 100px;
+    overflow: clip;
+}
+
+hidden vs clip
+hidden
+↓
+Content hide
+↓
+कुछ स्थितियों में programmatic scrolling possible
+
+
+clip
+↓
+Content clip
+↓
+Scrolling नहीं
+
+
+
+9. overflow-x
+
+overflow-x controls the overflow of content in the horizontal direction (left to right).
+overflow-x content के horizontal direction यानी left और right में होने वाले overflow को control करता है।
+
+Example:
+
+.table-box {
+    overflow-x: auto;
+}
+
+Use: बड़ी/wide table के लिए, ताकि table को left-right scroll किया जा सके।
+
+←──────────────→
+   Horizontal
+     Scroll
+
+9. overflow-y
+
+overflow-y controls the overflow of content in the vertical direction (top to bottom).
+overflow-y content के vertical direction यानी ऊपर और नीचे होने वाले overflow को control करता है।
+
+Example:
+
+.content {
+    overflow-y: auto;
+}
+
+Use: लंबे content, chat box, notification list या sidebar में up-down scrolling के लिए।
+
+       ↑
+       │
+     Content
+       │
+       ↓
+   Vertical
+    Scroll
+
+Examples:
+
+Chat messages
+Long paragraph
+Sidebar
+Notification list
+
+Fixed-height content box
+        ↑
+        │
+     Content
+     Content
+     Content
+     Content
+        │
+        ↓
+10. overflow-x और overflow-y साथ
+
+आप दोनों को अलग-अलग control कर सकते हैं:
+
+.box {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+मतलब:
+
+X-axis → horizontal control
+Y-axis → vertical control -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CSS Overflow Practical</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            color: #222;
+            line-height: 1.6;
+        }
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        section {
+            width: 90%;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+        .note {
+            background: #eef2ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2563eb;
+        }
+        /* ==================================================
+           1. OVERFLOW: VISIBLE
+           ================================================== */
+
+        .visible-box {
+            width: 350px;
+            height: 120px;
+            border: 3px solid black;
+            padding: 15px;
+            overflow: visible;
+            background: #dbeafe;
+        }
+        /* ==================================================
+           2. OVERFLOW: HIDDEN
+           ================================================== */
+        .hidden-box {
+            width: 350px;
+            height: 120px;
+            border: 3px solid black;
+            padding: 15px;
+            overflow: hidden;
+            background: #fee2e2;
+        }
+        /* ==================================================
+           3. OVERFLOW: SCROLL
+           ================================================== */
+        .scroll-box {
+            width: 350px;
+            height: 150px;
+            border: 3px solid black;
+            padding: 15px;
+            overflow: scroll;
+            background: #dcfce7;
+        }
+        /* ==================================================
+           4. OVERFLOW: AUTO
+           ================================================== */
+        .auto-box {
+            width: 350px;
+            height: 150px;
+            border: 3px solid black;
+            padding: 15px;
+            overflow: auto;
+            background: #fef3c7;
+        }
+        /* ==================================================
+           5. OVERFLOW: CLIP
+           ================================================== */
+        .clip-box {
+            width: 350px;
+            height: 120px;
+            border: 3px solid black;
+            padding: 15px;
+            overflow: clip;
+            background: #f3e8ff;
+        }
+        /* ==================================================
+           6. OVERFLOW-X
+           ================================================== */
+        .x-box {
+            width: 100%;
+            height: 180px;
+            border: 3px solid #2563eb;
+            overflow-x: auto;
+            overflow-y: auto;
+            background: #eff6ff;
+        }
+
+        table {
+            border-collapse: collapse;
+            min-width: 1200px;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 15px 30px;
+            white-space: nowrap;
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+        }
+        /* ==================================================
+           7. OVERFLOW-Y
+           ================================================== */
+        .y-box {
+            width: 400px;
+            height: 200px;
+            border: 3px solid #059669;
+            padding: 20px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: #ecfdf5;
+        }
+        /* ==================================================
+           8. BOTH X AND Y
+           ================================================== */
+        .both-box {
+            width: 400px;
+            height: 200px;
+            border: 3px solid #7c3aed;
+            overflow-x: auto;
+            overflow-y: auto;
+            padding: 20px;
+            background: #faf5ff;
+        }
+        .wide-content {
+            width: 800px;
+        }
+        .long-content {
+            height: 500px;
+        }
+        /* ==================================================
+           GENERAL LONG CONTENT
+           ================================================== */
+        .long-page {
+            padding: 20px;
+            background: #f9fafb;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            CSS Overflow Practical
+        </h1>
+        <p>
+            overflow, overflow-x और overflow-y
+        </p>
+    </header>
+    <!-- ==================================================
+         1. VISIBLE
+         ================================================== -->
+    <section>
+       <h2>
+            1. overflow: visible
+        </h2>
+        <div class="note">
+            Extra content box के बाहर दिखाई देगा।
+        </div>
+        <div class="visible-box">
+            यह एक fixed-height box है।
+            <br><br>
+            यह बहुत ज्यादा content है।
+            Extra content अपनी निर्धारित height
+            के बाहर भी दिखाई देगा क्योंकि हमने
+            overflow: visible लगाया है।
+            और यह extra text भी बाहर दिखाई देगा।
+
+        </div>
+
+    </section>
+    <!-- ==================================================
+         2. HIDDEN
+         ================================================== -->
+    <section>
+        <h2>
+            2. overflow: hidden
+        </h2>
+        <div class="note">
+            Extra content दिखाई नहीं देगा।
+        </div>
+
+        <div class="hidden-box">
+            यह बहुत ज्यादा content है।
+            <br><br>
+            यह content box की height से ज्यादा है।
+            इसलिए overflow: hidden के कारण
+            extra content छिप जाएगा।
+            यह text आपको दिखाई नहीं देगा।
+            यह भी hidden होगा।
+        </div>
+
+    </section>
+
+    <!-- ==================================================
+         3. SCROLL
+         ================================================== -->
+    <section>
+        <h2>
+            3. overflow: scroll
+        </h2>
+        <div class="note">
+
+            Scrollbar available रहेगा।
+            Box के अंदर mouse से scroll करें।
+        </div>
+
+        <div class="scroll-box">
+            <h3>
+                Long Content
+            </h3>
+            <p>
+                यह बहुत लंबा content है।
+                Scrollbar का उपयोग करके
+                ऊपर और नीचे जा सकते हैं।
+            </p>
+            <p>
+                CSS overflow scroll extra
+                content को देखने के लिए
+                scrolling की सुविधा देता है।
+            </p>
+            <p>
+                यह दूसरा paragraph है।
+            </p>
+            <p>
+                यह तीसरा paragraph है।
+            </p>
+            <p>
+                यह चौथा paragraph है।
+            </p>
+            <p>
+                यह पांचवा paragraph है।
+            </p>
+        </div>
+    </section>
+
+   <!-- ==================================================
+         4. AUTO
+         ================================================== -->
+
+    <section>
+        <h2>
+            4. overflow: auto
+        </h2>
+        <div class="note">
+            जरूरत होने पर scrollbar automatically आएगा।
+        </div>
+        <div class="auto-box">
+            <h3>
+                Auto Overflow
+            </h3>
+            <p>
+                यह long content है।
+            </p>
+            <p>
+                Content container की height से
+                ज्यादा हो रहा है।
+            </p>
+            <p>
+                इसलिए browser vertical scrollbar
+                automatically provide करेगा।
+            </p>
+            <p>
+                Auto केवल आवश्यकता होने पर
+                scrolling देता है।
+            </p>
+            <p>
+                Extra content यहाँ भी है।
+            </p>
+
+        </div>
+    </section>
+    <!-- ==================================================
+         5. CLIP
+         ================================================== -->
+    <section>
+        <h2>
+            5. overflow: clip
+        </h2>
+        <div class="note">
+            Extra content clip होगा और scrolling
+            available नहीं होगी।
+        </div>
+        <div class="clip-box">
+            यह बहुत ज्यादा content है।
+            <br><br>
+            overflow: clip के कारण box की सीमा
+            के बाहर जाने वाला content दिखाई नहीं देगा।
+            यह extra text clip हो जाएगा।
+            यह भी दिखाई नहीं देगा।
+        </div>
+    </section>
+    <!-- ==================================================
+         6. OVERFLOW-X + TABLE
+         ================================================== -->
+    <section>
+        <h2>
+            6. overflow-x: auto
+        </h2>
+        <div class="note">
+
+            नीचे table की width बहुत ज्यादा है।
+            इसलिए LEFT ↔ RIGHT scroll करके
+            पूरा table देख सकते हैं।
+        </div>
+
+        <div class="x-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Student Name</th>
+                        <th>Father Name</th>
+                        <th>Mother Name</th>
+                        <th>Class</th>
+                        <th>Section</th>
+                        <th>Roll Number</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Aman Kumar</td>
+                        <td>Raj Kumar</td>
+                        <td>Sunita Devi</td>
+                        <td>10</td>
+                        <td>A</td>
+                        <td>25</td>
+                        <td>aman@gmail.com</td>
+                        <td>9876543210</td>
+                        <td>Lucknow</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Rahul Singh</td>
+                        <td>Vijay Singh</td>
+                        <td>Neha Singh</td>
+                        <td>10</td>
+                        <td>B</td>
+                        <td>30</td>
+                        <td>rahul@gmail.com</td>
+                        <td>9876543211</td>
+                        <td>Prayagraj</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Priya Sharma</td>
+                        <td>Rakesh Sharma</td>
+                        <td>Kiran Sharma</td>
+                        <td>11</td>
+                        <td>A</td>
+                        <td>12</td>
+                        <td>priya@gmail.com</td>
+                        <td>9876543212</td>
+                        <td>Kanpur</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>Mohit Verma</td>
+                        <td>Sunil Verma</td>
+                        <td>Rekha Verma</td>
+                        <td>12</td>
+                        <td>C</td>
+                        <td>18</td>
+                        <td>mohit@gmail.com</td>
+                        <td>9876543213</td>
+                        <td>Varanasi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- ==================================================
+         7. OVERFLOW-Y
+         ================================================== -->
+
+    <section>
+        <h2>
+            7. overflow-y: auto
+        </h2>
+        <div class="note">
+            केवल UP ↕ DOWN vertical scrolling
+            check करें।
+        </div>
+        <div class="y-box">
+
+            <h3>
+                Long Article
+            </h3>
+            <p>
+                यह पहला paragraph है।
+                यह vertical overflow को demonstrate
+                करने के लिए लिखा गया है।
+            </p>
+
+            <p>
+                यह दूसरा paragraph है।
+                Content लगातार लंबा होता जा रहा है।
+            </p>
+            <p>
+                यह तीसरा paragraph है।
+                अब container की height कम पड़ने लगेगी।
+            </p>
+           <p>
+                यह चौथा paragraph है।
+                इसलिए vertical scrollbar दिखाई देगा।
+            </p>
+            <p>
+                यह पांचवा paragraph है।
+                Mouse wheel से ऊपर और नीचे जाएँ।
+            </p>
+            <p>
+                यह छठा paragraph है।
+                अब आप vertical scrolling देख सकते हैं।
+           </p>
+            <p>
+                यह सातवां paragraph है।
+                X direction में scrolling नहीं होगी।
+            </p>
+            <p>
+                यह आठवां paragraph है।
+                केवल Y direction control की गई है।
+            </p>
+            <p>
+                यह अंतिम paragraph है।
+                नीचे तक scroll करके देखें।
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================================================
+         8. BOTH X AND Y
+         ================================================== -->
+    <section>
+        <h2>
+            8. overflow-x + overflow-y
+        </h2>
+        <div class="note">
+
+            यहाँ दोनों directions में scrolling
+            check कर सकते हैं।
+
+        </div>
+        <div class="both-box">
+            <div class="wide-content">
+               <h3>
+                    Wide + Long Content
+                </h3>
+                <p>
+                    यह content horizontal direction
+                    में भी बड़ा है।
+                </p>
+                <p>
+                    इसलिए LEFT ↔ RIGHT scroll करें।
+                </p>
+                <div class="long-content">
+                    <p>
+                        यह vertical content भी बहुत लंबा है।
+                    </p>
+                    <p>
+                        इसलिए UP ↕ DOWN भी scroll करें।
+                    </p>
+                    <p>
+                        दोनों directions को check करें।
+                    </p>
+                    <p>
+                        Horizontal scrollbar नीचे मिलेगा।
+                    </p>
+                    <p>
+                        Vertical scrollbar right side मिलेगा।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         LONG PAGE
+         ================================================== -->
+
+    <div class="long-page">
+        <h2>
+            Final Practical Test
+        </h2>
+        <p>
+            पूरी website को scroll करें।
+            अलग-अलग sections में overflow का
+            behavior observe करें।
+        </p>
+        <p>
+            विशेष रूप से table में LEFT और RIGHT
+            scroll करके देखें।
+        </p>
+        <p>
+            Y overflow वाले box में UP और DOWN
+            scroll करके देखें।
+        </p>
+    </div>
+    <footer>
+        CSS Overflow Practical
+    </footer>
+</body>
+</html>

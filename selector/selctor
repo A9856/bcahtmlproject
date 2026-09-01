@@ -1,5 +1,3 @@
-
-
 CSS Selectors के प्रकार (Exam)
 Universal Selector → *
 Element Selector → p, h1, div
@@ -9,3 +7,308 @@ Grouping Selector → h1, p
 Attribute Selector → input[type=text]
 Pseudo-class Selector → :hover, :focus
 Pseudo-element Selector → ::before, ::after
+
+Sub Selector [4]
+1. Descendent Selector
+<!-- <html>
+<head>
+    <style>
+        ol li{
+            color:red; /* all li apply */
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>Databases</li>
+        <ul>
+            <li>Oracle</li>
+            <li>SQL</li>
+        </ul>
+        <li>ASP.Net</li>
+        <li>JAva</li>
+    </ol>
+</body> 
+</html-->
+
+<!-- 
+<html>
+<head>
+    <style>
+        div p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>this is first paragraph..</p>
+        <p>this is Second paragraph..</p>
+        <p>this is third paragraph..</p>
+    </div>
+    <p>this is fourth paragraph..</p>
+    <p>this is five paragraph..</p>
+</body> -->
+
+2. child Selector (>);
+<!-- <html>
+<head>
+    <style>
+        ol >li{
+            color:red; /* only ol child li */
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>Databases</li>
+        <ul>
+            <li>Oracle</li>
+            <li>SQL</li>
+        </ul>
+        <li>ASP.Net</li>
+        <li>JAva</li>
+    </ol>
+</body> 
+</html>-->
+
+3.Adjacent selector [+]; just after first tag
+<!-- <html>
+<head>
+    <style>
+      h2+p{
+      color:red;
+      background-color:white;
+      }
+      ul.tdp +p{
+      background-color:green;
+      color:white;
+      }
+    </style>
+</head>
+<body>
+    <h2>This is H2 Heading</h2>
+     <p>this is first paragraph..</p>
+        <p>this is Second paragraph..</p>
+
+        <ul class="tdp">
+            <li> 1->Python</li>
+            <li>2->SQL</li>
+            <li>3->C language</li>
+        </ul>
+        <p>THis is third paragraph</p>
+        <p>Go to our next page</p>
+      
+</body> 
+</html -->
+
+4. Genrel sibling Selector [~];
+<!-- <html>
+<head>
+    <style>
+     div~p{
+      color:red;
+      background-color:white;
+      }
+    </style>
+</head>
+<body>
+    <h2>This is H2 Heading</h2>
+    <div>
+     <p>this is first paragraph..</p>
+        <p>this is Second paragraph..</p>
+        <p>THis is third paragraph</p>
+    </div>
+        <p>Go to our next page</p>
+        <p>This is fourth paragraph..</p>
+      
+</body> 
+</html -->
+
+<!-- <html>
+<head>
+    <style>
+      h2~p{
+      color:red;
+      background-color:white;
+      }
+      ul.tdp ~p{
+      background-color:green;
+      color:white;
+      }
+    </style>
+</head>
+<body>
+    <h2>This is H2 Heading</h2>
+     <p>this is first paragraph..</p>
+        <p>this is Second paragraph..</p>
+
+        <ul class="tdp">
+            <li> 1->Python</li>
+            <li>2->SQL</li>
+            <li>3->C language</li>
+        </ul>
+        <p>THis is third paragraph</p>
+        <p>Go to our next page</p>
+      
+</body> 
+</html-->
+
+Attribute selector
+<html>
+
+<head>
+    <style>
+        a[target] {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+<h3 style="text-align:center">Thisisthirdheading</h3>
+    <a href="url">Google</a>
+    <a href="url" target="_p">Facebook</a>
+    <a href="url" target="_s">Twitter</a>
+</body>
+
+</html>
+[attribute = "value"]
+<!-- <html>
+<head>
+    <style>
+    a[target=_b]{
+    background-color:red;
+    }
+    </style>
+</head>
+<body>
+   <h3 style="text-align:center">This is third heading</h3>
+   <a href="http://www.google.com"target="_b">Google</a>
+   <a href="http://www.facebook.com"target="_p">Facebook</a>
+   <a href="http://www.twitter.com"target="_s">Twitter</a>
+</body> 
+</html-->
+
+attribute[~=value]
+
+<html>
+<head>
+    <style>
+    [title ~=flower]{
+    background-color:red; /* title me flower word hona chaiye*/
+    }
+    </style>
+</head>
+<body>
+  <img src="file:///C:/Users/GLA%20IT%20SOLUTIONS/Pictures/AI.jpg"title="abc flower"width=150 height=150/>
+  <img src="file:///C:/Users/GLA%20IT%20SOLUTIONS/Pictures/AI.jpg"title="flower"width=224 height=162/>
+  <img src="file:///C:/Users/GLA%20IT%20SOLUTIONS/Pictures/AI.jpg"title="tree"width=200 height=350/>
+</body> 
+</html
+
+[attribute |= value] word complete value hona chahiye
+Note second word add krna hu toh hyphen use kiya ja skta hai
+
+<!-- <html>
+<head>
+    <style>
+    [class|=header]{
+    background-color:green;
+    }
+    </style>
+</head>
+<body>
+  <h3 class="header-1">this is heading third</h3>
+  <p>this is paragraph..</p>
+  <p class="header3">This is second paragraph..</p>
+</body>
+</html-->
+
+attribute ^="value"
+<!-- <html>
+<head>
+    <style>
+    [class^="header"]{
+    background-color:green;
+    }
+    </style>
+</head>
+<body>
+  <h3 class="header-1">this is heading third</h3>
+  <p>this is paragraph..</p>
+  <p class="header3">This is second paragraph..</p>
+    <p class="3header">This is second paragraph..</p>
+</body>
+</html-->
+
+attribute $=value
+ <html>
+<head>
+    <style>
+    [class$="header"]{
+    background-color:green;
+    }
+    </style>
+</head>
+<body>
+  <h3 class="1header">this is heading third</h3>
+  <p class="header this">this is paragraph..</p>
+  <p class="this header">This is second paragraph..</p>
+    <p class="this_header">This is second paragraph..</p>
+</body>
+</html-->
+
+attribute *=value
+<!-- <html>
+<head>
+    <style>
+    [class*="fo"]{
+    background-color:green;
+    }
+    </style>
+</head>
+<body>
+  <h4 class="fourthheading">this is heading third</h3>
+  <p class="firstpara">this is paragraph..</p>
+  <p class="secondpara">This is second paragraph..</p>
+    <p class="this_header">This is second paragraph..</p>
+    <p class="fourthpara">This is second paragraph..</p>
+</body>
+</html-->
+
+mix 4 attribute
+<html>
+
+<head>
+    <style>
+        [class*="fo"] {
+            background-color: green;
+        }
+
+        [class $="a"] {
+            background-color: red;
+        }
+
+        [class ^="s"] {
+            background-color: yellow;
+        }
+
+        [class|=black] {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 class="fourthheading">this is heading third and *value substring value search</h3>
+        <p class="firstpara">this is paragraph..and $ value end </p>
+        <p class="secondpara">This is second paragraph..and ^ value start</p>
+        <p class="this_header">This is third paragraph..</p>
+        <p class="fourthpara">This is second paragraph..and $ value end </p>
+        <p class="black-1">This is attribute value paragraph..and | value start</p>
+        <p class="black1">This is second paragraph..</p>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+}
+
+p{
+ position: absolute;  z-index: -1;
+}
+p:hover{
+z-index:1000;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<img src="img_tree.png">
+<p>Because the image has a z-index of -1, it will be placed behind the text.</p>
+
+</body>
+</html>
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        /* ==================================================
+           6. Z-INDEX + HOVER
+           ================================================== */
+
+        .zindex-parent {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin-top: 20px;
+            border: 3px solid black;
+            background: #eeeeee;
+        }
+        .box-one {
+            position: absolute;
+            top: 50px;
+            left: 80px;
+            width: 220px;
+            height: 120px;
+            background: red;
+            /*
+            Default z-index
+            */
+            z-index: 1;
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+
+        }
+
+
+        .box-two {
+            position: absolute;
+            top: 100px;
+            left: 170px;
+            width: 220px;
+            height: 120px;
+            background: blue;
+            
+            /* Default z-index */
+           
+            z-index: 1;
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+
+
+        /* ==================================================
+           HOVER Z-INDEX
+           ================================================== */
+
+        .box-one:hover {
+            z-index: 2;
+            transform: scale(1.05);
+        }
+
+        .box-two:hover {
+            z-index: 2;
+            transform: scale(1.05);
+        }
+    </style>
+ </head>
+ <body>
+    <!-- ==================================================
+         6. Z-INDEX HOVER
+         ================================================== -->
+    <div class="section">
+        <h2>
+            6. z-index + :hover
+        </h2>
+        <p>
+            Mouse ko RED ya BLUE box par le jaakar dekhein.
+        </p>
+        <p>
+            Jis box par hover karenge,
+            wahi box front mein aa jayega.
+        </p>
+        <div class="zindex-parent">
+            <div class="box-one">
+                RED BOX
+                <br>
+                Hover Me
+                <br>
+                z-index: 1
+            </div>
+
+            <div class="box-two">
+                BLUE BOX
+                <br>
+                Hover Me
+                <br>
+                z-index: 2
+            </div>
+        </div>
+    </div>
+ </body>
+ </html>

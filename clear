@@ -1,0 +1,70 @@
+7. CSS clear — Definition
+
+clear is a CSS property used to control whether an element can appear beside a floated element or must move below it.
+
+clear CSS property यह control करती है कि कोई element floating element के side में आ सकता है या उसे float के नीचे जाना पड़ेगा।
+
+clear का मतलब है: float से रास्ता साफ करना।
+
+Example:
+
+.box {
+    clear: both;
+}
+
+यह element left और right दोनों तरफ के floated elements के नीचे जाएगा।
+
+8. Clear Important Values
+
+clear: none;
+clear: left;
+clear: right;
+clear: both;
+
+9. clear: none
+
+none means the element is not forced below floated elements.
+none में element को floated elements के नीचे जाने के लिए force नहीं किया जाता।
+
+clear: none;
+
+default value है।
+
+10. clear: left
+clear: left prevents the element from appearing beside a left-floated element.
+
+clear: left element को left-floated element के side में आने से रोकता है और जरूरत होने पर उसे नीचे भेज देता है।
+
+clear: left;
+11. clear: right
+clear: right prevents the element from appearing beside a right-floated element.
+clear: right element को right-floated element के side में आने से रोकता है।
+
+clear: right;
+12. clear: both
+clear: both prevents the element from appearing beside either left- or right-floated elements.
+clear: both element को left और right दोनों तरफ के floated elements के side में आने से रोकता है।
+
+clear: both;
+
+float: left
+       ↓
+element left में float
+
+clear: left
+       ↓
+अगला element left float के नीचे
+
+float: right
+       ↓
+element right में float
+
+
+clear: right
+       ↓
+अगला element right float के नीचे
+
+
+clear: both
+       ↓
+left + right दोनों floats के नीचे

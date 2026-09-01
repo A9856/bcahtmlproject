@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Clear Both Example</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 150px;
+            background: skyblue;
+            float: left;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .box2 {
+
+            width: 200px;
+            height: 150px;
+            background: lightgreen;
+            float: right;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .clear-box {
+            clear: both;
+            background: orange;
+            padding: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        Clear Both Example
+    </h1>
+    <div class="box1">LEFT FLOAT</div>
+
+    <div class="box2">RIGHT FLOAT</div>
+
+    <div class="clear-box">CLEAR BOTH<br>यह element left और right दोनों floated boxes के नीचे आएगा।
+    </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        .img1 {
+            float: right;
+        }
+        .img2 {
+            float: right;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <h2>Without Clearfix</h2>
+    <p>The image is floated to the right. It is also taller than the element containing it, so it overflows outside of
+        its container:</p>
+    <div>
+        <img class="img1" src="image/code1.webp" alt="Pineapple" width="170" height="170">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+    </div>
+    <h2 style="clear:right">Using the Clearfix Hack</h2>
+    <p>Add the clearfix hack to the containing element, to fix this problem:</p>
+    <div class="clearfix">
+        <img class="img2" src="image/web.jpg" alt="Pineapple" width="170" height="170">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+    </div>
+</body>
+</html>

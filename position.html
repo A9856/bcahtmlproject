@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>CSS Position Practical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background: #222;
+            color: white;
+        }
+        .section {
+            width: 90%;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border: 2px solid #ddd;
+        }
+
+        .section h2 {
+            color: #FF0000;
+        }
+        .box {
+            width: 180px;
+            height: 100px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        /* ==================================================
+           1. STATIC
+           ================================================== */
+        .static-box {
+            position: static;
+            width: 180px;
+            height: 100px;
+            background: green;
+
+        }
+        /* ==================================================
+           2. RELATIVE
+           ================================================== */
+
+        .relative-box {
+            position: relative;
+
+            /*
+
+            top: 30px;
+            left: 50px;
+            */
+
+            background: blue;
+
+        }
+        /* ==================================================
+           3. ABSOLUTE
+           ================================================== */
+
+        .absolute-parent {
+            position: relative;
+            width: 500px;
+            height: 250px;
+            border: 3px solid black;
+            background: #eeeeee;
+            margin-top: 20px;
+        }
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 160px;
+            height: 80px;
+            background: red;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+
+        }
+        /* ==================================================
+           4. FIXED
+           ================================================== */
+
+        .fixed-box {
+
+                   
+             position: fixed;  
+            bottom: 20px;
+            right: 20px;
+           
+            padding: 15px 25px;
+            background: purple;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        /* z-index: 1000; */
+
+        }
+        /* ==================================================
+           5. STICKY
+           ================================================== */
+
+        .sticky-box {
+
+            position: sticky;
+            top: 0;
+            padding: 15px;
+            background: teal;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            z-index: 10;
+
+        }
+        .content {
+
+            height: 500px;
+            padding: 20px;
+            background: linear-gradient(
+                white,
+                #ddd
+            );
+
+        }
+        /* ==================================================
+           6. Z-INDEX + HOVER
+           ================================================== */
+
+        .zindex-parent {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin-top: 20px;
+            border: 3px solid black;
+            background: #eeeeee;
+        }
+        .box-one {
+            position: absolute;
+            top: 50px;
+            left: 80px;
+            width: 220px;
+            height: 120px;
+            background: red;
+            /*
+            Default z-index
+            */
+            z-index: 1;
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+
+        }
+
+
+        .box-two {
+
+            position: absolute;
+
+            top: 100px;
+            left: 170px;
+
+            width: 220px;
+            height: 120px;
+
+            background: blue;
+
+            /*
+            Default z-index
+            */
+
+            z-index: 1;
+
+            padding: 40px 20px;
+
+            color: white;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        /* ==================================================
+           HOVER Z-INDEX
+           ================================================== */
+
+        .box-one:hover {
+
+            z-index: 2;
+
+            transform: scale(1.05);
+
+        }
+
+
+        .box-two:hover {
+
+            z-index: 2;
+
+            transform: scale(1.05);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        CSS Position Property Practical
+    </h1>
+
+
+
+    <!-- ==================================================
+         1. STATIC
+         ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            1. position: static
+        </h2>
+
+        <p>
+            Static is the default position.
+            Element normal document flow mein rahta hai.
+        </p>
+
+        <div class="box static-box">
+
+            STATIC BOX
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         2. RELATIVE
+         ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            2. position: relative
+        </h2>
+
+        <p>
+            Relative element apni original position
+            ke according move hota hai.
+        </p>
+
+        <p>
+            CSS mein top aur left ko uncomment karke dekhein.
+        </p>
+
+
+        <div class="box relative-box">
+
+            RELATIVE BOX
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         3. ABSOLUTE
+         ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            3. position: absolute
+        </h2>
+
+        <p>
+            Absolute element nearest positioned parent
+            ke according position hota hai.
+        </p>
+
+
+        <div class="absolute-parent">
+
+            <strong>
+                PARENT
+            </strong>
+
+
+            <div class="absolute-box">
+
+                ABSOLUTE BOX
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         4. FIXED
+         ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            4. position: fixed
+        </h2>
+
+        <p>
+            Fixed element browser viewport ke according
+            fix hota hai.
+        </p>
+
+        <p>
+            CSS mein fixed-box ke andar position,
+            bottom aur right ko uncomment karein.
+        </p>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         5. STICKY
+         ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            5. position: sticky
+        </h2>
+
+
+        <div class="sticky-box">
+
+            STICKY NAVBAR
+
+        </div>
+
+
+        <div class="content">
+
+            <h3>
+                Scroll Down
+            </h3>
+
+            <p>
+                Page ko scroll karke sticky effect dekhein.
+            </p>
+
+            <p>
+                Sticky element normal position se start hota hai.
+            </p>
+
+            <p>
+                Scroll karne ke baad top: 0 position par stick hota hai.
+            </p>
+
+            <p>
+                Keep Scrolling...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         6. Z-INDEX HOVER
+         ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            6. z-index + :hover
+        </h2>
+
+        <p>
+            Mouse ko RED ya BLUE box par le jaakar dekhein.
+        </p>
+
+        <p>
+            Jis box par hover karenge,
+            wahi box front mein aa jayega.
+        </p>
+
+
+        <div class="zindex-parent">
+
+
+            <div class="box-one">
+
+                RED BOX
+
+                <br>
+
+                Hover Me
+
+                <br>
+
+                z-index: 2
+
+            </div>
+
+
+
+            <div class="box-two">
+
+                BLUE BOX
+
+                <br>
+
+                Hover Me
+
+                <br>
+
+                z-index: 2
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         EXTRA CONTENT
+         ================================================== -->
+
+    <div class="content">
+
+        <h2>
+            Extra Content
+        </h2>
+
+        <p>
+            Page ko scroll karke fixed aur sticky
+            dono properties ko check kar sakte hain.
+        </p>
+
+        <p>
+            CSS position practical.
+        </p>
+
+        <p>
+            Keep Scrolling...
+        </p>
+
+    </div>
+
+
+
+    <!-- FIXED BUTTON -->
+
+    <div class="fixed-box">
+
+        FIXED BUTTON
+
+    </div>
+
+
+</body>
+
+</html>
