@@ -1,0 +1,101 @@
+CSS display — Basic Idea
+
+display property defines how an HTML element is displayed and how it occupies space in the layout.
+
+display property यह तय करती है कि HTML element page पर किस तरह दिखाई देगा और कितनी जगह occupy करेगा।
+
+1. display: block
+A block-level element starts on a new line and normally takes the full available width of its parent.
+
+block element नई line से शुरू होता है और सामान्यतः अपने parent की पूरी available width लेता है।
+
+Example
+.box {
+    display: block;
+}
+Easy Word
+
+Block = पूरी line ले लो और अगली चीज को नई line में भेज दो।
+
+Common Block Elements
+<div>
+<p>
+<h1> - <h6>
+<section>
+<header>
+<footer>
+कब use करें?
+
+जब elements को एक के नीचे एक रखना हो।
+
+┌─────────────────────┐
+│       Box 1         │
+└─────────────────────┘
+┌─────────────────────┐
+│       Box 2         │
+└─────────────────────┘
+2. display: inline
+An inline element does not start on a new line and takes only as much width as its content requires.
+inline element नई line से शुरू नहीं होता और केवल उतनी width लेता है जितनी उसके content को आवश्यकता होती है।
+
+Example
+span {
+    display: inline;
+}
+Easy Word
+
+Inline = उसी line में रहो।
+
+Example:
+
+Hello [BOX 1] [BOX 2] World
+
+सभी एक ही line में आ सकते हैं।
+
+Common Inline Elements
+<span>
+<a>
+<strong>
+<em>
+Important
+
+Inline element पर normally:
+
+width
+height
+
+का effect उसी तरह नहीं होता जैसे block/inline-block में होता है।
+
+3. display: inline-block
+
+यह दोनों का combination है।
+inline-block keeps an element inline with other elements while allowing it to have width, height, margin and padding like a block-level box.
+inline-block element को एक ही line में दूसरे elements के साथ रखता है, लेकिन उसे width, height, margin और padding देने की सुविधा भी देता है।
+
+Easy Word
+
+Inline-block = line में रहो + box की तरह width/height लो।
+
+Example:
+
+[ BOX 1 ] [ BOX 2 ] [ BOX 3 ]
+
+तीनों same line में हो सकते हैं और प्रत्येक की अपनी width/height हो सकती है।
+
+कब use करें?
+छोटे menu items
+Buttons
+Navigation items
+Cards को side-by-side रखना
+छोटे boxes
+
+| Property       | New Line? | Width/Height                                     | जगह                          |
+| -------------- | --------- | ------------------------------------------------ | ---------------------------- |
+| `block`        | ✅ Yes     | ✅ Works                                          | Usually full available width |
+| `inline`       | ❌ No      | ⚠️ Normally width/height don't apply as expected | Content जितना                |
+| `inline-block` | ❌ No      | ✅ Works                                          | Content/defined width        |
+
+
+Block = नीचे-नीचे
+Inline = साथ-साथ
+Inline-block = साथ-साथ + Box की पूरी control

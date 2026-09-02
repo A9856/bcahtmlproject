@@ -36,11 +36,13 @@ clear: left prevents the element from appearing beside a left-floated element.
 clear: left element को left-floated element के side में आने से रोकता है और जरूरत होने पर उसे नीचे भेज देता है।
 
 clear: left;
+
 11. clear: right
 clear: right prevents the element from appearing beside a right-floated element.
 clear: right element को right-floated element के side में आने से रोकता है।
 
 clear: right;
+
 12. clear: both
 clear: both prevents the element from appearing beside either left- or right-floated elements.
 clear: both element को left और right दोनों तरफ के floated elements के side में आने से रोकता है।

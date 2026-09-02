@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Display Property Practical</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+            .parent{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .parent>.d1{
+                    background-color: blue;
+                    color: aquamarine;
+            }
+              .parent>.d2{
+                    background-color: rgba(0, 255, 213, 0.577);
+                    color: rgba(127, 129, 255, 0.609);
+            }
+              .parent>.d3{
+                    background-color: rgba(234, 0, 255, 0.282);
+                    color: rgba(255, 127, 157, 0.564);
+            }
+
+        .box {
+            /* width: 150px; */
+            height: 80px;
+          padding: 20px;
+            margin: 10px;
+            border: 3px solid black;
+            background: lightblue;
+        }
+
+
+        /* =========================
+           BLOCK
+           ========================= */
+
+        .block {
+            display: block;
+            background: lightgreen;
+        }
+
+
+        /* =========================
+           INLINE
+           ========================= */
+
+        .inline {
+            display: inline;
+        
+            background: orange;
+
+            /*
+            width और height को
+            जानबूझकर दिया गया है
+            ताकि difference देख सकें
+            */
+
+            width: 150px;
+            height: 80px;
+
+            padding: 50px;
+            margin: 50px;
+        }
+
+
+        /* =========================
+           INLINE-BLOCK
+           ========================= */
+
+        .inline-block {
+            display: inline-block;
+
+            background: violet;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>
+        CSS Display Property
+    </h1>
+
+
+    <!-- =========================
+         BLOCK
+         ========================= -->
+
+    <h2>
+        1. display: block
+    </h2>
+
+    <div class="box block">
+        BLOCK 1
+    </div>
+
+    <div class="box block">
+        BLOCK 2
+    </div>
+
+
+    <hr>
+
+
+    <!-- =========================
+         INLINE
+         ========================= -->
+
+    <h2>
+        2. display: inline
+    </h2>
+
+    <span class="box inline">
+        INLINE 1
+    </span>
+
+    <span class="box inline">
+        INLINE 2
+    </span>
+
+    <span class="box inline">
+        INLINE 3
+    </span>
+
+
+    <hr>
+
+
+    <!-- =========================
+         INLINE-BLOCK
+         ========================= -->
+
+    <h2>
+        3. display: inline-block
+    </h2>
+
+    <div class="box inline-block">
+        INLINE-BLOCK 1
+    </div>
+
+    <div class="box inline-block">
+        INLINE-BLOCK 2
+    </div>
+
+    <div class="box inline-block">
+        INLINE-BLOCK 3
+    </div>
+<DIV class="parent">
+    <div class="d1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cupiditate!</p>
+    </div>
+    <div class="d2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cupiditate!</p>
+    </div>
+    <div class="d3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cupiditate!</p>
+    </div>
+
+</DIV>
+
+</body>
+
+</html>
