@@ -1,0 +1,636 @@
+1. JavaScript – Definition, Developer, Year, Company & Name History
+
+English Definition:
+JavaScript is a high-level programming and scripting language developed by Brendan Eich at Netscape in 1995 to make web pages dynamic and interactive. It was originally developed under the name Mocha, later renamed LiveScript, and finally named JavaScript.
+
+Hindi Explanation:
+JavaScript ek high-level programming aur scripting language hai, jise Brendan Eich ne Netscape company mein 1995 mein develop kiya tha. Iska main purpose web pages ko dynamic aur interactive banana tha. JavaScript ka original naam Mocha tha, baad mein iska naam LiveScript aur finally JavaScript rakha gaya.
+
+Important Points:
+
+Developer: Brendan Eich
+Company: Netscape
+Year: 1995
+Original Name: Mocha
+Second Name: LiveScript
+Final Name: JavaScript
+Main Purpose: Dynamic and Interactive Web Pages
+2. JavaScript Version History
+
+English Definition:
+JavaScript has evolved through several versions, beginning with the early Netscape versions and later becoming standardized as ECMAScript.
+
+Hindi Explanation:
+JavaScript samay ke saath kai versions mein develop hui. Shuruaati versions Netscape ke browser ke liye aaye, aur baad mein JavaScript ko standardize karne ke liye ECMAScript standard introduce kiya gaya.
+
+5. JavaScript क्यों बनाई गई?
+
+English:
+JavaScript was created to add interactivity and dynamic behavior to web pages.
+
+Hindi Explanation:
+JavaScript banane ka main purpose web pages ko static se dynamic banana tha.
+
+Without JavaScript:
+
+Web page mostly sirf information show karta hai.
+
+With JavaScript:
+
+User ke action ke according page response kar sakta hai.
+
+Example:
+
+User → Button Click → JavaScript → Action
+
+Button Click
+     ↓
+JavaScript Code
+     ↓
+Message / Calculation / Content Change
+
+6. JavaScript use 
+
+English:
+JavaScript is used to create dynamic and interactive web applications.
+
+Hindi:
+JavaScript ka use website aur web applications mein different tasks ke liye hota hai.
+
+Main Uses:
+
+1. Form Validation
+User ne form mein correct information enter ki hai ya nahi check karna.
+
+2. Events Handling
+Click, mouse movement, keyboard press etc. ko handle karna.
+
+3. Dynamic Content
+Web page ka content bina page reload kiye change karna.
+
+4. Popup / Alert
+Message ya warning show karna.
+
+5. Animation
+Web page par animation effects create karna.
+
+6. Calculation
+Addition, subtraction, percentage etc. calculate karna.
+
+7. Interactive Websites
+Website ko user-friendly aur interactive banana.
+
+8. Web Applications
+Gmail, online shopping, dashboards etc. jaise applications develop karne mein use hoti hai.
+
+7. JavaScript और Java में Difference
+
+Important: JavaScript aur Java same language nahi hain.
+
+English:
+JavaScript and Java are two different programming languages.
+
+Hindi:
+Dono alag-alag programming languages hain. Sirf naam similar hai.
+
+| JavaScript                               | Java                                                      |
+| ---------------------------------------- | --------------------------------------------------------- |
+| Mainly web development mein use hoti hai | General-purpose/application development mein use hoti hai |
+| Scripting/programming language           | Object-oriented programming language                      |
+| Browser mein directly run ho sakti hai   | Java Virtual Machine (JVM) par run hoti hai               |
+| JavaScript ka standard ECMAScript hai    | Java ka standard Java platform/specifications hain        |
+
+8. JavaScript और ECMAScript
+
+Ye exam mein bahut important hai.
+
+ECMAScript क्या है?
+
+English:
+ECMAScript is a standardized specification on which JavaScript is based.
+
+Hindi Explanation:
+ECMAScript ek standard/specification hai jo define karta hai ki JavaScript language mein kya rules aur features hone chahiye.
+
+Simple way:
+
+ECMAScript = Standard
+JavaScript = ECMAScript ko implement karne wali popular language
+
+Example:
+
+Jaise school mein rules hote hain:
+
+Rules → Standard
+Students → Rules follow karte hain
+
+Waise:
+
+ECMAScript → Standard
+JavaScript → Standard ko implement karti hai
+9. JavaScript Version History
+JavaScript 1.0 – 1995
+
+English:
+JavaScript 1.0 was introduced by Netscape in 1995.
+
+Hindi:
+1995 mein Netscape ne JavaScript ka initial version introduce kiya.
+
+JavaScript 1.1 – 1996
+
+English:
+JavaScript 1.1 was released in 1996 with improvements and additional features.
+
+Hindi:
+Is version mein JavaScript ke existing features ko improve kiya gaya aur naye features add kiye gaye.
+
+JavaScript 1.2 – 1997
+
+English:
+JavaScript 1.2 introduced further improvements and new features.
+
+Hindi:
+Isme JavaScript mein aur improvements aur naye features add kiye gaye.
+
+10. ECMAScript 1 – 1997
+
+English:
+ECMAScript 1 was published in 1997 as the first standardized version of the JavaScript language.
+
+Hindi Explanation:
+JavaScript ko standardize karne ke liye ECMA International ne ECMAScript standard introduce kiya.
+
+Yahin se JavaScript ke standardized versions ko ECMAScript (ES) kaha jane laga.
+
+11. ECMAScript 2 – 1998
+
+English:
+ECMAScript 2 was released in 1998 as an update to ECMAScript 1.
+
+Hindi:
+ECMAScript 2 mein mainly previous standard ko update kiya gaya.
+
+12. ECMAScript 3 – 1999
+
+English:
+ECMAScript 3 was released in 1999 and added several important language features.
+
+Hindi:
+1999 mein ES3 release hua. Isme important features add hue.
+
+Important Features:
+Regular Expressions
+try...catch
+Better error handling
+13. ECMAScript 4
+
+English:
+ECMAScript 4 was proposed but was never officially released as a standard.
+
+Hindi:
+ECMAScript 4 ke liye development/proposal hua tha, lekin ye officially standard ke form mein release nahi hua.
+
+14. ECMAScript 5 (ES5) – 2009
+
+English:
+ECMAScript 5 was released in 2009 and introduced many important improvements to JavaScript.
+
+Hindi:
+2009 ka ES5 JavaScript ka ek important version tha.
+
+Important Features:
+Strict Mode
+JSON support
+New Array methods
+Object improvements
+Example:
+"use strict";
+
+"use strict" JavaScript ko strict rules ke according execute karne mein help karta hai.
+
+15. ECMAScript 5.1 – 2011
+
+English:
+ECMAScript 5.1 was released in 2011 as an updated version of ECMAScript 5.
+
+Hindi:
+ES5.1, ES5 ka updated version tha.
+
+16. ECMAScript 6 (ES6) – 2015
+
+English:
+ECMAScript 6, also known as ES2015, was released in 2015 and introduced many major features to JavaScript.
+
+Hindi Explanation:
+ES6 JavaScript ka bahut important version tha. Isme JavaScript mein bahut saare modern features introduce hue.
+
+Important Features:
+1. let
+let age = 20;
+
+Hindi:
+let variable declare karne ke liye use hota hai.
+
+2. const
+const pi = 3.14;
+
+Hindi:
+const constant value declare karne ke liye use hota hai.
+
+3. Arrow Function
+const add = (a, b) => a + b;
+
+Hindi:
+Arrow function function likhne ka short syntax provide karta hai.
+
+4. Class
+class Student {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+Hindi:
+Class ka use objects create karne ke liye kiya jata hai.
+
+5. Template Literals
+let name = "Adil";
+console.log(`Hello ${name}`);
+
+Hindi:
+Template literals ke through string ke andar variables ko easily use kar sakte hain.
+
+6. Modules
+
+English:
+ES6 introduced modules using import and export.
+
+import { add } from "./math.js";
+export { add };
+
+Hindi:
+Modules ki help se code ko different files mein divide aur reuse kar sakte hain.
+
+17. ES2016 – 2016
+
+English:
+ES2016 introduced features such as Array.includes() and the exponentiation operator.
+
+Important:
+[1, 2, 3].includes(2);
+
+includes() check karta hai ki array mein given value present hai ya nahi.
+
+Exponentiation:
+
+2 ** 3
+
+Output:
+
+8
+18. ES2017 – 2017
+
+English:
+ES2017 introduced async and await for working with asynchronous operations.
+
+Hindi:
+async aur await ka use asynchronous operations ko easier way mein handle karne ke liye hota hai.
+
+async function getData() {
+    let result = await fetch(url);
+}
+19. ES2018 – 2018
+
+English:
+ES2018 introduced features such as object rest/spread properties and asynchronous iteration.
+
+Hindi:
+Is version mein objects aur asynchronous operations se related naye features aaye.
+
+20. ES2019 – 2019
+
+English:
+ES2019 introduced methods such as flat() and flatMap().
+
+Example:
+
+let arr = [1, [2, 3]];
+console.log(arr.flat());
+
+Output:
+
+[1, 2, 3]
+21. ES2020 – 2020
+
+English:
+ES2020 introduced important features such as optional chaining and nullish coalescing.
+
+Optional Chaining ?.
+user?.name
+
+Hindi:
+Agar user available nahi hai to error ke chances ko avoid karne mein help karta hai.
+
+Nullish Coalescing ??
+let name = userName ?? "Guest";
+
+Hindi:
+Agar userName null ya undefined ho to "Guest" use hoga.
+
+22. ES2021 – 2021
+
+English:
+ES2021 introduced new features including logical assignment operators.
+
+Hindi:
+Is version mein logical operators ke saath assignment ke naye methods aaye.
+
+23. ES2022 – 2022
+
+English:
+ES2022 introduced features such as class fields and private class methods.
+
+Hindi:
+Classes ko aur powerful banane ke liye naye features add kiye gaye.
+
+24. ES2023 – 2023
+
+English:
+ES2023 introduced new features and improvements to JavaScript, including new array methods.
+
+Hindi:
+Is version mein Array aur JavaScript language ke kuch naye features aur improvements aaye.
+
+25. ES2024 – 2024
+
+English:
+ES2024 introduced new language features and improvements to ECMAScript.
+
+Hindi:
+ES2024 mein JavaScript/ECMAScript language ko improve karne wale naye features add hue.
+
+26. ES2025 – 2025
+English:
+ECMAScript 2025 introduced new features and improvements to the JavaScript language standard.
+
+Hindi:
+ES2025 mein bhi JavaScript standard mein naye features aur improvements add kiye gaye.
+
+
+JavaScript – Features & Applications
+JavaScript के Features
+1. Event-Driven
+
+English Definition:
+JavaScript is an event-driven language that executes code in response to events such as clicking a button, typing a key, or submitting a form.
+
+Hindi Explanation:
+JavaScript mein code user ke kisi action (event) ke according run hota hai.
+
+Example:
+Button click → JavaScript function run.
+
+Use: Button click, form submit, mouse movement, keyboard events etc.
+
+2. Prototype-Based
+
+English Definition:
+JavaScript is a prototype-based language in which objects can inherit properties and methods from other objects through prototypes.
+
+Hindi Explanation:
+JavaScript mein ek object dusre object ke properties aur methods ko prototype ke through inherit kar sakta hai.
+
+Easy:
+Prototype = Objects ke beech properties/methods share karne ka mechanism.
+
+Use: Object creation aur inheritance ke liye.
+
+3. Cross-Browser
+
+English Definition:
+JavaScript is a cross-browser language that can run in major web browsers such as Chrome, Firefox, Edge, and Safari.
+
+Hindi Explanation:
+JavaScript ko different browsers mein run kiya ja sakta hai.
+
+Example:
+Chrome, Firefox, Edge, Safari etc.
+
+Use: Aisi website/web application banane ke liye jo different browsers mein work kare.
+
+Note: Browser compatibility ke liye modern web standards aur testing ka dhyan rakhna padta hai.
+
+4. Dynamic Typing
+
+English Definition:
+JavaScript is dynamically typed, which means a variable can hold values of different data types during program execution.
+
+Hindi Explanation:
+JavaScript mein variable ka data type pehle se declare karna zaroori nahi hota. Ek hi variable mein alag type ki value store ki ja sakti hai.
+
+let value = 10;
+value = "Hello";
+value = true;
+
+Yahan value mein pehle number, phir string, phir boolean value store hui.
+
+5. First-Class Functions
+
+English Definition:
+In JavaScript, functions are first-class objects, which means functions can be stored in variables, passed as arguments, and returned from other functions.
+
+Hindi Explanation:
+JavaScript mein function ko ek normal value/object ki tarah treat kiya ja sakta hai.
+
+Function ko:
+
+Variable mein store kar sakte hain
+Kisi function ko argument ke roop mein de sakte hain
+Kisi function se return kar sakte hain
+let greet = function() {
+    console.log("Hello");
+};
+6. Closures
+
+Aapne "clusters" likha hai; JavaScript ka relevant feature Closures hai.
+
+English Definition:
+A closure is a function that remembers and can access variables from its outer function even after the outer function has finished executing.
+
+Hindi Explanation:
+Closure mein inner function apne outer function ke variables ko yaad rakhta hai, chahe outer function ka execution complete ho chuka ho.
+
+Easy:
+Closure = Function + uske outer scope ke variables ki memory.
+
+Use: Data privacy, state maintain karne aur callbacks mein.
+
+7. Rich Ecosystem
+
+English Definition:
+JavaScript has a rich ecosystem of libraries, frameworks, packages, and tools for developing web, server-side, and mobile applications.
+
+Hindi Explanation:
+JavaScript ka ecosystem bahut bada hai. Isme bahut saare libraries, frameworks, packages aur tools available hain jo development ko easy aur fast banate hain.
+
+Examples:
+React, Angular, Vue, Express.js, Next.js, React Native etc.
+
+JavaScript का Use कहाँ-कहाँ होता है?
+1. Frontend / Client-Side Development
+
+English:
+JavaScript is used on the frontend to create dynamic and interactive user interfaces for websites and web applications.
+
+Hindi:
+Frontend mein JavaScript ka use jo part user browser par dekhta aur use karta hai, usko interactive banane ke liye hota hai.
+
+JavaScript ke saath:
+HTML → Web page ka structure
+CSS → Design/style
+JavaScript → Logic & interactivity
+Example:
+HTML + CSS + JavaScript
+       ↓
+Frontend Website / Web App
+Kya develop kar sakte hain?
+Interactive websites
+E-commerce frontend
+Admin Dashboard
+Online Quiz
+Weather App
+Chat UI
+Banking UI
+Single Page Applications (SPA)
+Popular Frontend Libraries/Frameworks
+React
+Angular
+Vue.js
+Svelte
+2. Backend / Server-Side Development
+
+English:
+JavaScript can be used for backend and server-side development with runtime environments such as Node.js.
+
+Hindi:
+JavaScript sirf browser mein hi nahi chalti. Node.js jaise runtime environment ki help se JavaScript ko server par bhi run kar sakte hain.
+
+Backend mein:
+Frontend
+   ↓
+JavaScript / React
+   ↓
+API Request
+   ↓
+Node.js + Express.js
+   ↓
+Database
+JavaScript Backend ke saath kya develop kar sakte hain?
+REST APIs
+Login/Signup system
+Authentication
+E-commerce backend
+Chat server
+School Management System backend
+CRUD applications
+Real-time applications
+Common Technologies:
+
+Node.js → JavaScript ko server par run karta hai.
+
+Express.js → Node.js ke upar commonly used web framework hai.
+
+MongoDB → Database ke saath JavaScript/Node.js applications mein commonly use hota hai.
+
+Example stack:
+
+React + Node.js + Express.js + MongoDB
+
+3. Mobile Application Development
+
+English:
+JavaScript can be used to develop mobile applications using frameworks such as React Native and Ionic.
+
+Hindi:
+JavaScript ka use mobile applications develop karne mein bhi kiya ja sakta hai.
+
+Popular Technologies:
+
+React Native
+JavaScript/React concepts ka use karke Android aur iOS applications develop kar sakte hain.
+
+Ionic
+Web technologies jaise HTML, CSS aur JavaScript ke through mobile applications develop karne mein use hota hai.
+
+Mobile Apps:
+Shopping App
+Chat App
+Education App
+Food Delivery App
+Business App
+Management App
+4. Desktop Applications
+
+English:
+JavaScript can also be used to develop desktop applications using technologies such as Electron.
+
+Hindi:
+JavaScript se desktop applications bhi banayi ja sakti hain.
+
+Example Technology: Electron
+
+Isse Windows, macOS aur Linux ke liye desktop applications develop ki ja sakti hain.
+
+5. Full-Stack Development
+
+English:
+JavaScript can be used for both frontend and backend development, making it suitable for full-stack web development.
+
+Hindi:
+JavaScript ki sabse important qualities mein se ek ye hai ki iska use frontend aur backend dono mein kiya ja sakta hai.
+
+Example Full-Stack Stack:
+HTML + CSS + JavaScript
+          ↓
+       React
+       Frontend
+          ↓
+         API
+          ↓
+ Node.js + Express.js
+        Backend
+          ↓
+       MongoDB
+       Database
+
+JavaScript ek programming/scripting language hai, library nahi.
+
+| Technology       | Kya hai?                       | Use                             |
+| ---------------- | ------------------------------ | ------------------------------- |
+| **JavaScript**   | Programming/Scripting Language | Programming & application logic |
+| **React**        | JavaScript Library             | Frontend UI development         |
+| **Node.js**      | JavaScript Runtime Environment | Server-side JavaScript          |
+| **Express.js**   | Node.js Web Framework          | Backend/API development         |
+| **React Native** | Framework                      | Mobile app development          |
+| **Electron**     | Framework                      | Desktop applications            |
+
+                    JAVASCRIPT
+                         │
+          ┌──────────────┼──────────────┐
+          ↓              ↓              ↓
+      Frontend        Backend         Mobile
+          │              │              │
+        React          Node.js      React Native
+        Angular        Express.js       Ionic
+        Vue.js            │
+          │               ↓
+          ↓           APIs/Server
+     Web Apps             │
+                          ↓
+                       Database
+
+One-line exam answer:
+JavaScript is a versatile programming language used for frontend web development and, with technologies such as Node.js, for backend/server-side development; it can also be used for mobile and desktop application development through frameworks such as React Native and Electron.
+
+
