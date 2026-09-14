@@ -1,0 +1,519 @@
+<!-- 1. JavaScript <script> Tag
+
+The <script> tag is an HTML tag used to include or write JavaScript code inside an HTML document.and connect external js file.
+
+<script> HTML ka ek tag hai jiska use HTML document ke andar JavaScript code likhne ya external JavaScript file ko connect karne ke liye kiya jata hai.
+
+Syntax
+<script>
+    // JavaScript code
+</script>
+
+Example
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Demo</title>
+</head>
+<body>
+
+    <h1>JavaScript Example</h1>
+
+    <script>
+        alert("Hello JavaScript");
+    </script>
+
+</body>
+</html>
+
+Important Point
+<script> tag ko generally:
+<head> ke andar
+<body> ke andar
+
+ya external .js file ko connect karne ke liye
+
+use kiya ja sakta hai. -->
+
+2. JavaScript in <head>
+
+JavaScript can be written inside the <head> section of an HTML document using the <script> tag.
+
+JavaScript code ko HTML ke <head> section ke andar bhi likh sakte hain.
+
+Syntax
+<head>
+
+    <script>
+        // JavaScript code
+    </script>
+
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript in Head</title>
+    <script>
+        function showMessage() {
+            alert("JavaScript is written inside Head!");
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript in Head Example</h1>
+    <button onclick="showMessage()">
+        Click Me
+    </button>
+</body>
+</html>
+
+<script src="script.js" defer></script>
+3. JavaScript in <body>
+JavaScript can be written inside the <body> section of an HTML document using the <script> tag.
+
+JavaScript ko HTML ke <body> ke andar bhi likh sakte hain. Agar script ko body ke end mein rakha jaye, to generally HTML elements pehle load ho chuke hote hain.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript in Body</title>
+</head>
+<body>
+
+    <h1 id="heading">
+        JavaScript in Body
+    </h1>
+
+    <button onclick="changeText()">
+        Change Text
+    </button>
+    <script>
+        function changeText() {
+            document.getElementById("heading").innerHTML =
+                "Text Changed Using JavaScript!";
+        }
+    </script>
+</body>
+</html>
+
+5. External JavaScript
+
+External JavaScript is a method of writing JavaScript code in a separate .js file and linking it to an HTML document using the <script> tag.
+
+External JavaScript mein JavaScript code ko HTML file ke andar nahi likhte. JavaScript ke liye separate .js file banate hain aur HTML mein us file ko connect karte hain.
+
+Example Structure
+project/
+│
+├── index.html
+│
+└── script.js
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>External JavaScript</title>
+
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <h1 id="heading">
+        External JavaScript Demo
+    </h1>
+
+    <button onclick="changeHeading()">
+        Change Heading
+    </button>
+
+</body>
+
+</html>
+
+JavaScript File — script.js
+function changeHeading() {
+
+    document.getElementById("heading").innerHTML =
+        "Text Changed From External JavaScript!";
+
+}
+
+6. External JavaScript Reference
+The src attribute of the <script> tag is used to specify the path or URL of an external JavaScript file.
+
+src attribute ka use HTML document ko external JavaScript file ka address/path batane ke liye hota hai.
+
+Syntax
+<script src="script.js"></script>
+
+6.1 Same Folder External JavaScript
+
+Agar HTML aur JS file same folder mein hain:
+
+project/
+├── index.html
+└── script.js
+
+Use:
+
+<script src="script.js"></script>
+
+6.2 Folder ke andar JavaScript
+
+Structure:
+
+project/
+├── index.html
+└── js/
+    └── script.js
+
+Reference:
+
+<script src="js1/js/script.js"></script>
+
+6.3 Parent Folder ki JavaScript
+
+Structure:
+
+project/
+├── script.js
+└── pages/
+    └── index.html
+
+index.html se:
+
+<script src="../script.js"></script>
+
+../ means go to the parent directory.
+
+7. External JavaScript Advantages
+
+1. Code Reusability--:
+
+The same JavaScript file can be used by multiple HTML pages.
+
+index.html ──┐
+about.html ──┼──> script.js
+contact.html ┘
+2. Separation of Code--:
+
+External JavaScript separates HTML structure from JavaScript logic.
+HTML → Structure
+CSS  → Design
+JS   → Logic / Behaviour
+
+3. Easy Maintenance--:
+External JavaScript makes the code easier to maintain and update.
+
+4. Better Code Organization--:
+External JavaScript helps organize large applications into separate files and modules.
+Large project mein code ko properly organize karna easy hota hai.
+
+// add function
+
+5. Reusable Logic--:
+Common functions and logic can be written once and reused on multiple pages.
+
+
+6. Browser Caching--
+Browsers can cache external JavaScript files, which may reduce repeated downloads.
+
+Browser external JS file ko cache kar sakta hai, jisse repeated page visits par file ko dobara download karne ki need kam ho sakti hai.
+
+JavaScript Function--:
+
+A function is a reusable block of JavaScript code designed to perform a specific task.
+
+Function JavaScript code ka ek reusable block hai jo kisi specific task ko perform karta hai.
+
+Syntax
+function functionName() {
+
+    // code
+
+}
+Example
+function greet() {
+
+    console.log("Hello Student");
+
+}
+
+Function ko execute/call karne ke liye:
+
+greet();
+
+9. Function with Parameters--:
+
+Parameters are variables defined in a function that receive values when the function is called.
+
+
+Example
+function greet(name) {
+
+    console.log("Hello " + name);
+
+}
+
+greet("AtoZ");
+
+Output:
+
+Hello Adil
+
+Yahan:
+
+name → Parameter
+"Adil" → Argument
+
+10. Function with Return Value--:
+A return statement sends a value from a function back to the code that called the function.
+return function se result/value ko wapas caller ke paas bhejta hai.
+
+Example
+function add(a, b) {
+
+    return a + b;
+
+}
+
+let result = add(10, 20);
+
+console.log(result);
+
+Output:
+
+30
+
+11. JavaScript Event--:
+
+An event is an action or occurrence detected by the browser, such as a mouse click, key press, form submission, or page loading.
+
+Event browser mein hone wala koi action/occurrence hai jise JavaScript detect karke response de sakti hai.
+
+Common                  Events
+Event	                Meaning
+click	                Element par click
+dblclick	            Double click
+mouseover	            Mouse element ke upar aana
+mouseout	            Mouse element se bahar jana
+keydown	                Keyboard key press
+keyup	                Keyboard key release
+submit	                Form submit
+change	                Input value change
+input	                Input mein value enter/change
+load	                Page/resource load
+focus	                Element active/focused hona
+blur	                Element ka focus lose hona
+
+12. Event Handling--:
+Event handling is the process of detecting an event and executing JavaScript code in response to that event.
+
+Example
+<button onclick="showMessage()">
+    Click Me
+</button>
+function showMessage() {
+
+    alert("Button Clicked!");
+
+}
+
+Flow:
+
+User Clicks Button
+       ↓
+click Event
+       ↓
+showMessage()
+       ↓
+alert()
+       ↓
+Message Display
+
+13. Event Listener--:
+addEventListener() is a JavaScript method used to attach an event handler to an HTML element.
+addEventListener() ka use HTML element ke saath event ko connect karne ke liye hota hai.
+
+Example
+const button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+
+    alert("Button Clicked!");
+
+});
+
+14. Complete Function + Event + DOM Example
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Function and Event</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f4f7fb;
+        }
+
+        .box {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1 id="heading">
+            JavaScript Function
+        </h1>
+
+        <button id="btn">
+            Click Me
+        </button>
+
+        <p id="output">
+            Waiting for event...
+        </p>
+
+    </div>
+
+
+    <script>
+
+        // Function
+
+        function showMessage() {
+
+            document.getElementById("heading").innerHTML =
+                "Welcome to JavaScript!";
+
+            document.getElementById("output").innerHTML =
+                "The button click event was handled successfully.";
+
+        }
+
+
+        // Event Listener
+
+        const button = document.getElementById("btn");
+
+        button.addEventListener("click", showMessage);
+
+    </script>
+
+</body>
+
+</html>
+15. Complete Concept Flow
+HTML
+ ↓
+<script> Tag
+ ↓
+JavaScript
+ ↓
+Function
+ ↓
+Event
+ ↓
+Event Handler
+ ↓
+DOM Element
+ ↓
+Content / Style / Behaviour Change
+Simple Example
+Button
+  ↓
+click event
+  ↓
+Function
+  ↓
+JavaScript
+  ↓
+DOM
+  ↓
+Output Change
+
+16. JavaScript Include 3 Main Ways
+
+1. Inline JavaScript
+JavaScript written directly inside an HTML element's event attribute.
+
+<button onclick="alert('Hello')">
+    Click
+</button>
+
+
+2. Internal JavaScript
+JavaScript written inside the <script> tag within the same HTML document.
+
+<script>
+
+    alert("Hello");
+
+</script>
+
+3. External JavaScript--:
+
+JavaScript written in a separate .js file and linked using the src attribute.
+
+<script src="script.js" defer></script>
+JavaScript ko separate .js file mein likhkar HTML se connect karna.
+
+17. Quick Revision for Exam
+
+Function:
+Specific task perform karne wala reusable block of JavaScript code.
+
+Event:
+Browser mein hone wala action/occurrence, jaise click, key press, submit etc.
+
+Event Handling:
+Event ke response mein JavaScript code execute karna.
+
+addEventListener():
+HTML element ke saath event handler attach karne ke liye JavaScript method.
+
+defer:
+External script ko HTML parsing complete hone ke baad execute karne ke liye use kiya jane wala attribute.

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Function and Event</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f4f7fb;
+        }
+
+        .box {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1 id="heading">
+            JavaScript Function
+        </h1>
+
+        <button id="btn"onclick="showMessage()">
+            Click Me
+        </button>
+
+        <p id="output">
+            Waiting for event...
+        </p>
+
+    </div>
+
+
+    <script>
+
+        // Function
+
+        function showMessage() {
+
+            document.getElementById("heading").innerHTML =
+                "Welcome to JavaScript!";
+
+            document.getElementById("output").innerHTML =
+                "The button click event was handled successfully.";
+
+        }
+
+
+        // Event Listener
+
+        // const button = document.getElementById("btn");
+
+        // button.addEventListener("click", showMessage);
+
+    </script>
+
+</body>
+</html>

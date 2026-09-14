@@ -379,14 +379,11 @@ ES2025 mein bhi JavaScript standard mein naye features aur improvements add kiye
 
 
 JavaScript – Features & Applications
-JavaScript के Features
-1. Event-Driven
+JavaScript  Features
+1. Event-Driven-->
 
 English Definition:
 JavaScript is an event-driven language that executes code in response to events such as clicking a button, typing a key, or submitting a form.
-
-Hindi Explanation:
-JavaScript mein code user ke kisi action (event) ke according run hota hai.
 
 Example:
 Button click → JavaScript function run.
@@ -398,9 +395,6 @@ Use: Button click, form submit, mouse movement, keyboard events etc.
 English Definition:
 JavaScript is a prototype-based language in which objects can inherit properties and methods from other objects through prototypes.
 
-Hindi Explanation:
-JavaScript mein ek object dusre object ke properties aur methods ko prototype ke through inherit kar sakta hai.
-
 Easy:
 Prototype = Objects ke beech properties/methods share karne ka mechanism.
 
@@ -410,9 +404,6 @@ Use: Object creation aur inheritance ke liye.
 
 English Definition:
 JavaScript is a cross-browser language that can run in major web browsers such as Chrome, Firefox, Edge, and Safari.
-
-Hindi Explanation:
-JavaScript ko different browsers mein run kiya ja sakta hai.
 
 Example:
 Chrome, Firefox, Edge, Safari etc.

@@ -1,0 +1,349 @@
+1. Variable -->
+
+A variable is a named storage location used to store and represent data values in a JavaScript program. The value stored in a variable can be accessed and, depending on how the variable is declared, may be changed during program execution.
+
+Variable ek named storage location hota hai jisme program ke andar data/value store ki jati hai. Is value ko variable ke naam se access kiya ja sakta hai. Variable ki value change hogi ya nahi, ye is baat par depend karta hai ki variable ko var, let ya const se declare kiya gaya hai.
+
+Example
+let age = 20;
+let → Variable declaration keyword
+
+2. Variable Declaration---->
+Variable declaration is the process of creating a variable by specifying its name using a declaration keyword such as var, let, or const.
+
+Variable declaration ka matlab hai program mein variable create karna.
+
+Example
+let age;
+
+3. Variable Initialization--->
+
+Variable initialization is the process of assigning an initial value to a variable when it is declared.
+
+
+let age = 20;
+
+4. Variable Assignment-->
+Assignment is the process of storing or updating a value in a variable using the assignment operator =.
+
+let age = 20;
+age = 25;
+// value 20 to update 25
+
+5. JavaScript Variable Declaration 3 Types (3 type keyword)
+1. var
+2. let
+3. const
+
+6. var-:
+
+var is a JavaScript keyword used to declare a function-scoped variable. It allows both reassignment and redeclaration within the same scope.
+
+// var JavaScript mein variable declare karne ka traditional/older method hai. Ye function-scoped hota hai aur isme variable ki value change aur same scope mein redeclare dono kar sakte hain.
+
+Syntax
+var variableName = value;
+
+Example
+var age = 20;
+age = 25;
+var age = 30;// reassignment aur redeclaration both possible.
+
+7. let:
+let is a modern JavaScript keyword used to declare a block-scoped variable whose value can be reassigned but cannot be redeclared in the same scope.
+
+// let modern JavaScript mein variable declare karne ke liye use hota hai. Ye block-scoped hota hai. Iski value change kar sakte hain, lekin same scope mein dobara declare nahi kar sakte.
+
+Syntax
+let variableName = value;
+
+Example
+let age = 20;
+age = 25;//Reassignment allowed.
+
+let age = 20;
+let age = 30;//Same scope mein redeclaration allowed nahi.
+
+8. const-->
+const is a block-scoped JavaScript keyword used to declare a variable that must be initialized when declared and cannot be reassigned later.
+
+// const ek block-scoped variable declaration keyword hai. Isme declaration ke time value dena zaroori hai aur baad mein variable ko new value assign nahi kar sakte.
+
+Syntax
+const variableName = value;
+Example
+const pi = 3.14; //Ye allowed hai: but reassign not allow
+
+console.log(pi);
+
+9. Scope-->
+
+Scope defines the region of a JavaScript program where a variable can be accessed.
+
+//Scope batata hai ki variable ko program ke kis area mein access kiya ja sakta hai.
+
+JavaScript important scopes:
+
+Global Scope
+Function Scope
+Block Scope
+Module Scope
+
+10. Global Variable
+
+A global variable is a variable declared in the global scope and can generally be accessed from different parts of the program, subject to JavaScript's scope rules.
+
+//Jo variable global scope mein declare hota hai aur program ke multiple parts se access kiya ja sakta hai, use global variable kehte hain.
+
+let name = "AtoZ";
+
+console.log(name);
+function showName() {
+    console.log(name);
+}
+
+showName();
+
+11. Local Variable
+A local variable is a variable that is accessible only within the scope where it is declared.
+
+//Jo variable kisi specific function ya block ke andar declare hota hai aur wahi accessible hota hai, use local variable kehte hain.
+
+function test() {
+    let age = 20;
+    console.log(age);
+}
+//variable age out of function not accessible
+
+12. Function Scope
+Function scope means that a variable is accessible throughout the function in which it is declared.
+
+//Function scope ka matlab hai variable jis function mein declare hua hai, us function ke andar accessible hota hai.
+
+var traditionally function-scoped hota hai.
+
+function test() {
+
+    var x = 10;
+
+    console.log(x);
+}
+
+13. Block Scope
+
+Block scope means that a variable is accessible only within the block { } in which it is declared.
+
+//Block scope mein variable sirf us { } block ke andar accessible hota hai.
+
+let aur const block-scoped hain.
+
+if (true) {
+
+    let age = 20;
+
+    console.log(age);
+
+}
+
+14. Reassignment
+Reassignment means assigning a new value to an already declared variable.
+
+//Existing variable ko new value dena reassignment kehlata hai.
+
+let age = 20;
+
+age = 25;
+
+15. Redeclaration
+Redeclaration means declaring an already declared variable again in the same scope.
+//Ek hi scope mein same variable ko dobara declare karna redeclaration kehlata hai.
+
+var age = 20;
+var age = 30;
+//var mein allowed hai.
+
+//but Same scope mein allowed nahi.
+
+let age = 20;
+let age = 30;
+
+
+16. Hoisting
+
+Hoisting is JavaScript's behavior in which declarations are processed before the execution of the code in their scope.
+Example:
+console.log(x);
+var x = 10;
+console.log(x);
+var ke case mein declaration hoist hoti hai, isliye result:
+
+undefined
+Important
+
+let aur const bhi scope ke start se hoisted conceptually hote hain, lekin initialization se pehle access karne par Temporal Dead Zone (TDZ) ki wajah se error milta hai.
+
+17. Temporal Dead Zone (TDZ)
+
+The Temporal Dead Zone is the session between entering a scope and the initialization of a let or const variable during which accessing that variable causes a ReferenceError.
+
+let aur const variable ko declare/initialize karne se pehle access karne ka jo session hota hai, use Temporal Dead Zone kehte hain.
+
+console.log(age);
+let age = 20;
+
+// ReferenceError
+
+18. Variable Naming Rules
+Rule 1
+A variable name can contain letters, digits, underscore _, and dollar sign $.
+
+let student_name;
+let student1;
+let $price;
+
+* A variable name cannot start with a digit.
+
+let 1student;
+//Correct:let student1;
+
+* JavaScript variable names are case-sensitive.
+
+let age = 20;
+let Age = 30;//different variables.
+
+* JavaScript reserved keywords cannot be used as variable names.
+
+let class = 10;//class JavaScript ka reserved keyword hai.
+
+19. Variable Data Types-->
+
+Data Type in JavaScript tells us what type of data or value is stored in a variable.
+
+JavaScript data types are mainly divided into two categories:
+
+Primitive Data Types
+Non-Primitive Data Types
+
+Primitive Data Types
+Primitive data types are the basic and simple data types that store a single value.
+
+String
+Number
+BigInt
+Boolean
+Undefined
+Null
+Symbol
+
+Non-Primitive / Reference Type
+
+Non-primitive data types are complex data types that can store or represent multiple values or collections of data.
+
+1. Object
+
+An Object is a non-primitive data type that stores data in the form of key-value pairs. It is used to represent a real-world entity or a collection of related data.
+
+Example:
+
+let student = {
+    name: "Ankit",
+    age: 20,
+    course: "BCA"
+};
+
+console.log(student.name);
+
+Easy Meaning: Object में related information को एक साथ store करते हैं।
+
+2. Array
+
+An Array is a data structure that stores multiple values in a single variable. Each value is accessed using an index number, starting from 0.
+
+Example:
+let marks = [80, 75, 90, 85];
+
+
+Easy Meaning: Array में multiple values को एक variable में store करते हैं।
+
+3. Function
+A Function is a reusable block of code that performs a specific task. It can be called whenever we need to perform that task.
+Example:
+function greet() {
+    console.log("Hello Apcs");
+}
+greet();
+Output:
+Hello Apcs.
+
+20. String
+A string is a sequence of characters used to represent text.
+//String ka use text/characters store karne ke liye hota hai.
+
+let name = "Ankit";
+
+21. Number
+The Number type represents numeric values, including integers and floating-point numbers.
+//Number ka use numeric values store karne ke liye hota hai.
+
+let age = 25;
+let price = 99.50;
+
+22. BigInt
+BigInt is a JavaScript data type used to represent integers larger than the safe range of the Number type.
+//BigInt ka use bahut bade integer numbers ko represent karne ke liye hota hai.
+
+let bigNumber = 12345678901234567890n;
+
+23. Boolean
+Boolean represents one of two logical values: true or false.
+//Boolean mein sirf do values hoti hain:
+
+true
+false
+
+Example:
+
+let isStudent = true;
+
+24. Undefined
+Undefined indicates that a variable has been declared but has not been assigned a value.
+//Agar variable declare hai lekin usme value assign nahi ki gayi hai, to uski value normally undefined hoti hai.
+
+let age;
+console.log(age);
+Output:
+undefined
+
+25. Null
+Null represents the intentional absence of an object or value.
+//null ka use intentionally batane ke liye kiya jata hai ki abhi koi value/object nahi hai.
+let student = null;
+
+26. Symbol
+
+Symbol is a primitive data type used to create unique identifiers.
+//Symbol ka use unique identifiers create karne ke liye hota hai.
+
+let id = Symbol("id");
+
+27. Object
+An object is a collection of related data and functionality represented using properties and methods.
+//Object mein related data ko properties aur behavior ko methods ke form mein store kar sakte hain.
+
+let student = {
+    name: "Adil",
+    age: 25
+};
+
+28. Array
+An array is an ordered collection used to store multiple values in a single variable.
+//Array ek variable mein multiple values ko ordered form mein store karne ke liye use hota hai.
+let fruits = ["Apple", "Mango", "Banana"];
+
+29. Function as a Value
+
+JavaScript functions are first-class values, so they can be assigned to variables, passed as arguments, and returned from functions.
+//JavaScript mein function ko variable mein store kar sakte hain.
+const greet = function() {
+    console.log("Hello");
+};
