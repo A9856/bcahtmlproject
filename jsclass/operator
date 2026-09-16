@@ -1045,10 +1045,6 @@ true
 
 ? :     → Ternary / Conditional
 ??      → Nullish Coalescing
-<<<<<<< HEAD
-=======
-
-
 Date-->16-09-2026
 
 1. Conditional Operator — 
@@ -1678,4 +1674,6 @@ switch (choice) {
 Output:
 
 View Student
->>>>>>> ff0dae8 (ten commit)
+
+
+
