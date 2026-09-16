@@ -614,7 +614,7 @@ Guest
 
 लेकिन:
 
-let username = "Adil";
+let username = "Ankit";
 
 username ||= "Guest";
 
@@ -622,7 +622,7 @@ console.log(username);
 
 Output:
 
-Adil
+Ankit
 6.3 Nullish Assignment ??= ->
 
 The ??= operator assigns a value only when the existing value is null or undefined.
@@ -648,8 +648,8 @@ The + operator can join two or more strings together. This is called string conc
 
 + operator दो या अधिक strings को जोड़ सकता है। इसे String Concatenation कहते हैं।
 
-let firstName = "Adil";
-let lastName = "Khan";
+let firstName = "Ankit";
+let lastName = "singh";
 
 let fullName = firstName + " " + lastName;
 
@@ -657,7 +657,7 @@ console.log(fullName);
 
 Output:
 
-Adil Khan
+Ankit singh
 String Assignment += ->
 
 += existing string में नई string जोड़कर result को उसी variable में store करता है।
@@ -951,7 +951,7 @@ number
 
 More examples:
 
-console.log(typeof "Adil");
+console.log(typeof "Ankit");
 console.log(typeof true);
 console.log(typeof 10);
 
@@ -967,7 +967,7 @@ The delete operator removes a property from an object.
 delete operator object की property को remove करने के लिए use होता है।
 
 let student = {
-    name: "Adil",
+    name: "Ankit",
     age: 20
 };
 
@@ -977,7 +977,7 @@ console.log(student);
 
 Output:
 
-{ name: "Adil" }
+{ name: "Ankit" }
 13. in Operator ->
 
 The in operator checks whether a property exists in an object.
@@ -985,7 +985,7 @@ The in operator checks whether a property exists in an object.
 in operator check करता है कि कोई property object में मौजूद है या नहीं।
 
 let student = {
-    name: "Adil",
+    name: "Ankit",
     age: 20
 };
 
