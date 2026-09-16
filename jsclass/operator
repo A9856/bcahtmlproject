@@ -1,0 +1,1047 @@
+JAVASCRIPT OPERATORS -> 
+1. Operator -> 
+A JavaScript operator is a symbol or keyword used to perform a specific operation on values or variables.
+
+JavaScript में operator एक symbol या keyword होता है, जिसका प्रयोग variables या values पर कोई specific operation करने के लिए किया जाता है।
+
+Example
+let a = 10;
+let b = 5;
+console.log(a + b);
+
+Output:15
+
+2. Arithmetic Operators->
+Arithmetic operators are used to perform mathematical calculations such as addition, subtraction, multiplication and division.
+Arithmetic operators का उपयोग numbers पर mathematical calculations करने के लिए किया जाता है।
+
+Arithmetic Operators
++     Addition
+-     Subtraction
+*     Multiplication
+/     Division
+%     Modulus
+**    Exponentiation
+++    Increment
+--    Decrement
+
+2.1 Addition Operator +
+The addition operator + adds two numbers and returns their sum.
++ operator दो numbers को जोड़कर उनका sum return करता है।
+
+Example
+let a = 10;
+let b = 20;
+let result = a + b;
+
+console.log(result);
+
+Output:30
+
+Practical Example
+let price1 = 500;
+let price2 = 300;
+
+let total = price1 + price2;
+console.log("Total Price =", total);
+Output:Total Price = 800
+
+2.2 Subtraction Operator -
+
+The subtraction operator - subtracts the second value from the first value.
+- operator पहली value में से दूसरी value को घटाता है।
+
+Syntax
+a - b
+Example
+let a = 20;
+let b = 5;
+
+console.log(a - b);
+
+Output:15
+Practical Example
+
+let balance = 1000;
+let expense = 250;
+
+balance = balance - expense;
+
+console.log("Remaining Balance =", balance);
+
+Output:Remaining Balance = 750
+
+2.3 Multiplication Operator * ->
+The multiplication operator * multiplies two numbers and returns their product.
+* operator दो numbers को multiply करके उनका product देता है।
+
+Syntax
+a * b
+Example
+let a = 10;
+let b = 5;
+
+console.log(a * b);
+
+Output:50
+Practical Example
+
+let price = 100;
+let quantity = 5;
+let total = price * quantity;
+console.log("Total =", total);
+
+Output:Total = 500
+
+2.4 Division Operator / -> 
+The division operator / divides one number by another number.
+
+/ operator एक number को दूसरे number से divide करता है।
+
+Syntax
+a / b
+Example
+let a = 20;
+let b = 5;
+
+console.log(a / b);
+
+Output:
+
+4
+Practical Example
+let totalMarks = 400;
+let subjects = 5;
+
+let average = totalMarks / subjects;
+
+console.log("Average =", average);
+
+Output: Average = 80
+
+2.5 Modulus Operator % ->
+
+The modulus operator % returns the remainder after division.
+
+% operator division के बाद बचा हुआ remainder (शेषफल) return करता है।
+
+Syntax
+a % b
+Example
+let a = 17;
+let b = 5;
+
+console.log(a % b);
+
+Output:2
+
+Quotient = 3
+Remainder = 2
+
+Practical: Even/Odd
+let number = 15;
+
+if (number % 2 === 0) {
+    console.log("Even");
+} else {
+    console.log("Odd");
+}
+
+Output: Odd
+
+2.6 Exponentiation Operator ** ->
+
+The exponentiation operator ** raises the first number to the power of the second number.
+
+** operator किसी number की power calculate करने के लिए use होता है।
+
+Syntax
+base ** exponent
+Example
+let result = 2 ** 4;
+
+console.log(result);
+
+Output:16
+
+Because:2 × 2 × 2 × 2 = 16
+
+Practical Example
+let side = 5;
+
+let area = side ** 2;
+
+console.log("Area =", area);
+
+Output: Area = 25
+
+2.7 Increment Operator ++ ->
+
+The increment operator ++ increases the value of a variable by 1.
+
+++ operator variable की value को 1 से बढ़ाता है।
+
+Example
+let x = 10;
+
+x++;
+
+console.log(x);
+
+Output:
+
+11
+Pre-Increment ++x
+
+पहले value increase होती है, फिर use होती है।
+
+let x = 10;
+
+console.log(++x);
+
+Output:
+
+11
+Post-Increment x++
+
+पहले current value use होती है, फिर value increase होती है।
+
+let x = 10;
+
+console.log(x++);
+console.log(x);
+
+Output:
+10
+11
+
+2.8 Decrement Operator -- ->
+
+The decrement operator -- decreases the value of a variable by 1.
+
+-- operator variable की value को 1 से कम करता है।
+
+Example
+let x = 10;
+
+x--;
+
+console.log(x);
+Output:9
+
+Pre-Decrement
+let x = 10;
+console.log(--x);
+Output:9
+
+Post-Decrement
+let x = 10;
+
+console.log(x--);
+console.log(x);
+
+Output:
+10
+9
+
+3. Assignment Operators ->
+
+Assignment operators are used to assign a value to a variable or update its existing value.
+
+Assignment operators का उपयोग variable को value देने या उसकी existing value को update करने के लिए किया जाता है।
+
+Operators
+= 
++=
+-=
+*=
+/=
+%=
+**=
+
+3.1 Assignment Operator = ->
+
+= operator किसी variable में value assign करता है।
+
+let x = 10;
+
+console.log(x)
+Output:10
+
+3.2 Add Assignment += ->
+
++= adds a value to the existing variable value and assigns the result back to the variable.
+
++= existing value में नई value को जोड़कर result उसी variable में store करता है।
+
+let x = 10;
+
+x += 5;
+
+console.log(x);
+
+Output:15
+
+Equivalent:
+
+x = x + 5;
+
+3.3 Subtract Assignment -= ->
+
+-= existing value में से value subtract करके result को उसी variable में store करता है।
+
+let x = 10;
+
+x -= 3;
+
+console.log(x);
+
+Output:7
+
+Equivalent:
+
+x = x - 3;
+3.4 Multiply Assignment *= ->
+
+*= existing value को दूसरी value से multiply करके result को उसी variable में store करता है।
+
+let x = 10;
+
+x *= 3;
+
+console.log(x);
+
+Output:30
+
+3.5 Divide Assignment /= ->
+
+/= existing value को divide करके result को उसी variable में store करता है।
+
+let x = 20;
+
+x /= 4;
+
+console.log(x);
+
+Output:
+
+5
+3.6 Modulus Assignment %= ->
+
+%= division का remainder निकालकर उसे उसी variable में store करता है।
+
+let x = 17;
+
+x %= 5;
+
+console.log(x);
+
+Output:2
+
+3.7 Exponentiation Assignment **= ->
+
+**= variable की value की power calculate करके result को उसी variable में store करता है।
+
+let x = 2;
+
+x **= 3;
+
+console.log(x);
+
+Output:8
+
+4. Comparison Operators ->
+
+Comparison operators compare two values and return a Boolean result, either true or false.
+Comparison operators दो values को compare करते हैं और result में true या false देते हैं।
+
+All Comparison Operators
+
+==      Equal to
+===     Strict equal to
+!=      Not equal to
+!==     Strict not equal to
+>       Greater than
+<       Less than
+>=      Greater than or equal to
+<=      Less than or equal to
+
+4.1 Equal == ->
+
+The == operator compares two values after performing type conversion when necessary.
+
+== दो values को compare करता है और आवश्यकता होने पर type conversion कर सकता है।
+
+Example
+console.log(10 == "10");
+
+Output:true
+
+क्योंकि value दोनों की 10 है।
+
+4.2 Strict Equal === ->
+
+The === operator compares both value and data type without performing type conversion.
+
+=== value और data type दोनों को check करता है। इसमें automatic type conversion नहीं होता।
+
+console.log(10 === "10");
+
+Output:false
+
+क्योंकि:
+
+10    → number
+"10"  → string
+Important
+==   → Value comparison
+===  → Value + Type comparison
+
+4.3 Not Equal != ->
+
+The != operator returns true when two values are not equal after type conversion when needed.
+
+!= operator बताता है कि दो values equal नहीं हैं।
+
+console.log(10 != 5);
+
+Output:
+
+true
+4.4 Strict Not Equal !== ->
+
+The !== operator returns true when the value or data type is different.
+
+!== value या data type में difference होने पर true return करता है।
+
+console.log(10 !== "10");
+
+Output:
+
+true
+4.5 Greater Than > ->
+
+The > operator checks whether the left value is greater than the right value.
+
+> check करता है कि left-side value right-side value से बड़ी है या नहीं।
+
+console.log(20 > 10);
+
+Output:
+
+true
+4.6 Less Than < ->
+
+The < operator checks whether the left value is less than the right value.
+
+< check करता है कि left-side value right-side value से छोटी है या नहीं।
+
+console.log(10 < 20);
+
+Output:true
+
+4.7 Greater Than or Equal >= ->
+
+The >= operator checks whether the left value is greater than or equal to the right value.
+
+>= check करता है कि value दूसरी value से बड़ी या उसके बराबर है।
+
+console.log(20 >= 20);
+
+Output:
+
+true
+
+दोनों cases में true:
+
+20 > 10
+20 == 20
+4.8 Less Than or Equal <= ->
+
+The <= operator checks whether the left value is less than or equal to the right value.
+
+<= check करता है कि value दूसरी value से छोटी या उसके बराबर है।
+
+console.log(10 <= 20);
+
+Output:
+
+true
+Comparison Practical Program
+let marks = 75;
+
+if (marks >= 33) {
+    console.log("Student is Pass");
+} else {
+    console.log("Student is Fail");
+}
+
+Output:
+
+Student is Pass
+5. Logical Operators ->
+
+Logical operators are used to combine multiple conditions or reverse a Boolean condition.
+
+Logical operators का उपयोग multiple conditions को combine करने या Boolean condition को reverse करने के लिए किया जाता है।
+
+Operators
+&&    Logical AND
+||    Logical OR
+!     Logical NOT
+5.1 Logical AND && ->
+
+The && operator returns true only when both conditions are true.
+
+&& में दोनों conditions का true होना जरूरी है।
+
+let age = 20;
+let hasID = true;
+
+console.log(age >= 18 && hasID);
+
+Output:
+
+true
+Truth Table
+| A     | B     | A && B |
+| ----- | ----- | ------ |
+| true  | true  | true   |
+| true  | false | false  |
+| false | true  | false  |
+| false | false | false  |
+
+Practical
+let age = 20;
+let hasID = true;
+
+if (age >= 18 && hasID === true) {
+    console.log("Entry Allowed");
+}
+
+Output:
+
+Entry Allowed
+5.2 Logical OR || ->
+
+The || operator returns true when at least one condition is true.
+
+|| में कम से कम एक condition true होना जरूरी है।
+
+let age = 16;
+let permission = true;
+
+console.log(age >= 18 || permission);
+
+Output:
+
+true
+Truth Table
+A	        B	    A || B
+true	    true	true
+true	    false	true
+false	    true	true
+false	    false	false
+5.3 Logical NOT ! ->
+
+The ! operator reverses a Boolean value.
+
+! operator Boolean value को उल्टा कर देता है।
+
+let x = true;
+
+console.log(!x);
+
+Output:
+
+false
+
+Another:
+
+let x = false;
+
+console.log(!x);
+
+Output:
+
+true
+6. Logical Assignment Operators
+Operators
+&&=
+||=
+??=
+6.1 AND Assignment &&= ->
+
+The &&= operator assigns the right-side value only if the existing left-side value is truthy.
+
+&&= तभी नई value assign करता है जब existing value truthy हो।
+
+Example
+let x = true;
+
+x &&= 10;
+
+console.log(x);
+
+Output:
+
+10
+Falsy Example
+let x = false;
+
+x &&= 10;
+
+console.log(x);
+
+Output:
+
+false
+6.2 OR Assignment ||= ->
+
+The ||= operator assigns the right-side value when the existing value is falsy.
+
+||= तब नई value assign करता है जब existing value falsy हो।
+
+let username = "";
+
+username ||= "Guest";
+
+console.log(username);
+
+Output:
+
+Guest
+
+लेकिन:
+
+let username = "Adil";
+
+username ||= "Guest";
+
+console.log(username);
+
+Output:
+
+Adil
+6.3 Nullish Assignment ??= ->
+
+The ??= operator assigns a value only when the existing value is null or undefined.
+
+??= तभी नई value assign करता है जब existing value null या undefined हो।
+
+let username = null;
+
+username ??= "Guest";
+
+console.log(username);
+
+Output:
+
+Guest
+7. String Operators
+
+JavaScript में strings के साथ मुख्य रूप से + और += का use किया जाता है।
+
+String Concatenation + ->
+
+The + operator can join two or more strings together. This is called string concatenation.
+
++ operator दो या अधिक strings को जोड़ सकता है। इसे String Concatenation कहते हैं।
+
+let firstName = "Adil";
+let lastName = "Khan";
+
+let fullName = firstName + " " + lastName;
+
+console.log(fullName);
+
+Output:
+
+Adil Khan
+String Assignment += ->
+
++= existing string में नई string जोड़कर result को उसी variable में store करता है।
+
+let message = "Hello";
+
+message += " World";
+
+console.log(message);
+
+Output:
+
+Hello World
+8. Conditional / Ternary Operator ? : ->
+
+The conditional or ternary operator is a shorthand way of writing a simple if...else statement.
+
+Conditional/Ternary operator simple if...else का short form है।
+
+Syntax
+condition ? valueIfTrue : valueIfFalse;
+Example
+let age = 20;
+
+let result = age >= 18 ? "Adult" : "Minor";
+
+console.log(result);
+
+Output:
+
+Adult
+Practical Pass/Fail
+let marks = 70;
+
+let result = marks >= 33 ? "Pass" : "Fail";
+
+console.log(result);
+
+Output:
+
+Pass
+9. Bitwise Operators ->
+
+Bitwise operators perform operations on the binary bits of integer values.
+
+Bitwise operators numbers के binary bits (0 और 1) पर operation करते हैं।
+
+All Bitwise Operators
+&       Bitwise AND
+|       Bitwise OR
+^       Bitwise XOR
+~       Bitwise NOT
+<<      Left Shift
+>>      Sign-propagating Right Shift
+>>>     Zero-fill Right Shift
+9.1 Bitwise AND & ->
+
+The bitwise AND operator compares corresponding bits and returns 1 only when both bits are 1.
+
+& corresponding bits को compare करता है और दोनों bits 1 होने पर ही 1 देता है।
+
+Example
+let a = 5;
+let b = 3;
+
+console.log(a & b);
+
+Binary:
+
+5 = 101
+3 = 011
+
+    101
+&   011
+---------
+    001
+
+Output:
+
+1
+Practical
+let a = 6;
+let b = 3;
+
+console.log(a & b);
+6 = 110
+3 = 011
+
+110
+011
+---
+010 = 2
+
+Output:
+
+2
+9.2 Bitwise OR | ->
+
+The bitwise OR operator returns 1 when at least one corresponding bit is 1.
+
+| में corresponding bits में से कम से कम एक bit 1 होने पर result 1 होता है।
+
+Example
+let a = 5;
+let b = 3;
+
+console.log(a | b);
+
+Binary:
+
+5 = 101
+3 = 011
+
+    101
+|   011
+---------
+    111
+
+111 binary = 7
+
+Output:
+
+7
+9.3 Bitwise XOR ^ ->
+
+The bitwise XOR operator returns 1 when the corresponding bits are different.
+
+XOR (^) में दोनों corresponding bits अलग हों तो 1, और same हों तो 0 मिलता है।
+
+Example
+let a = 5;
+let b = 3;
+
+console.log(a ^ b);
+5 = 101
+3 = 011
+
+    101
+^   011
+---------
+    110
+
+110 binary = 6
+
+Output:
+
+6
+Rule
+0 ^ 0 = 0
+0 ^ 1 = 1
+1 ^ 0 = 1
+1 ^ 1 = 0
+9.4 Bitwise NOT ~ ->
+
+The bitwise NOT operator reverses every bit: 0 becomes 1 and 1 becomes 0.
+
+~ operator प्रत्येक bit को उल्टा कर देता है: 0 → 1 और 1 → 0।
+
+Example
+let x = 5;
+
+console.log(~x);
+
+Output:
+
+-6
+Important Formula
+
+JavaScript में:
+
+~x = -(x + 1)
+
+Therefore:
+
+~5 = -(5 + 1)
+   = -6
+9.5 Left Shift << ->
+
+The left shift operator shifts the binary bits to the left and fills the right side with zeros.
+
+<< binary bits को left side की ओर shift करता है और right side में 0 add करता है।
+
+Example
+let x = 5;
+
+console.log(x << 1);
+
+Binary:
+
+5 = 101
+
+101 << 1
+= 1010
+
+1010 = 10
+
+Output:
+
+10
+Easy Rule
+
+एक bit left shift:
+
+x << 1 ≈ x × 2
+9.6 Right Shift >> ->
+
+The right shift operator shifts bits to the right while preserving the sign bit for signed integers.
+
+>> binary bits को right side की ओर shift करता है और signed number में sign को preserve करता है।
+
+Example
+let x = 10;
+
+console.log(x >> 1);
+
+Binary:
+
+10 = 1010
+
+1010 >> 1
+= 0101
+
+0101 = 5
+
+Output:
+
+5
+Easy Rule
+
+Positive number में:
+
+x >> 1 ≈ x / 2
+9.7 Zero-Fill Right Shift >>> ->
+
+The >>> operator shifts bits to the right and fills the left side with zeros. It does not preserve the sign bit.
+
+>>> bits को right shift करता है और left side में 0 भरता है। यह sign bit को preserve नहीं करता।
+
+Example
+let x = 10;
+
+console.log(x >>> 1);
+
+Output:
+
+5
+
+Positive numbers के साथ >> और >>> का result अक्सर same दिखाई देता है।
+
+Negative numbers के साथ दोनों में difference दिखाई देता है।
+
+Bitwise Quick Table
+| Operator | Name                  | Main Rule                  |
+| -------- | --------------------- | -------------------------- |
+| `&`      | AND                   | दोनों `1` → `1`            |
+| `\|`     | OR                    | कोई एक `1` → `1`           |
+| `^`      | XOR                   | अलग bits → `1`             |
+| `~`      | NOT                   | bits reverse               |
+| `<<`     | Left Shift            | bits left                  |
+| `>>`     | Right Shift           | bits right + sign preserve |
+| `>>>`    | Zero-fill Right Shift | bits right + left में `0`  |
+
+10. Nullish Coalescing Operator ?? ->
+
+The nullish coalescing operator ?? returns the right-side value when the left-side value is null or undefined; otherwise it returns the left-side value.
+
+?? में अगर left value null या undefined है तो right value मिलती है, अन्यथा left value ही मिलती है।
+
+let name = null;
+
+let result = name ?? "Guest";
+
+console.log(result);
+
+Output:
+
+Guest
+11. typeof Operator ->
+
+The typeof operator returns a string indicating the data type of a value.
+
+typeof किसी value का data type बताता है।
+
+let age = 20;
+
+console.log(typeof age);
+
+Output:
+
+number
+
+More examples:
+
+console.log(typeof "Adil");
+console.log(typeof true);
+console.log(typeof 10);
+
+Output:
+
+string
+boolean
+number
+12. delete Operator ->
+
+The delete operator removes a property from an object.
+
+delete operator object की property को remove करने के लिए use होता है।
+
+let student = {
+    name: "Adil",
+    age: 20
+};
+
+delete student.age;
+
+console.log(student);
+
+Output:
+
+{ name: "Adil" }
+13. in Operator ->
+
+The in operator checks whether a property exists in an object.
+
+in operator check करता है कि कोई property object में मौजूद है या नहीं।
+
+let student = {
+    name: "Adil",
+    age: 20
+};
+
+console.log("name" in student);
+
+Output:
+
+true
+14. instanceof Operator ->
+
+The instanceof operator checks whether an object is an instance of a particular constructor or class.
+
+instanceof check करता है कि कोई object किसी particular class या constructor की instance है या नहीं।
+
+let numbers = [];
+
+console.log(numbers instanceof Array);
+
+Output:
+
+true
+
+| Category               | Operators                 |   |        |
+| ---------------------- | ------------------------- | - | ------ |
+| **Arithmetic**         | `+ - * / % ** ++ --`      |   |        |
+| **Assignment**         | `= += -= *= /= %= **=`    |   |        |
+| **Comparison**         | `== === != !== > < >= <=` |   |        |
+| **Logical**            | `&&                       |   | !`     |
+| **Logical Assignment** | `&&=                      |   | = ??=` |
+| **String**             | `+ +=`                    |   |        |
+| **Conditional**        | `? :`                     |   |        |
+| **Nullish**            | `??`                      |   |        |
+| **Bitwise**            | `& \| ^ ~ << >> >>>`      |   |        |
+| **Type**               | `typeof`                  |   |        |
+| **Property**           | `delete`, `in`            |   |        |
+| **Object**             | `instanceof`              |   |        |
+
+=       → value assign
+==      → value compare
+===     → value + type compare
+
+&&      → Logical AND
+||      → Logical OR
+!       → Logical NOT
+
+&&=     → AND Assignment
+||=     → OR Assignment
+??=     → Nullish Assignment
+
+&       → Bitwise AND
+|       → Bitwise OR
+^       → Bitwise XOR
+~       → Bitwise NOT
+<<      → Left Shift
+>>      → Right Shift
+>>>     → Zero-fill Right Shift
+
+? :     → Ternary / Conditional
+??      → Nullish Coalescing
