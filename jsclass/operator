@@ -252,7 +252,7 @@ Assignment operators का उपयोग variable को value देने �
 
 Operators
 = 
-+=
++= a=a+10
 -=
 *=
 /=
@@ -397,7 +397,7 @@ Important
 ==   → Value comparison
 ===  → Value + Type comparison
 
-4.3 Not Equal != ->
+ Not Equal != ->
 
 The != operator returns true when two values are not equal after type conversion when needed.
 
@@ -463,10 +463,8 @@ The <= operator checks whether the left value is less than or equal to the right
 <= check करता है कि value दूसरी value से छोटी या उसके बराबर है।
 
 console.log(10 <= 20);
+Output:true
 
-Output:
-
-true
 Comparison Practical Program
 let marks = 75;
 

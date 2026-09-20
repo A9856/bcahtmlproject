@@ -1,0 +1,1871 @@
+1. JavaScript String
+
+A String in JavaScript is a sequence of characters used to store and work with text, such as names, messages, addresses, and sentences.
+
+Hindi-
+JavaScript में String characters का एक sequence होता है जिसका उपयोग text को store और process करने के लिए किया जाता है, जैसे name, message, address आदि।
+
+Example
+let name = "ankit";
+let message = "Hello JavaScript";
+
+console.log(name);
+console.log(message);
+Output:ankit
+Hello JavaScript
+
+2. Creating String Using Quotes->
+
+3 main types create JavaScript String
+
+'Single Quotes'
+"Double Quotes"
+`Backticks`
+
+A string can be created in JavaScript using single quotes, double quotes, or backticks.
+
+Hindi-JavaScript में text को ' ', " " या ` ` के अंदर लिखकर String बनाई जा सकती है।
+
+Syntax
+let variable = "text";
+let variable = 'text';
+let variable = `text`;
+
+Practical Code
+let a = "Hello";
+let b = 'JavaScript';
+let c = `Programming`;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+3. Quotes Inside Quoted String
+
+Quotes can be included inside a string by using different outer quotation marks or by using escape characters.
+
+Hindi -अगर String के अंदर ही quotation mark लगाना हो, तो अलग-अलग outer quotes या escape character का उपयोग किया जाता है।
+
+Example
+let a = "ankit's Laptop";
+let b = 'He said "Hello"';
+
+console.log(a);
+console.log(b);
+Output:ankit's Laptop
+He said "Hello"
+
+Same Quotes for Escape
+let message = "He said \"Hello\"";
+
+console.log(message);
+Output: He said "Hello"
+
+4. Template String / Template Literal
+
+A Template Literal is a string created using backticks that allows variable interpolation, expressions, and multiline strings.
+
+Hindi -Template Literal ऐसी String है जो backtick ` से बनाई जाती है। इसमें हम variable, expression और multiple lines आसानी से use कर सकते हैं।
+
+Syntax
+`text ${variable}`
+
+Practical Code
+let name = "ankit";
+let age = 21;
+
+let result = `My name is ${name} and my age is ${age}.`;
+
+console.log(result);
+Output: My name is ankit and my age is 21.
+
+5. String Length
+
+
+The length property returns the number of UTF-16 code units in a string.
+length property String की length/count बताती है।
+
+Syntax
+string.length
+
+Practical Code
+let name = "ankit";
+console.log(name.length);
+Output: 4
+Space भी count होता है
+let text = "Hello World";
+console.log(text.length);
+
+Output: 11
+
+6. Escape Characters
+
+Escape characters are special character sequences beginning with a backslash \, used to represent special characters inside a string.
+
+Hindi - Escape characters का उपयोग String के अंदर special characters, quotes, new line, tab आदि को represent करने के लिए किया जाता है।
+
+Important Escape Characters
+
+| Escape Character | English Meaning | Hindi Meaning     |
+| ---------------- | --------------- | ----------------- |
+| `\'`             | Single quote    | Single quote      |
+| `\"`             | Double quote    | Double quote      |
+| `\\`             | Backslash       | Backslash         |
+| `\n`             | New line        | नई लाइन           |
+| `\t`             | Tab             | Tab space         |
+| `\b`             | Backspace       | एक character पीछे |
+| `\f`             | Form feed       | Form feed         |
+| `\r`             | Carriage return | Carriage return   |
+| `\v`             | Vertical tab    | Vertical tab      |
+| `\0`             | Null character  | Null character    |
+
+\' Example
+console.log('It\'s JavaScript');
+
+Output:
+
+It's JavaScript
+\" Example
+console.log("He said \"Hello\"");
+
+Output: He said "Hello"
+
+\\ Example
+console.log("C:\\Users\\ankit");
+
+Output: C:\Users\ankit
+
+\n Example
+console.log("Hello\nJavaScript");
+
+Output:
+Hello
+JavaScript
+
+\t Example
+console.log("Name:\tankit");
+
+Output:Name:   ankit
+
+7. Template String — Multiple Strings / Multiple Lines
+
+Template literals allow multiple lines of text to be written directly inside a string without manually using \n.
+
+Hindi -Template String में हम एक से अधिक lines को directly लिख सकते हैं। इसके लिए बार-बार \n लिखने की जरूरत नहीं होती।
+
+Example
+let message = `Hello ankit
+Welcome to JavaScript
+This is a multiline string.`;
+
+console.log(message);
+Output
+Hello ankit
+Welcome to JavaScript
+This is a multiline string.
+
+Version : Template Literals  introduced ECMAScript 2015 (ES6) 
+
+8. JavaScript String as Object
+
+two form string in javascript
+
+1. String Primitive
+let str = "Hello";
+console.log(typeof str);
+Output: string
+
+2. String Object 
+
+A String Object is an object created using the String constructor with the new keyword.
+
+Hindi - new String() का उपयोग करके बनाई गई String को String Object कहा जाता है।
+
+Syntax
+new String("text")
+
+Example
+let str = new String("Hello");
+console.log(str);
+console.log(typeof str);
+
+Output: Hello object
+Important
+
+Normal programming : let str = "Hello";
+
+9. Backtick 
+
+A backtick (`) is used to create template literals in JavaScript.
+
+Hindi -Backtick ` JavaScript में Template Literal बनाने के लिए इस्तेमाल होता है।
+
+Example
+let name = "ankit";
+console.log(`Hello ${name}`);
+
+Output: Hello ankit
+
+10. String Interpolation
+
+String interpolation is the process of inserting variables or expressions directly into a template literal using ${}.
+
+Hindi -String के अंदर variable या expression की value को directly insert करना String Interpolation कहलाता है।
+
+Syntax
+`Text ${variable}`
+
+Example
+let name = "ankit";
+let age = 21;
+console.log(`My name is ${name} and my age is ${age}.`);
+
+Output: My name is ankit and my age is 21.
+
+11. Interpolation with Expression
+
+user can do ${} inside  calculation .
+
+Addition
+let a = 10;
+let b = 20;
+
+console.log(`Sum = ${a + b}`);
+
+Output: Sum = 30
+
+Subtraction
+let a = 50;
+let b = 20;
+
+console.log(`Subtraction = ${a - b}`);
+
+Output: Subtraction = 30
+
+Multiplication
+let a = 10;
+let b = 5;
+
+console.log(`Multiplication = ${a * b}`);
+
+Division
+let a = 20;
+let b = 5;
+
+console.log(`Division = ${a / b}`);
+
+12. HTML Template Using Interpolation
+
+An HTML Template uses template literals and interpolation to create HTML content dynamically using JavaScript variables and data.
+
+Hindi - JavaScript में Template Literal + Interpolation की मदद से HTML को dynamically create करना HTML Template कहलाता है।
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Template</title>
+</head>
+
+<body>
+
+<div id="app"></div>
+
+<script>
+
+let header = "Student List";
+
+let students = [
+    "ankit",
+    "Rahul",
+    "Aman",
+    "Vikas"
+];
+
+let html = `
+    <h2>${header}</h2>
+    <ul>
+`;
+
+for (let x of students) {
+
+    html += `
+        <li>${x}</li>
+    `;
+
+}
+
+html += `
+    </ul>
+`;
+
+document.getElementById("app").innerHTML = html;
+
+</script>
+
+</body>
+</html>
+
+let header = "Student List";
+
+let students = ["ankit", "Rahul", "Aman", "Vikas"];
+
+let html = `
+<h2>${header}</h2>
+<ul>
+`;
+
+Backtick use HTML template create
+for (let x of students)
+<li>${x}</li>
+
+13. Important Point — Strings are Immutable
+
+JavaScript strings are immutable, which means their original characters cannot be changed directly. String methods generally return a new string.
+
+Hindi -String immutable होती है, अर्थात original String को directly change नहीं किया जा सकता। Methods generally एक नई String return करते हैं।
+
+Example
+let str = "hello";
+str.toUpperCase();
+console.log(str);
+Output: hello
+
+//after result store 
+
+let str = "hello";
+str = str.toUpperCase();
+console.log(str);
+
+Output: HELLO
+
+BASIC STRING METHODS
+14. length
+English
+
+Returns the length of a string.
+
+Hindi
+
+String में कितने characters हैं, यह बताता है।
+
+Syntax
+string.length
+Code
+let str = "JavaScript";
+
+console.log(str.length);
+15. charAt()
+English
+
+Returns the character at a specified index.
+
+Hindi
+
+दिए गए index का character return करता है।
+
+Syntax
+string.charAt(index)
+Code
+let str = "JavaScript";
+
+console.log(str.charAt(0));
+console.log(str.charAt(4));
+
+Output:
+
+J
+S
+16. charCodeAt()
+English
+
+Returns the UTF-16 code unit of the character at a specified index.
+
+Hindi
+
+दिए गए index के character का UTF-16 code return करता है।
+
+Syntax
+string.charCodeAt(index)
+Code
+let str = "ABC";
+
+console.log(str.charCodeAt(0));
+console.log(str.charCodeAt(1));
+console.log(str.charCodeAt(2));
+
+Output:
+
+65
+66
+67
+17. codePointAt()
+English
+
+Returns the Unicode code point of the character at a specified index.
+
+Hindi
+
+दिए गए position के character का Unicode code point return करता है।
+
+Syntax
+string.codePointAt(index)
+Code
+let str = "A";
+
+console.log(str.codePointAt(0));
+
+Output:
+
+65
+18. concat()
+English
+
+Joins two or more strings and returns a new string.
+
+Hindi
+
+दो या दो से अधिक Strings को जोड़ता है।
+
+Syntax
+string.concat(string2, string3, ...)
+Code
+let first = "Hello";
+let second = "JavaScript";
+
+let result = first.concat(" ", second);
+
+console.log(result);
+
+Output:
+
+Hello JavaScript
+19. at()
+English
+
+Returns the character at a specified index. It also supports negative indexes.
+
+Hindi
+
+दिए गए index का character return करता है और negative index भी support करता है।
+
+Syntax
+string.at(index)
+Code
+let str = "JavaScript";
+
+console.log(str.at(0));
+console.log(str.at(-1));
+
+Output:
+
+J
+t
+
+-1 → last character.
+
+20. String [ ] Property Access
+English
+
+Bracket notation is used to access a character using its index.
+
+Hindi
+
+Index की मदद से String का character प्राप्त करने के लिए [] का उपयोग कर सकते हैं।
+
+Syntax
+string[index]
+Code
+let str = "JavaScript";
+
+console.log(str[0]);
+console.log(str[4]);
+
+Output:
+
+J
+S
+21. slice()
+English 
+
+Extracts a part of a string and returns it as a new string.
+
+Hindi 
+
+String के किसी भाग को निकालकर नई String return करता है।
+
+Syntax
+string.slice(start, end)
+
+end include नहीं होता।
+
+Code
+let str = "JavaScript";
+
+console.log(str.slice(0, 4));
+
+Output:
+
+Java
+Negative Index
+let str = "JavaScript";
+
+console.log(str.slice(-6));
+
+Output:
+
+Script
+22. substring()
+English 
+
+Extracts characters between two specified indexes.
+
+Hindi 
+
+दो indexes के बीच के characters को निकालता है।
+
+Syntax
+string.substring(start, end)
+Code
+let str = "JavaScript";
+
+console.log(str.substring(0, 4));
+
+Output:
+
+Java
+23. substr()
+English 
+
+Extracts a specified number of characters starting from a specified position.
+
+Hindi 
+
+दिए गए start position से specified number of characters निकालता है।
+
+Syntax
+string.substr(start, length)
+Code
+let str = "JavaScript";
+
+console.log(str.substr(4, 6));
+
+Output:
+
+Script
+Important
+
+substr() deprecated/legacy method है। नए code में slice() या substring() use करना बेहतर है।
+
+24. slice() vs substring() vs substr()
+| Method        | Syntax                  | दूसरा Parameter |
+| ------------- | ----------------------- | --------------- |
+| `slice()`     | `slice(start, end)`     | End position    |
+| `substring()` | `substring(start, end)` | End position    |
+| `substr()`    | `substr(start, length)` | Length          |
+
+slice      → start + end
+substring  → start + end
+substr     → start + length
+
+25. toUpperCase()
+English
+
+Converts a string to uppercase.
+
+Hindi
+
+String को capital/uppercase letters में convert करता है।
+
+Syntax
+string.toUpperCase()
+Code
+let str = "javascript";
+
+console.log(str.toUpperCase());
+
+Output:
+
+JAVASCRIPT
+26. toLowerCase()
+English
+
+Converts a string to lowercase.
+
+Hindi
+
+String को lowercase letters में convert करता है।
+
+Syntax
+string.toLowerCase()
+Code
+let str = "JAVASCRIPT";
+
+console.log(str.toLowerCase());
+
+Output:
+
+javascript
+27. isWellFormed()
+English 
+
+Checks whether a string is well-formed Unicode and returns true or false.
+
+Hindi 
+
+यह check करता है कि String में valid Unicode representation है या नहीं।
+
+Syntax
+string.isWellFormed()
+Code
+let str = "Hello";
+
+console.log(str.isWellFormed());
+
+Output:
+
+true
+28. toWellFormed()
+English 
+
+Returns a new string where lone Unicode surrogates are replaced with the Unicode replacement character �.
+
+Hindi 
+
+यह एक नई well-formed String return करता है और invalid/lone surrogate को � से replace करता है।
+
+Syntax
+string.toWellFormed()
+Code
+let str = "Hello\uD800World";
+
+console.log(str.toWellFormed());
+
+Output:
+
+Hello�World
+29. trim()
+English
+
+Removes whitespace from both beginning and end of a string.
+
+Hindi
+
+String के start और end दोनों तरफ के spaces remove करता है।
+
+Syntax
+string.trim()
+Code
+let str = "   Hello   ";
+
+console.log(str.trim());
+
+Output:
+
+Hello
+30. trimStart()
+English
+
+Removes whitespace from the beginning of a string.
+
+Hindi
+
+String के starting spaces remove करता है।
+
+Syntax
+string.trimStart()
+Code
+let str = "   Hello   ";
+
+console.log(str.trimStart());
+31. trimEnd()
+English
+
+Removes whitespace from the end of a string.
+
+Hindi
+
+String के ending spaces remove करता है।
+
+Syntax
+string.trimEnd()
+Code
+let str = "   Hello   ";
+
+console.log(str.trimEnd());
+32. padStart()
+English
+
+Adds padding characters to the beginning of a string until it reaches the specified length.
+
+Hindi
+
+String की शुरुआत में characters add करता है ताकि String की length specified length तक पहुँच जाए।
+
+Syntax
+string.padStart(targetLength, padString)
+Code
+let number = "5";
+
+console.log(number.padStart(3, "0"));
+
+Output:
+
+005
+33. padEnd()
+English
+
+Adds padding characters to the end of a string until it reaches the specified length.
+
+Hindi
+
+String के end में characters add करता है।
+
+Syntax
+string.padEnd(targetLength, padString)
+Code
+let number = "5";
+
+console.log(number.padEnd(3, "0"));
+
+Output:
+
+500
+34. repeat()
+English
+
+Returns a new string containing the original string repeated a specified number of times.
+
+Hindi
+
+String को specified number of times repeat करता है।
+
+Syntax
+string.repeat(count)
+Code
+let str = "Hi ";
+
+console.log(str.repeat(3));
+
+Output:
+
+Hi Hi Hi
+35. replace()
+English
+
+Replaces the first matching occurrence with another value.
+
+Hindi
+
+String में मिलने वाली पहली matching value को दूसरी value से replace करता है।
+
+Syntax
+string.replace(searchValue, newValue)
+Code
+let str = "I like JavaScript";
+
+let result = str.replace("JavaScript", "Python");
+
+console.log(result);
+
+Output:
+
+I like Python
+Multiple Same Values
+let str = "apple apple apple";
+
+console.log(str.replace("apple", "mango"));
+
+Output:
+
+mango apple apple
+36. replaceAll()
+English
+
+Replaces all matching occurrences with another value.
+
+Hindi
+
+String में मौजूद सभी matching values को replace करता है।
+
+Syntax
+string.replaceAll(searchValue, newValue)
+Code
+let str = "apple apple apple";
+
+console.log(str.replaceAll("apple", "mango"));
+
+Output:
+
+mango mango mango
+37. split()
+English 
+
+Splits a string into an array using a specified separator.
+
+Hindi 
+
+String को specified separator के आधार पर Array में convert/split करता है।
+
+Syntax
+string.split(separator, limit)
+Example
+let str = "Hello JavaScript World";
+
+console.log(str.split(" "));
+
+Output:
+
+["Hello", "JavaScript", "World"]
+Character Split
+let str = "ABC";
+
+console.log(str.split(""));
+
+Output:
+
+["A", "B", "C"]
+Comma Split
+let str = "HTML,CSS,JavaScript";
+
+console.log(str.split(","));
+
+Output:
+
+["HTML", "CSS", "JavaScript"]
+STRING SEARCH METHODS
+38. indexOf()
+English
+
+Returns the index of the first occurrence of a specified value. If not found, returns -1.
+
+Hindi
+
+किसी value की पहली position/index return करता है। अगर value नहीं मिलती तो -1 return करता है।
+
+Syntax
+string.indexOf(searchValue, start)
+Code
+let str = "Hello JavaScript";
+
+console.log(str.indexOf("Java"));
+
+Output:
+
+6
+39. lastIndexOf()
+English
+
+Returns the index of the last occurrence of a specified value.
+
+Hindi
+
+किसी value की last occurrence की position/index return करता है।
+
+Syntax
+string.lastIndexOf(searchValue, start)
+Code
+let str = "JavaScript JavaScript";
+
+console.log(str.lastIndexOf("Java"));
+
+Output:
+
+11
+40. search()
+English
+
+Searches a string for a specified value or regular expression and returns the index of the first match.
+
+Hindi
+
+String में किसी text या Regular Expression को search करता है और first match का index देता है।
+
+Syntax
+string.search(searchValue)
+Code
+let str = "Hello JavaScript";
+
+console.log(str.search("Java"));
+
+Output:
+
+6
+Regular Expression
+let str = "Hello JavaScript";
+
+console.log(str.search(/Java/));
+
+Output:
+
+6
+41. match()
+English
+
+Searches a string for matches against a regular expression and returns the matching result.
+
+Hindi
+
+Regular Expression के आधार पर String में matching values खोजता है और matching result return करता है।
+
+Syntax
+string.match(regexp)
+Example
+let str = "The number is 123";
+
+console.log(str.match(/\d+/));
+
+Output:
+
+["123"]
+g Flag से Multiple Matches
+let str = "10 20 30";
+
+console.log(str.match(/\d+/g));
+
+Output:
+
+["10", "20", "30"]
+42. matchAll()
+English 
+
+Returns an iterator containing all matches of a regular expression, including capturing groups.
+
+Hindi 
+
+Regular Expression के सभी matches को एक iterator के रूप में return करता है और capturing groups भी प्राप्त किए जा सकते हैं।
+
+Syntax
+string.matchAll(regexp)
+Practical Code
+let str = "test1 test2 test3";
+
+let matches = str.matchAll(/test(\d)/g);
+
+for (let match of matches) {
+    console.log(match[0]);
+}
+
+Output:
+
+test1
+test2
+test3
+Capturing Group
+let str = "test1 test2";
+
+let matches = str.matchAll(/test(\d)/g);
+
+for (let match of matches) {
+    console.log("Full:", match[0]);
+    console.log("Number:", match[1]);
+}
+
+Output:
+
+Full: test1
+Number: 1
+
+Full: test2
+Number: 2
+43. includes()
+English
+
+Checks whether a string contains a specified value and returns true or false.
+
+Hindi
+
+Check करता है कि String के अंदर कोई specified value मौजूद है या नहीं।
+
+Syntax
+string.includes(searchValue, start)
+Code
+let str = "I am learning JavaScript";
+
+console.log(str.includes("JavaScript"));
+console.log(str.includes("Python"));
+
+Output:
+
+true
+false
+44. startsWith()
+English
+
+Checks whether a string starts with a specified value.
+
+Hindi
+
+Check करता है कि String की शुरुआत specified value से हो रही है या नहीं।
+
+Syntax
+string.startsWith(searchValue, start)
+Code
+let str = "JavaScript Programming";
+
+console.log(str.startsWith("Java"));
+console.log(str.startsWith("Script"));
+
+Output:
+
+true
+false
+45. endsWith()
+English
+
+Checks whether a string ends with a specified value.
+
+Hindi
+
+Check करता है कि String का end specified value से हो रहा है या नहीं।
+
+Syntax
+string.endsWith(searchValue, length)
+Code
+let str = "JavaScript";
+
+console.log(str.endsWith("Script"));
+console.log(str.endsWith("Java"));
+
+Output:
+
+true
+false
+
+String
+│
+├── Basic
+│   ├── length
+│   ├── charAt()
+│   ├── charCodeAt()
+│   ├── codePointAt()
+│   ├── concat()
+│   ├── at()
+│   ├── [ ]
+│   ├── slice()
+│   ├── substring()
+│   ├── substr()
+│   ├── toUpperCase()
+│   ├── toLowerCase()
+│   ├── isWellFormed()
+│   ├── toWellFormed()
+│   ├── trim()
+│   ├── trimStart()
+│   ├── trimEnd()
+│   ├── padStart()
+│   ├── padEnd()
+│   ├── repeat()
+│   ├── replace()
+│   ├── replaceAll()
+│   └── split()
+│
+└── Search
+    ├── indexOf()
+    ├── lastIndexOf()
+    ├── search()
+    ├── match()
+    ├── matchAll()
+    ├── includes()
+    ├── startsWith()
+    └── endsWith()
+
+| Method           | English                    | Hindi                                |
+| ---------------- | -------------------------- | ------------------------------------ |
+| `length`         | Gets length                | Length बताता है                      |
+| `charAt()`       | Gets character             | Character देता है                    |
+| `charCodeAt()`   | Gets UTF-16 code unit      | Character का UTF-16 code देता है     |
+| `codePointAt()`  | Gets Unicode code point    | Unicode code point देता है           |
+| `concat()`       | Joins strings              | Strings जोड़ता है                    |
+| `at()`           | Gets character by index    | Index से character                   |
+| `[]`             | Character access           | Index से character                   |
+| `slice()`        | Extracts part              | String का भाग निकालता है             |
+| `substring()`    | Extracts between indexes   | दो indexes के बीच भाग                |
+| `substr()`       | Extracts by length         | Start से length तक                   |
+| `toUpperCase()`  | Uppercase                  | Capital करता है                      |
+| `toLowerCase()`  | Lowercase                  | Small करता है                        |
+| `isWellFormed()` | Checks Unicode validity    | Unicode representation check         |
+| `toWellFormed()` | Creates well-formed string | Invalid surrogate को replace करता है |
+| `trim()`         | Removes both-side spaces   | दोनों तरफ spaces हटाता है            |
+| `trimStart()`    | Removes starting spaces    | शुरुआत के spaces हटाता है            |
+| `trimEnd()`      | Removes ending spaces      | अंत के spaces हटाता है               |
+| `padStart()`     | Adds padding at start      | शुरुआत में value जोड़ता है           |
+| `padEnd()`       | Adds padding at end        | अंत में value जोड़ता है              |
+| `repeat()`       | Repeats string             | String repeat करता है                |
+| `replace()`      | Replaces first match       | पहली matching value बदलता है         |
+| `replaceAll()`   | Replaces all matches       | सभी matching values बदलता है         |
+| `split()`        | Converts string to array   | String को Array में तोड़ता है        |
+| `indexOf()`      | First index                | पहली position                        |
+| `lastIndexOf()`  | Last index                 | आखिरी position                       |
+| `search()`       | Searches string/regex      | Search करके index                    |
+| `match()`        | Gets regex matches         | Matching result                      |
+| `matchAll()`     | Gets all regex matches     | सभी matches                          |
+| `includes()`     | Checks existence           | Value मौजूद है या नहीं               |
+| `startsWith()`   | Checks beginning           | शुरुआत check                         |
+| `endsWith()`     | Checks ending              | अंत check                            |
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript String Methods</title>
+</head>
+
+<body>
+
+<script>
+
+let str = "  Hello JavaScript JavaScript  ";
+
+
+// 1. length
+console.log("Length:", str.length);
+
+
+// 2. charAt()
+console.log("charAt:", str.charAt(3));
+
+
+// 3. charCodeAt()
+console.log("charCodeAt:", str.charCodeAt(3));
+
+
+// 4. codePointAt()
+console.log("codePointAt:", str.codePointAt(3));
+
+
+// 5. concat()
+console.log(
+    "concat:",
+    "Hello".concat(" ", "JavaScript")
+);
+
+
+// 6. at()
+console.log("at:", str.at(3));
+console.log("Last:", str.at(-1));
+
+
+// 7. [] property access
+console.log("Bracket:", str[3]);
+
+
+// 8. slice()
+console.log("slice:", str.slice(2, 7));
+
+
+// 9. substring()
+console.log("substring:", str.substring(2, 7));
+
+
+// 10. substr()
+console.log("substr:", str.substr(2, 5));
+
+
+// 11. toUpperCase()
+console.log("Upper:", str.toUpperCase());
+
+
+// 12. toLowerCase()
+console.log("Lower:", str.toLowerCase());
+
+
+// 13. isWellFormed()
+console.log("Well Formed:", str.isWellFormed());
+
+
+// 14. toWellFormed()
+console.log("To Well Formed:", str.toWellFormed());
+
+
+// 15. trim()
+console.log("Trim:", str.trim());
+
+
+// 16. trimStart()
+console.log("Trim Start:", str.trimStart());
+
+
+// 17. trimEnd()
+console.log("Trim End:", str.trimEnd());
+
+
+// 18. padStart()
+let number = "5";
+console.log("Pad Start:", number.padStart(3, "0"));
+
+
+// 19. padEnd()
+console.log("Pad End:", number.padEnd(3, "0"));
+
+
+// 20. repeat()
+console.log("Repeat:", "Hi ".repeat(3));
+
+
+// 21. replace()
+console.log(
+    "Replace:",
+    str.replace("JavaScript", "Python")
+);
+
+
+// 22. replaceAll()
+console.log(
+    "Replace All:",
+    str.replaceAll("JavaScript", "Python")
+);
+
+
+// 23. split()
+console.log(
+    "Split:",
+    "HTML,CSS,JavaScript".split(",")
+);
+
+
+// 24. indexOf()
+console.log(
+    "indexOf:",
+    str.indexOf("JavaScript")
+);
+
+
+// 25. lastIndexOf()
+console.log(
+    "lastIndexOf:",
+    str.lastIndexOf("JavaScript")
+);
+
+
+// 26. search()
+console.log(
+    "search:",
+    str.search("JavaScript")
+);
+
+
+// 27. match()
+console.log(
+    "match:",
+    str.match(/JavaScript/g)
+);
+
+
+// 28. matchAll()
+let matches = str.matchAll(/JavaScript/g);
+
+for (let match of matches) {
+    console.log("matchAll:", match[0]);
+}
+
+
+// 29. includes()
+console.log(
+    "includes:",
+    str.includes("JavaScript")
+);
+
+
+// 30. startsWith()
+console.log(
+    "startsWith:",
+    str.trim().startsWith("Hello")
+);
+
+
+// 31. endsWith()
+console.log(
+    "endsWith:",
+    str.trim().endsWith("JavaScript")
+);
+
+</script>
+
+</body>
+</html>
+
+
+Number
+
+1. JavaScript Number
+
+A Number in JavaScript is a data type used to represent numeric values, such as integers, decimal numbers, positive numbers, negative numbers, and special numeric values.
+
+JavaScript में Number एक data type है जिसका उपयोग numeric values को store करने के लिए किया जाता है, जैसे integer, decimal, positive और negative numbers।
+
+Example
+let a = 100;
+let b = 25.50;
+let c = -50;
+
+console.log(a);
+console.log(b);
+console.log(c);
+Output
+100
+25.5
+-50
+
+2. JavaScript Number 
+let age = 21;
+let price = 499.99;
+let temperature = -5;
+
+console.log(age);
+console.log(price);
+console.log(temperature);
+
+3.Important Values Number in JS
+
+JavaScript Number में सामान्य numbers के अलावा कुछ special values भी होती हैं।
+
+Value	        Meaning
+10	            Integer
+10.5	        Decimal
+-20 	        Negative number
+Infinity	    अनंत
+-Infinity	    Negative infinity
+
+NaN	Not a Number //NaN data type number js me kisi data ko numbr me chnge kiya jta hai "hello" string h toh NaN aur result NaN but isNaN("Hello") false kuki NaN nhi hai String hai.
+0	            Zero
+Example
+console.log(10);
+console.log(10.5);
+console.log(-20);
+
+console.log(10 / 0);
+console.log("Hello" * 5);
+
+Output:
+
+10
+10.5
+-20
+Infinity
+NaN
+
+4. JavaScript Number Type
+let a = 100;
+let b = 10.5;
+
+console.log(typeof a);
+console.log(typeof b);
+
+Output:
+number
+number
+
+5. Number Methods :
+
+Number methods are built-in JavaScript methods used to convert, format, check, and work with numeric values.
+
+Number Methods JavaScript के built-in methods हैं जिनका उपयोग numbers को convert, format, check और process करने के लिए किया जाता है।
+
+JavaScript Important Number Methods
+
+main Number methods:
+
+toString()
+toExponential()
+toFixed()
+toPrecision()
+valueOf()
+toLocaleString()
+Number.isInteger()
+Number.isSafeInteger()
+Number.isFinite()
+Number.isNaN()
+Number.isInteger()
+Number.parseInt()
+Number.parseFloat()
+Number.isSafeInteger()
+
+other Number related important static properties As:
+
+Number.MAX_VALUE
+Number.MIN_VALUE
+Number.MAX_SAFE_INTEGER
+Number.MIN_SAFE_INTEGER
+Number.POSITIVE_INFINITY
+Number.NEGATIVE_INFINITY
+Number.NaN
+Number.EPSILON
+
+6. toString() ->
+The toString() method converts a number into a string.
+toString() number को String में convert करता है।
+
+Syntax
+number.toString()
+
+Code
+let num = 100;
+let result = num.toString();
+console.log(result);
+
+console.log(typeof result);
+Output
+100
+string
+
+Practical ->
+let price = 500;
+console.log("Price: " + price.toString());
+
+7. toExponential() ->
+The toExponential() method converts a number into exponential/scientific notation.
+toExponential() number को exponential/scientific notation में convert करता है।
+
+Syntax
+number.toExponential()
+
+या
+number.toExponential(fractionDigits)
+Code
+let num = 123456;
+console.log(num.toExponential());
+Output approximately:
+1.23456e+5
+
+Fraction Digits
+
+let num = 123456;
+console.log(num.toExponential(2));
+
+Output:
+1.23e+5
+
+8. toFixed() ->
+The toFixed() method formats a number using a specified number of digits after the decimal point.
+
+toFixed() decimal point के बाद कितने digits दिखाने हैं, यह निर्धारित करता है।
+
+Syntax
+number.toFixed(digits)
+Code
+let num = 25.6789;
+console.log(num.toFixed(2));
+
+Output: 25.68
+Example
+let price = 100;
+console.log(price.toFixed(2));
+Output:
+100.00
+
+Important
+
+toFixed()  result String 
+
+let num = 25.678;
+let result = num.toFixed(2);
+console.log(result);
+console.log(typeof result);
+
+Output:
+25.68
+string
+
+9. toPrecision() ->
+
+The toPrecision() method formats a number to a specified number of significant digits.
+
+toPrecision() number को specified significant digits के अनुसार format करता है।
+
+Syntax
+number.toPrecision(precision)
+
+let num = 123.456;
+console.log(num.toPrecision(4));
+Output: 123.5
+
+Example
+let num = 12.3456;
+console.log(num.toPrecision(3));
+Output: 12.3
+
+10. valueOf() ->
+The valueOf() method returns the primitive value of a Number object.
+valueOf() Number object की primitive numeric value return करता है।
+
+Syntax
+number.valueOf()
+
+let num = new Number(100);
+console.log(num.valueOf());
+Output: 100
+Type
+let num = new Number(100);
+
+console.log(typeof num);
+console.log(typeof num.valueOf());
+
+Output:
+object
+number
+
+11. toLocaleString() ->
+The toLocaleString() method returns a number formatted according to a specified locale.
+
+toLocaleString() number को country/language के formatting rules के अनुसार format करता है।
+
+Syntax
+number.toLocaleString()
+
+let num = 1234567;
+console.log(num.toLocaleString());
+
+Output may depend on locale:
+
+1,234,567
+Indian Locale
+let num = 1234567;
+console.log(num.toLocaleString("en-IN"));
+Output: 12,34,567
+
+Currency Example
+let price = 50000;
+
+console.log(
+    price.toLocaleString("en-IN", {
+        style: "currency",
+        currency: "INR"
+    })
+);
+
+Output: ₹50,000.00
+
+STATIC NUMBER METHODS
+
+अब ऐसे methods जो किसी particular number variable पर नहीं, बल्कि Number के साथ use होते हैं।
+
+12. Number.isInteger()
+
+Number.isInteger() checks whether a value is an integer.
+यह check करता है कि दी गई value पूर्णांक (integer) है या नहीं।
+
+Syntax
+Number.isInteger(value)
+Code
+
+console.log(Number.isInteger(10));
+console.log(Number.isInteger(10.5));
+
+Output:
+true
+false
+
+Practical Example
+
+let age = 21;
+if (Number.isInteger(age)) {
+    console.log("Age is an integer");
+}
+
+13. Number.isSafeInteger()
+Checks whether a value is an integer that can be represented safely and exactly in JavaScript.
+
+यह check करता है कि value एक safe integer है या नहीं।
+
+Syntax
+Number.isSafeInteger(value)
+
+Code
+console.log(Number.isSafeInteger(100));
+console.log(Number.isSafeInteger(9007199254740991));
+console.log(Number.isSafeInteger(9007199254740992));
+
+Output:true,true,false
+
+safe integer range in js:
+
+-9007199254740991
+to
+9007199254740991
+
+14. Number.isFinite()
+Checks whether a value is a finite number.
+
+यह check करता है कि value एक finite number है या नहीं। Infinity, -Infinity और non-number values के लिए false देता है।
+
+Syntax
+Number.isFinite(value)
+
+Code
+console.log(Number.isFinite(100));
+console.log(Number.isFinite(10.5));
+console.log(Number.isFinite(Infinity));
+console.log(Number.isFinite("100"));
+
+Output:true,true,false,false
+
+Important
+Number.isFinite("100")
+false देगा क्योंकि "100" String है।
+
+15. Number.isNaN()
+Checks whether a value is the special numeric value NaN (Not-a-Number).
+यह check करता है कि value वास्तव में NaN है या नहीं।
+
+Syntax
+Number.isNaN(value)
+
+Code
+console.log(Number.isNaN(NaN));
+console.log(Number.isNaN(100));
+console.log(Number.isNaN("Hello"));
+Output:true,false,false
+
+NaN कैसे प्राप्त हो सकता है?
+let result = "Hello" * 10;
+
+console.log(result);
+console.log(Number.isNaN(result));
+Output:NaN,true
+
+16. Number.parseInt()
+Number.parseInt() parses a string and returns an integer from the beginning of the string.
+Number.parseInt() String में मौजूद number को integer में convert करता है।
+
+Syntax
+Number.parseInt(string, radix)
+
+Basic Code
+let value = "100";
+let result = Number.parseInt(value);
+console.log(result);
+console.log(typeof result);
+
+Output:
+100
+number
+
+Decimal String
+let value = "25.75";
+console.log(Number.parseInt(value));
+Output:25
+
+Decimal part remove हो जाता है।
+
+with Radix 
+let binary = "1010";
+console.log(Number.parseInt(binary, 2));
+Output:10
+
+यहाँ 2 का मतलब binary/base-2 है।
+
+17. Number.parseFloat() -> 
+Number.parseFloat() parses a string and returns a floating-point number.
+यह String में मौजूद number को decimal/floating-point number में convert करता है।
+
+Syntax
+Number.parseFloat(string)
+
+Code
+let value = "25.75";
+let result = Number.parseFloat(value);
+
+console.log(result);
+console.log(typeof result);
+
+Output:
+
+25.75
+number
+
+Difference
+let value = "25.75";
+console.log(Number.parseInt(value));
+console.log(Number.parseFloat(value));
+
+Output:
+
+25
+25.75
+
+18. Number() Conversion 
+
+यह method technically Number() constructor/function है, लेकिन number conversion में बहुत important है।
+
+Number() converts a value into a numeric value when possible.
+Number() किसी value को number में convert करने का प्रयास करता है।
+
+Syntax
+Number(value)
+
+Code
+console.log(Number("100"));
+console.log(Number("25.5"));
+console.log(Number(true));
+console.log(Number(false));
+Output:
+100
+25.5
+1
+0
+Invalid String
+console.log(Number("Hello"));
+Output:NaN
+
+19. parseInt() vs parseFloat() vs Number()
+Function	                            काम
+Number("25.5")	                    Numeric conversion
+Number.parseInt("25.5")	            Integer 25
+Number.parseFloat("25.5")	        Decimal 25.5
+
+Example
+let value = "25.75";
+
+console.log(Number(value));
+console.log(Number.parseInt(value));
+console.log(Number.parseFloat(value));
+
+Output:
+
+25.75
+25
+25.75
+
+NUMBER PROPERTIES
+20. Number.MAX_VALUE
+
+Represents the largest positive finite number that JavaScript can represent.
+JavaScript में represent किया जा सकने वाला सबसे बड़ा finite number।
+
+Code
+console.log(Number.MAX_VALUE);
+
+21. Number.MIN_VALUE
+
+Represents the smallest positive number greater than zero that JavaScript can represent.
+
+JavaScript में 0 से बड़ा सबसे छोटा positive value।
+console.log(Number.MIN_VALUE);
+
+Note: MIN_VALUE का मतलब सबसे बड़ा negative number नहीं है; यह सबसे छोटी positive non-zero value है।
+
+22. Number.MAX_SAFE_INTEGER
+
+Represents the largest integer that can be represented safely and exactly in JavaScript.
+JavaScript में safely represent किया जा सकने वाला सबसे बड़ा exact integer।
+
+console.log(Number.MAX_SAFE_INTEGER);
+Output:
+
+9007199254740991 
+
+23. Number.MIN_SAFE_INTEGER
+
+Represents the smallest safe integer in JavaScript.
+JavaScript का सबसे छोटा safe integer।
+
+console.log(Number.MIN_SAFE_INTEGER);
+Output:-9007199254740991
+
+24. Number.POSITIVE_INFINITY ->
+
+Represents positive infinity.
+यह positive infinity (अनंत) को represent करता है।
+console.log(Number.POSITIVE_INFINITY);
+
+25. Number.NEGATIVE_INFINITY ->
+
+Represents negative infinity.
+यह negative infinity को represent करता है।
+
+console.log(Number.NEGATIVE_INFINITY);
+
+26. Number.NaN
+
+Represents the special numeric value NaN, meaning Not-a-Number.
+NaN का अर्थ Not-a-Number है। यह ऐसी numeric result को represent करता है जो valid number नहीं है।
+
+console.log(Number.NaN);
+
+27. Number.EPSILON
+
+Number.EPSILON represents the smallest difference between two representable numeric values around 1.
+Number.EPSILON floating-point calculations में बहुत छोटी precision difference को represent करता है।
+
+console.log(Number.EPSILON);
+
+Complete Number Practical Program
+
+important Number methods practice :
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Number Methods</title>
+</head>
+
+<body>
+
+<script>
+
+let num = 123.456789;
+// 1. toString()
+console.log("toString:", num.toString());
+// 2. toExponential()
+console.log("toExponential:", num.toExponential(2));
+// 3. toFixed()
+console.log("toFixed:", num.toFixed(2));
+// 4. toPrecision()
+console.log("toPrecision:", num.toPrecision(5));
+// 5. valueOf()
+let obj = new Number(100);
+console.log("valueOf:", obj.valueOf());
+// 6. toLocaleString()
+let money = 1234567;
+console.log(
+    "Indian Number:",money.toLocaleString("en-IN")
+);
+// 7. isInteger()
+console.log(
+    "isInteger:",Number.isInteger(100)
+);
+console.log(
+    "isInteger:",Number.isInteger(100.5)
+);
+
+// 8. isSafeInteger()
+console.log(
+    "isSafeInteger:",Number.isSafeInteger(100)
+);
+// 9. isFinite()
+console.log(
+    "isFinite:",Number.isFinite(100)
+);
+console.log(
+    "isFinite:",Number.isFinite(Infinity)
+);
+// 10. isNaN()
+console.log(
+    "isNaN:",Number.isNaN(NaN)
+);
+// 11. parseInt()
+console.log(
+    "parseInt:",Number.parseInt("25.75")
+);
+// 12. parseFloat()
+console.log(
+    "parseFloat:",Number.parseFloat("25.75")
+);
+// 13. Number()
+console.log(
+    "Number:",Number("500")
+);
+
+// Number Properties
+console.log("MAX_VALUE:", Number.MAX_VALUE);
+
+console.log(
+    "MAX_SAFE_INTEGER:",Number.MAX_SAFE_INTEGER
+);
+console.log(
+    "MIN_SAFE_INTEGER:",Number.MIN_SAFE_INTEGER
+);
+console.log(
+    "EPSILON:",Number.EPSILON
+);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Template</title>
+</head>
+<body>
+<div id="app"></div>
+<script>
+let header = "Student List";
+let students = ["ankit","Rahul","Aman","Vikas"];
+let html = `
+    <h2>${header}</h2>
+    <ul>
+`;
+for (let x of students) {
+    html += `
+        <li>${x}</li>
+    `;
+}
+html += `
+    </ul>
+`;
+document.getElementById("app").innerHTML = html;
+</script>
+</body>
+</html>
