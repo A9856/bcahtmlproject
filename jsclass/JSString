@@ -333,8 +333,9 @@ Output: hello
 //after result store 
 
 let str = "hello";
-str = str.toUpperCase();
+str1= str.toUpperCase();
 console.log(str);
+console.log(str1);
 
 Output: HELLO
 
@@ -354,6 +355,7 @@ Code
 let str = "JavaScript";
 
 console.log(str.length);
+
 15. charAt()
 English
 
@@ -470,7 +472,7 @@ Bracket notation is used to access a character using its index.
 
 Hindi
 
-Index की मदद से String का character प्राप्त करने के लिए [] का उपयोग कर सकते हैं।
+Index की मदद से String का character प्राप्त करने के लिए []  ()   {}का उपयोग कर सकते हैं।
 
 Syntax
 string[index]
@@ -919,12 +921,8 @@ Output:
 ["123"]
 g Flag से Multiple Matches
 let str = "10 20 30";
-
 console.log(str.match(/\d+/g));
-
-Output:
-
-["10", "20", "30"]
+Output: ["10", "20", "30"]
 42. matchAll()
 English 
 

@@ -1,0 +1,557 @@
+1. JavaScript Timer
+
+A JavaScript Timer is a mechanism used to execute a function after a specified time or repeatedly after a specified time interval.
+
+
+| Function          | English                                             | Hindi                                             |
+| ----------------- | --------------------------------------------------- | ------------------------------------------------- |
+| `setTimeout()`    | Executes a function once after a delay.             | देरी के बाद function को एक बार चलाता है।          |
+| `clearTimeout()`  | Cancels a timeout.                                  | timeout को cancel करता है।                        |
+| `setInterval()`   | Executes a function repeatedly at a fixed interval. | function को निश्चित interval पर बार-बार चलाता है। |
+| `clearInterval()` | Stops an interval.                                  | interval को stop करता है।                         |
+
+2. setTimeout()
+
+The setTimeout() function executes a specified function once after a specified amount of time.
+setTimeout() function किसी specified function को निर्धारित समय के बाद केवल एक बार execute करता है।
+
+Syntax
+setTimeout(function, delay);
+
+English: function is the function that will be executed.
+Hindi: function वह function है जिसे execute किया जाएगा।
+
+English: delay is the waiting time in milliseconds.
+Hindi: delay प्रतीक्षा का समय है, जो milliseconds में दिया जाता है।
+
+1000 milliseconds = 1 second
+2000 milliseconds = 2 seconds
+5000 milliseconds = 5 seconds
+
+Practical Code
+<script>
+function showMessage() {
+    console.log("Hello JavaScript");
+}
+setTimeout(showMessage, 3000); //showMessage() function will execute after 3 seconds.
+</script>
+
+3. Passing a Function
+
+Passing a function means passing a function as an argument to another function.
+Passing a function का अरथ है किसी function को दूसरे function के argument के रूप में देना।
+
+Syntax
+setTimeout(functionName, delay);
+
+Practical Code
+<script>
+
+function welcome() {
+    console.log("Welcome to JavaScript");
+}
+
+setTimeout(welcome, 2000);//The welcome function is passed to setTimeout() and will execute after 2 seconds.
+
+</script>
+
+
+Important Difference
+setTimeout(welcome, 2000);
+
+English: Passes the function.
+
+
+BUT ->setTimeout(welcome(), 2000);//Calls the function immediately.
+
+setTimeout(welcome, 2000);
+
+
+4. Using an Anonymous Function ->
+
+An anonymous function is a function that does not have a name.so it is called an anonymous function.
+Anonymous Function वह function होता है जिसका कोई नाम नहीं होता।
+
+Syntax
+setTimeout(function() {
+    // code
+}, delay);
+
+Practical Code
+<script>
+setTimeout(function() {
+    console.log("Hello after 3 seconds");
+}, 3000);
+
+</script>
+
+5. Timers Do Not Pause JavaScript  ->
+
+A JavaScript timer does not pause the entire JavaScript program. It schedules a function to execute later while other JavaScript code can continue executing.
+
+JavaScript timer पूरे JavaScript program को pause नहीं करता। यह केवल किसी function को बाद में execute करने के लिए schedule करता है और बाकी JavaScript code आगे execute हो सकता है।
+
+Practical Code
+<script>
+
+console.log("Start");
+
+setTimeout(function() {
+    console.log("Timer Message");
+}, 3000);
+
+console.log("End");
+
+setTimeout(function() {
+    console.log("Hello after 3 seconds");
+}, 3000);
+
+function call(){
+    console.log("hello world this is function timer do not pause function");
+}
+call()
+
+</script>
+
+Start and End execute first. The timer callback executes after 3 seconds.
+पहले Start और End execute होंगे। Timer वाला function 3 seconds बाद execute होगा।
+
+6. Canceling a Timeout - >
+
+Canceling a timeout means stopping a scheduled setTimeout() function before it executes.so use clearTimeout() 
+
+Syntax
+let timerID = setTimeout(function, delay);
+clearTimeout(timerID);
+
+Practical Code
+<script>
+function message() {
+    console.log("This message will not appear");
+}
+let timerID = setTimeout(message, 5000);
+clearTimeout(timerID);
+console.log("Timeout cancelled"); //The timeout is canceled before 5 seconds, so message() does not execute.
+</script>
+
+7. clearTimeout() -->
+
+clearTimeout() is used to cancel a timeout created by setTimeout().
+Syntax
+clearTimeout(timerID);
+Practical Code
+<script>
+let timerID = setTimeout(function() {
+    console.log("Hello");
+}, 5000);
+clearTimeout(timerID);
+
+</script>
+
+Explanation -->
+The timer is canceled before the function executes.
+Function के execute होने से पहले timer को cancel कर दिया गया।
+
+8. setInterval() -->
+
+The setInterval() function repeatedly executes a specified function after every specified time interval.
+
+setInterval() function किसी specified function को निर्धारित time interval के बाद बार-बार execute करता है।
+
+Syntax
+setInterval(function, interval);
+
+Practical Code
+<script>
+setInterval(function() {
+    console.log("Hello");
+}, 2000);
+
+</script>
+
+Explanation -> The function executes every 2 seconds until the interval is stopped.
+
+
+9. Canceling an Interval -->
+
+Canceling an interval means stopping the repeated execution created by setInterval().
+
+Interval को cancel करने का अर्थ है setInterval() द्वारा बार-बार execute हो रहे function को रोकना।
+
+Syntax
+let intervalID = setInterval(function, time);
+
+clearInterval(intervalID);
+
+Practical Code
+<script>
+
+let count = 0;
+let intervalID = setInterval(function() {
+    count++;
+    console.log("Count:", count);
+    if (count === 5) {
+        clearInterval(intervalID);
+    }
+}, 1000);
+
+</script>
+Output
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+Explanation
+
+English: When the count reaches 5, clearInterval() stops the interval.
+
+10. clearInterval() -->
+clearInterval() is used to stop a repeated interval created by setInterval().
+Syntax->
+clearInterval(intervalID);
+
+<script>
+let intervalID = setInterval(function() {
+    console.log("Running...");
+}, 1000);
+
+setTimeout(function() {
+    clearInterval(intervalID);
+}, 5000);
+
+</script>
+Explanation -> The interval runs repeatedly and is stopped after approximately 5 seconds.
+
+11. Passing Arguments -->
+ Arguments can be passed to a function scheduled by setTimeout() after the specified delay.
+
+setTimeout() द्वारा बाद में execute होने वाले function को arguments pass किए जा सकते हैं।
+
+Syntax
+setTimeout(function, delay, argument1, argument2);
+
+Practical Code
+<script>
+function greet(name) {
+    console.log("Hello " + name);
+}
+setTimeout(greet, 2000, "saurabh");
+</script>
+
+Explanation -->  "saurabh" is passed as an argument to the greet() function.
+
+
+12. Passing Multiple Arguments --> Multiple arguments can be passed to a function scheduled by setTimeout().
+setTimeout() के माध्यम से function को एक से अधिक arguments भी pass किए जा सकते हैं।
+
+Practical Code
+<script>
+function add(a, b) {
+    console.log("Sum =", a + b);
+}
+
+setTimeout(add, 2000, 10, 20);
+</script>
+
+Explanation
+add       → Function
+2000      → Delay
+10        → First argument
+20        → Second argument
+
+
+13. Repeated setTimeout()--> Repeated setTimeout() means calling setTimeout() again inside its callback to execute a function repeatedly.
+
+जब setTimeout() के callback के अंदर फिर से setTimeout() call किया जाता है, तो function को repeatedly execute कराया जा सकता है।
+
+Practical Code
+<script>
+
+function showMessage() {
+    console.log("Hello");
+    setTimeout(showMessage, 2000);
+}
+setTimeout(showMessage, 2000);
+
+
+
+</script>
+Output
+Hello
+Hello
+Hello
+Hello
+...
+Explanation
+
+After each execution, another timeout is created for the next execution.
+हर execution के बाद अगली execution के लिए एक नया timeout बनाया जाता है।
+
+14. setTimeout() vs setInterval()
+
+| Point           | `setTimeout()`                       | `setInterval()`                              |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| English         | Executes once after a delay.         | Executes repeatedly at an interval.          |
+| Hindi           | Delay के बाद एक बार execute होता है।    | निशचित interval पर बार-बार execute होता है। |
+| Cancel Function | `clearTimeout()`                     | `clearInterval()`                            |
+| Example         | Message after 5 seconds              | Clock every 1 second                         |
+
+TIMER CONCEPT WITH ONE TIMER
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>JavaScript Timer Practical</title>
+
+</head>
+
+<body>
+
+    <h1>JavaScript Timer</h1>
+
+    <button onclick="startTimeout()">
+        Start Timeout
+    </button>
+
+    <button onclick="cancelTimeout()">
+        Cancel Timeout
+    </button>
+
+    <br><br>
+
+    <button onclick="startInterval()">
+        Start Interval
+    </button>
+
+    <button onclick="stopInterval()">
+        Stop Interval
+    </button>
+
+    <p id="output">Timer Output</p>
+
+
+<script>
+
+let timeoutID;
+let intervalID;
+let count = 0;
+
+
+// Start Timeout
+function startTimeout() {
+
+    timeoutID = setTimeout(function() {
+
+        document.getElementById("output").innerHTML =
+            "Timeout executed after 3 seconds";
+
+    }, 3000);
+
+}
+
+
+// Cancel Timeout
+function cancelTimeout() {
+
+    clearTimeout(timeoutID);
+
+    document.getElementById("output").innerHTML =
+        "Timeout Cancelled";
+
+}
+
+
+// Start Interval
+function startInterval() {
+
+    count = 0;
+
+    intervalID = setInterval(function() {
+
+        count++;
+
+        document.getElementById("output").innerHTML =
+            "Interval Count: " + count;
+
+    }, 1000);
+
+}
+
+
+// Stop Interval
+function stopInterval() {
+
+    clearInterval(intervalID);
+
+    document.getElementById("output").innerHTML =
+        "Interval Stopped";
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+16. Project: Countdown Timer
+
+अब सभी important timer concepts को एक practical Countdown Timer Project में use करते हैं।
+
+Project Definition ->
+A countdown timer is a program that displays a decreasing amount of time until it reaches zero.
+Countdown Timer ऐसा program है जो समय को लगातार कम करके दिखाता है और zero पर पहुँचने के बाद stop हो जाता है।
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Countdown Timer</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f2f2f2;
+            padding-top: 100px;
+        }
+
+        .timer-box {
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #timer {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="timer-box">
+
+        <h1>Countdown Timer</h1>
+
+        <div id="timer">10</div>
+
+        <button onclick="startTimer()">
+            Start
+        </button>
+
+        <button onclick="pauseTimer()">
+            Pause
+        </button>
+
+        <button onclick="resetTimer()">
+            Reset
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+
+<script>
+
+let time = 10;
+
+let intervalID = null;
+
+
+// Display Time
+function displayTime(value) {
+
+    document.getElementById("timer").innerHTML = value;
+
+}
+
+
+// Start Timer
+function startTimer() {
+
+    // Prevent multiple intervals
+    if (intervalID !== null) {
+        return;
+    }
+
+
+    intervalID = setInterval(function() {
+
+        time--;
+
+        displayTime(time);
+
+
+        // Check whether time is zero
+        if (time === 0) {
+
+            clearInterval(intervalID);
+
+            intervalID = null;
+
+            document.getElementById("message").innerHTML =
+                "Time Over!";
+
+        }
+
+    }, 1000);
+
+}
+
+
+// Pause Timer
+function pauseTimer() {
+
+    clearInterval(intervalID);
+
+    intervalID = null;
+
+    document.getElementById("message").innerHTML =
+        "Timer Paused";
+
+}
+
+
+// Reset Timer
+function resetTimer() {
+
+    clearInterval(intervalID);
+
+    intervalID = null;
+
+    time = 10;
+
+    displayTime(time);
+
+    document.getElementById("message").innerHTML =
+        "Timer Reset";
+
+}
+
+</script>
+
+</body>
+
+</html>

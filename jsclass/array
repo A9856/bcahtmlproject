@@ -1,0 +1,1186 @@
+1. JavaScript Array Definition
+
+An Array in JavaScript is a special type of object used to store multiple values or elements in a single variable. Each element is stored at a numeric index, starting from 0.
+
+JavaScript Array एक special object है जिसका उपयोग एक ही variable में multiple values को store करने के लिए किया जाता है। Array के प्रत्येक element का एक numeric index होता है और indexing 0 से शुरू होती है।
+
+Example
+let fruits = ["Apple", "Mango", "Banana"];
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
+
+Output:
+
+Apple
+Mango
+Banana
+
+Index:
+
+Array:    ["Apple", "Mango", "Banana"]
+Index:        0        1          2
+
+2. Key Characteristics of JavaScript Array
+1. Multiple values
+
+let numbers = [10, 20, 30, 40];
+2. Zero-based indexing
+
+let arr = ["A", "B", "C"];
+
+console.log(arr[0]); // A
+console.log(arr[2]); // C
+3. Dynamic size
+
+Array का size fixed नहीं होता। Elements add/remove कर सकते हैं।
+
+let arr = [10, 20];
+
+arr.push(30);
+
+console.log(arr);
+
+Output:
+
+[10, 20, 30]
+4. Different data types
+
+JavaScript array में अलग-अलग types की values रख सकते हैं।
+
+let data = [
+    10,
+    "Adil",
+    true,
+    null
+];
+
+console.log(data);
+
+5. Duplicate values allowed
+let numbers = [10, 20, 10, 30, 20];
+
+console.log(numbers);
+6. Nested Array
+
+एक array के अंदर दूसरा array रख सकते हैं।
+
+let matrix = [
+    [1, 2],
+    [3, 4]
+];
+
+console.log(matrix[0][1]);
+
+Output:
+
+2
+7. Array has length
+
+length property array में मौजूद slots/length को represent करती है। सामान्य array में यह elements की संख्या के बराबर होती है।
+
+let fruits = ["Apple", "Mango", "Banana"];
+console.log(fruits.length);
+
+Output:
+
+3
+3. Creating JavaScript Array
+
+सबसे common तरीका:
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+इसे Array Literal कहते हैं।
+
+4. Array Constructor
+
+The Array constructor is used to create an array object using the Array keyword.
+
+Array constructor का उपयोग Array keyword की सहायता से नया array object बनाने के लिए किया जाता है।
+Syntax
+new Array()
+Example
+let fruits = new Array("Apple", "Mango", "Banana");
+
+console.log(fruits);
+
+Output:
+
+["Apple", "Mango", "Banana"]
+
+5. Array Literal vs new Array()
+Array Literal	            Array Constructor
+let arr = [10,20,30]	let arr = new Array(10,20,30)
+
+Simple और commonly preferred	Constructor syntax
+Readable	थोड़ा confusing हो सकता है
+Recommended for normal array creation	Special situations में उपयोग हो सकता है
+Important Difference
+
+यह बहुत important है:
+
+let a = [5];
+
+इसमें एक element 5 है।
+
+let b = new Array(5);
+
+इसमें 5 length का empty array बनता है।
+
+console.log(a);
+console.log(a.length);
+
+console.log(b);
+console.log(b.length);
+
+Output concept:
+
+[5]
+1
+
+[empty × 5]
+5
+
+इसलिए normal array creation के लिए:
+
+let arr = [5];
+
+ज्यादा clear है।
+
+PART A — BASIC ARRAY METHODS
+6. length
+
+The length property returns the number of slots in an array.
+
+let arr = [10, 20, 30, 40];
+console.log(arr.length);
+Output: 4
+
+7. toString()
+
+toString() converts an array into a string representation.
+toString() array के elements को string में convert करता है।
+let fruits = ["Apple", "Mango", "Banana"];
+console.log(fruits.toString());
+
+Output: Apple,Mango,Banana
+
+8. at()
+
+at() returns the element at the specified index. It also supports negative indexes.
+
+at() दिए गए index का element return करता है और negative index से पीछे से element access कर सकते हैं।
+
+let fruits = ["Apple", "Mango", "Banana"];
+console.log(fruits.at(1));
+console.log(fruits.at(-1));
+
+Output:
+
+Mango
+Banana
+9. join()
+
+join() combines array elements into a string using a specified separator.
+
+join() array के सभी elements को एक string में जोड़ता है।
+
+let fruits = ["Apple","Mango", "Banana"];
+
+console.log(fruits.join(" - "));
+
+Output:
+
+Apple - Mango - Banana
+
+10. pop()
+Definition
+
+pop() removes and returns the last element of an array.
+
+pop() array के last element को remove करता है और removed element return करता है।
+
+let fruits = ["Apple", "Mango", "Banana"];
+let removed = fruits.pop();
+console.log(removed);
+console.log(fruits);
+
+Output:Banana / ["Apple", "Mango"]
+
+11. push()
+push() adds one or more elements to the end of an array and returns the new length.
+
+push() array के अंत में नया element add करता है और नई length return करता है।
+
+let fruits = ["Apple", "Mango"];
+
+let result = fruits.push("Banana");
+
+console.log(fruits);
+console.log(result);
+
+Output:
+
+["Apple", "Mango", "Banana"]
+3
+12. shift()
+Definition
+
+shift() removes and returns the first element of an array.
+
+Hindi
+
+shift() array के first element को remove करता है।
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+let removed = fruits.shift();
+
+console.log(removed);
+console.log(fruits);
+
+Output:
+
+Apple
+["Mango", "Banana"]
+13. unshift()
+
+unshift() adds one or more elements at the beginning of an array and returns the new length.
+
+Hindi
+
+unshift() array के beginning में elements add करता है।
+
+let fruits = ["Mango", "Banana"];
+
+fruits.unshift("Apple");
+
+console.log(fruits);
+
+Output:
+
+["Apple", "Mango", "Banana"]
+Easy Trick
+push()    → End में add
+pop()     → End से remove
+
+unshift() → Start में add
+shift()   → Start से remove
+PART B — ARRAY MODIFYING METHODS
+
+14. Array.isArray()
+Definition
+
+Array.isArray() checks whether a value is an array. It returns true or false.
+
+Hindi
+
+यह check करता है कि दी गई value array है या नहीं।
+
+let arr = [10, 20, 30];
+
+console.log(Array.isArray(arr));
+console.log(Array.isArray("Hello"));
+
+Output:
+
+true
+false
+15. delete
+Definition
+
+The delete operator removes an element property from an array but does not shift the remaining elements.
+
+Hindi
+
+delete array के element को remove करता है, लेकिन बाकी elements की indexing automatically shift नहीं करता।
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+delete fruits[1];
+
+console.log(fruits);
+console.log(fruits.length);
+
+Concept:
+
+["Apple", empty, "Banana"]
+
+इसलिए elements remove करने के लिए सामान्यतः splice() ज्यादा appropriate होता है।
+
+16. concat()
+Definition
+
+concat() combines two or more arrays and returns a new array.
+
+Hindi
+
+concat() दो या अधिक arrays को जोड़कर नया array बनाता है।
+
+let a = [10, 20];
+let b = [30, 40];
+
+let result = a.concat(b);
+
+console.log(result);
+
+Output:
+
+[10, 20, 30, 40]
+
+Original arrays:
+
+a = [10,20]
+b = [30,40]
+
+remain unchanged.
+
+17. copyWithin()
+Definition
+
+copyWithin() copies part of an array to another position within the same array.
+
+Hindi
+
+copyWithin() उसी array के elements को दूसरी position पर copy करता है।
+
+let arr = [1, 2, 3, 4, 5];
+
+arr.copyWithin(0, 3);
+
+console.log(arr);
+
+Output:
+
+[4, 5, 3, 4, 5]
+
+Meaning:
+
+copyWithin(target, start)
+18. flat()
+Definition
+
+flat() creates a new array by flattening nested arrays.
+
+Hindi
+
+flat() nested array को एक level या specified depth तक flat करता है।
+
+let arr = [1, 2, [3, 4], [5, 6]];
+
+console.log(arr.flat());
+
+Output:
+
+[1, 2, 3, 4, 5, 6]
+
+Multiple levels:
+
+let arr = [1, [2, [3, 4]]];
+
+console.log(arr.flat(2));
+
+Output:
+
+[1, 2, 3, 4]
+19. slice()
+Definition
+
+slice() extracts a portion of an array and returns a new array without changing the original array.
+
+Hindi
+
+slice() array के किसी portion को निकालकर नया array return करता है। Original array change नहीं होता।
+
+let fruits = ["Apple", "Mango", "Banana", "Orange"];
+
+let result = fruits.slice(1, 3);
+
+console.log(result);
+console.log(fruits);
+
+Output:
+
+["Mango", "Banana"]
+
+["Apple", "Mango", "Banana", "Orange"]
+Important
+slice(start, end)
+
+end index include नहीं होता।
+
+20. splice()
+Definition
+
+splice() can add, remove, or replace elements in an array.
+
+Hindi
+
+splice() array में elements को remove, add या replace कर सकता है और original array को modify करता है।
+
+Syntax
+array.splice(start, deleteCount, item1, item2);
+Remove
+let fruits = ["Apple", "Mango", "Banana", "Orange"];
+
+fruits.splice(1, 2);
+
+console.log(fruits);
+
+Output:
+
+["Apple", "Orange"]
+Add
+let fruits = ["Apple", "Orange"];
+
+fruits.splice(1, 0, "Mango", "Banana");
+
+console.log(fruits);
+
+Output:
+
+["Apple", "Mango", "Banana", "Orange"]
+21. toSpliced()
+Definition
+
+toSpliced() performs the same kind of add/remove/replace operation as splice(), but returns a new array without modifying the original array.
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+let newFruits = fruits.toSpliced(1, 1, "Orange");
+
+console.log(fruits);
+console.log(newFruits);
+
+Output:
+
+["Apple", "Mango", "Banana"]
+
+["Apple", "Orange", "Banana"]
+Difference
+splice()     → Original array changes
+toSpliced()  → New array, original remains same
+PART C — ARRAY SEARCH METHODS
+22. indexOf()
+Definition
+
+indexOf() returns the first index at which a specified value is found. If not found, it returns -1.
+
+Hindi
+
+indexOf() किसी value की पहली position/index return करता है। Value नहीं मिलने पर -1 return करता है।
+
+let numbers = [10, 20, 30, 20];
+
+console.log(numbers.indexOf(20));
+console.log(numbers.indexOf(50));
+
+Output:
+
+1
+-1
+23. lastIndexOf()
+Definition
+
+lastIndexOf() returns the last index at which a specified value is found.
+
+Hindi
+
+यह किसी value का सबसे आखिरी index return करता है।
+
+let numbers = [10, 20, 30, 20, 40];
+
+console.log(numbers.lastIndexOf(20));
+
+Output:
+
+3
+24. includes()
+Definition
+
+includes() checks whether an array contains a specified value and returns true or false.
+
+Hindi
+
+यह check करता है कि array में specified value मौजूद है या नहीं।
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+console.log(fruits.includes("Mango"));
+console.log(fruits.includes("Orange"));
+
+Output:
+
+true
+false
+25. find()
+Definition
+
+find() returns the first element that satisfies a testing condition. If no element matches, it returns undefined.
+
+Hindi
+
+find() condition को satisfy करने वाला पहला element return करता है।
+
+let numbers = [10, 25, 40, 55];
+
+let result = numbers.find(function(value) {
+    return value > 30;
+});
+
+console.log(result);
+
+Output:
+
+40
+26. findIndex()
+Definition
+
+findIndex() returns the index of the first element that satisfies a condition. If no match is found, it returns -1.
+
+let numbers = [10, 25, 40, 55];
+
+let result = numbers.findIndex(function(value) {
+    return value > 30;
+});
+
+console.log(result);
+
+Output:
+
+2
+Difference
+find()       → element return
+findIndex()  → index return
+27. findLast()
+Definition
+
+findLast() searches from the end and returns the last element satisfying the condition.
+
+let numbers = [10, 40, 25, 60, 30];
+
+let result = numbers.findLast(function(value) {
+    return value > 20;
+});
+
+console.log(result);
+
+Output:
+
+30
+
+क्योंकि पीछे से 30 पहला value है जो 20 से बड़ा है।
+
+28. findLastIndex()
+Definition
+
+findLastIndex() searches from the end and returns the index of the last element satisfying the condition.
+
+let numbers = [10, 40, 25, 60, 30];
+
+let result = numbers.findLastIndex(function(value) {
+    return value > 20;
+});
+
+console.log(result);
+
+Output:
+
+4
+Search Methods — याद रखने की Table
+Method	क्या return करता है?
+indexOf()	value का first index
+lastIndexOf()	value का last index
+includes()	true/false
+find()	first matching element
+findIndex()	first matching index
+findLast()	last matching element
+findLastIndex()	last matching index
+PART D — ARRAY SORTING
+29. sort()
+Definition
+
+sort() sorts the elements of an array in place and returns the sorted array.
+
+Hindi
+
+sort() array के elements को sort करता है और original array को modify करता है।
+
+let fruits = ["Mango", "Apple", "Orange", "Banana"];
+
+fruits.sort();
+
+console.log(fruits);
+
+Output:
+
+["Apple", "Banana", "Mango", "Orange"]
+30. Numeric Sort
+
+JavaScript का default sort() values को string की तरह compare करता है।
+
+इसलिए:
+
+let numbers = [100, 5, 25, 10];
+
+numbers.sort();
+
+console.log(numbers);
+
+Expected numeric order नहीं मिलेगा।
+
+Correct Numeric Sort
+let numbers = [100, 5, 25, 10];
+
+numbers.sort(function(a, b) {
+    return a - b;
+});
+
+console.log(numbers);
+
+Output:
+
+[5, 10, 25, 100]
+Descending
+numbers.sort(function(a, b) {
+    return b - a;
+});
+31. reverse()
+Definition
+
+reverse() reverses the order of elements in an array and modifies the original array.
+
+Hindi
+
+reverse() array के elements का order उल्टा कर देता है।
+
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.reverse();
+
+console.log(numbers);
+
+Output:
+
+[5, 4, 3, 2, 1]
+32. toSorted()
+Definition
+
+toSorted() returns a new sorted array without changing the original array.
+
+let numbers = [30, 10, 20];
+
+let result = numbers.toSorted(function(a, b) {
+    return a - b;
+});
+
+console.log(numbers);
+console.log(result);
+
+Output:
+
+[30, 10, 20]
+
+[10, 20, 30]
+33. toReversed()
+Definition
+
+toReversed() returns a new reversed array without modifying the original array.
+
+let numbers = [1, 2, 3, 4];
+
+let result = numbers.toReversed();
+
+console.log(numbers);
+console.log(result);
+
+Output:
+
+[1, 2, 3, 4]
+
+[4, 3, 2, 1]
+34. Sorting Objects
+
+Objects के array को किसी property के आधार पर sort कर सकते हैं।
+
+let students = [
+    {name: "Rahul", marks: 70},
+    {name: "Aman", marks: 90},
+    {name: "Vikas", marks: 60}
+];
+
+students.sort(function(a, b) {
+    return a.marks - b.marks;
+});
+
+console.log(students);
+
+Marks के ascending order में:
+
+Vikas → 60
+Rahul → 70
+Aman  → 90
+35. Random Sort
+
+Random order के लिए:
+
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.sort(function() {
+    return Math.random() - 0.5;
+});
+
+console.log(numbers);
+
+Note: यह simple random-shuffle demonstration है; production-quality unbiased shuffle के लिए Fisher–Yates algorithm बेहतर है।
+
+36. Math.min()
+Definition
+
+Math.min() returns the smallest number among the supplied values.
+
+let numbers = [10, 5, 30, 2];
+
+console.log(Math.min(...numbers));
+
+Output:
+
+2
+
+यहाँ ...numbers spread syntax है।
+
+37. Math.max()
+let numbers = [10, 5, 30, 2];
+
+console.log(Math.max(...numbers));
+
+Output:
+
+30
+38. Home-made min()
+
+Array में loop लगाकर minimum निकाल सकते हैं:
+
+let numbers = [10, 5, 30, 2];
+
+let min = numbers[0];
+
+for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+        min = numbers[i];
+    }
+}
+
+console.log(min);
+
+Output:
+
+2
+39. Home-made max()
+let numbers = [10, 5, 30, 2];
+
+let max = numbers[0];
+
+for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+        max = numbers[i];
+    }
+}
+
+console.log(max);
+
+Output:
+
+30
+PART E — ARRAY ITERATION
+Iteration Definition
+English
+
+Array iteration means visiting or processing each element of an array one by one. JavaScript provides loops and array methods such as forEach(), map(), filter(), reduce(), some(), and every() for array iteration.
+
+Hindi
+
+Array iteration का अर्थ है array के प्रत्येक element को एक-एक करके access या process करना।
+
+Array के कई iterative methods callback function लेते हैं।
+
+40. for...of
+Definition
+
+for...of iterates over the values of an array.
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+Output:
+
+Apple
+Mango
+Banana
+याद रखें
+for...of → values
+41. for...in
+Definition
+
+for...in iterates over the enumerable property keys/indexes.
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+for (let index in fruits) {
+    console.log(index);
+}
+
+Output:
+
+0
+1
+2
+याद रखें
+for...in → index/key
+for...of → value
+42. forEach()
+Definition
+
+forEach() executes a callback function once for each array element.
+
+Hindi
+
+forEach() array के प्रत्येक element पर दिए गए function को execute करता है।
+
+let numbers = [10, 20, 30];
+
+numbers.forEach(function(value) {
+    console.log(value);
+});
+
+Output:
+
+10
+20
+30
+43. map()
+Definition
+
+map() creates a new array by applying a function to every element.
+
+Hindi
+
+map() प्रत्येक element पर operation करके एक नया array बनाता है।
+
+let numbers = [10, 20, 30];
+
+let result = numbers.map(function(value) {
+    return value * 2;
+});
+
+console.log(result);
+
+Output:
+
+[20, 40, 60]
+याद रखें
+map() → नया modified array
+44. flatMap()
+Definition
+
+flatMap() maps each element and then flattens the result by one level.
+
+let numbers = [1, 2, 3];
+
+let result = numbers.flatMap(function(value) {
+    return [value, value * 2];
+});
+
+console.log(result);
+
+Output:
+
+[1, 2, 2, 4, 3, 6]
+45. filter()
+Definition
+
+filter() creates a new array containing elements that satisfy a condition.
+
+Hindi
+
+filter() condition को satisfy करने वाले elements का नया array बनाता है।
+
+let numbers = [10, 15, 20, 25, 30];
+
+let result = numbers.filter(function(value) {
+    return value >= 20;
+});
+
+console.log(result);
+
+Output:
+
+[20, 25, 30]
+46. reduce()
+Definition
+
+reduce() reduces all array elements to a single accumulated value.
+
+Hindi
+
+reduce() array के सभी elements को process करके एक single result/value बनाता है।
+
+Sum Example
+let numbers = [10, 20, 30, 40];
+
+let sum = numbers.reduce(function(total, value) {
+    return total + value;
+}, 0);
+
+console.log(sum);
+
+Output:
+
+100
+
+Flow:
+
+0 + 10 = 10
+10 + 20 = 30
+30 + 30 = 60
+60 + 40 = 100
+47. reduceRight()
+Definition
+
+reduceRight() works like reduce(), but processes elements from right to left.
+
+let numbers = [1, 2, 3, 4];
+
+let result = numbers.reduceRight(function(total, value) {
+    return total + value;
+}, 0);
+
+console.log(result);
+
+Output:
+
+10
+48. every()
+Definition
+
+every() returns true if all elements satisfy the given condition; otherwise it returns false.
+
+let marks = [60, 70, 80, 90];
+
+let result = marks.every(function(mark) {
+    return mark >= 33;
+});
+
+console.log(result);
+
+Output:
+
+true
+याद रखें
+every() → क्या सभी satisfy करते हैं?
+49. some()
+Definition
+
+some() returns true if at least one element satisfies the condition.
+
+let marks = [20, 40, 60, 80];
+
+let result = marks.some(function(mark) {
+    return mark < 33;
+});
+
+console.log(result);
+
+Output:
+
+true
+
+क्योंकि कम से कम एक mark 33 से कम है।
+
+Difference
+every() → सभी
+some()  → कम से कम एक
+PART F — ARRAY CREATION / ITERATOR METHODS
+50. Array.from()
+Definition
+
+Array.from() creates a new array from an iterable or array-like object.
+
+Hindi
+
+Array.from() iterable या array-like object से नया array बनाता है।
+
+let str = "ADIL";
+
+let arr = Array.from(str);
+
+console.log(arr);
+
+Output:
+
+["A", "D", "I", "L"]
+51. keys()
+Definition
+
+keys() returns an iterator containing the indexes/keys of the array.
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+for (let key of fruits.keys()) {
+    console.log(key);
+}
+
+Output:
+
+0
+1
+2
+52. entries()
+Definition
+
+entries() returns an iterator containing index-value pairs.
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+for (let [index, value] of fruits.entries()) {
+    console.log(index, value);
+}
+
+Output:
+
+0 Apple
+1 Mango
+2 Banana
+53. with()
+Definition
+
+with() returns a new array with the element at a specified index replaced, without modifying the original array.
+
+let fruits = ["Apple", "Mango", "Banana"];
+
+let result = fruits.with(1, "Orange");
+
+console.log(fruits);
+console.log(result);
+
+Output:
+
+["Apple", "Mango", "Banana"]
+
+["Apple", "Orange", "Banana"]
+Difference
+arr[1] = "Orange"
+→ original array changes
+
+arr.with(1, "Orange")
+→ new array
+PART G — SPREAD ...
+54. Spread Syntax
+Definition
+
+Spread syntax (...) expands the elements of an iterable, such as an array, into individual elements.
+
+Hindi
+
+Spread operator (...) array के elements को अलग-अलग values के रूप में expand करता है।
+
+Copy Array
+let a = [10, 20, 30];
+
+let b = [...a];
+
+console.log(b);
+
+Output:
+
+[10, 20, 30]
+Combine Arrays
+let a = [10, 20];
+let b = [30, 40];
+
+let c = [...a, ...b];
+
+console.log(c);
+
+Output:
+
+[10, 20, 30, 40]
+Math
+let numbers = [10, 20, 30];
+
+console.log(Math.max(...numbers));
+
+Output:
+
+30
+PART H — REST ...
+55. Rest Syntax
+Definition
+
+Rest syntax (...) collects multiple remaining values into a single array.
+
+Hindi
+
+Rest operator (...) multiple values को collect करके एक array में store करता है।
+
+function add(...numbers) {
+
+    let sum = 0;
+
+    for (let number of numbers) {
+        sum += number;
+    }
+
+    return sum;
+}
+
+console.log(add(10, 20, 30, 40));
+
+Output:
+
+100
+
+यहाँ:
+
+...numbers
+
+ने:
+
+10, 20, 30, 40
+
+को collect करके:
+
+[10, 20, 30, 40]
+
+बना दिया।
+
+Spread vs Rest — बहुत Important
+
+दोनों में syntax ... है लेकिन काम अलग है।
+
+Spread	Rest
+Values को expand करता है	Values को collect करता है
+Array/object को खोलता है	Multiple arguments को array में collect करता है
+...arr	...numbers
+Spread
+let a = [10, 20];
+
+console.log(...a);
+
+Output:
+
+10 20
+Rest
+function test(...a) {
+    console.log(a);
+}
+
+test(10, 20);
+
+Output:
+
+[10, 20]

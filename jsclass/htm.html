@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,5 +15,65 @@
     }
   </script>
 
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Timer Practical</title>
+</head>
+<body>
+    <h1>JavaScript Timer</h1>
+<button onclick="startTimeout()">Start Timeout</button>
+<button onclick="cancelTimeout()">Cancel Timeout</button>
+<br><br>
+<button onclick="startInterval()">Start Interval</button>
+<button onclick="stopInterval()">Stop Interval</button>
+<p id="output">Timer Output</p>
+<h3 id="output1"></h3>
+<p id="endinterval"></p>
+<script>
+
+let timeoutID;
+let intervalID;
+let count = 0;
+// Start Timeout
+function startTimeout() {
+    timeoutID = setTimeout(function() {
+        document.getElementById("output").innerHTML =
+            "Timeout executed after 3 seconds";
+    }, 3000);
+}
+// Cancel Timeout
+function cancelTimeout() {
+    clearTimeout(timeoutID);
+    document.getElementById("output").innerHTML =
+        "Timeout Cancelled";
+}
+// Start Interval
+function startInterval() {
+    count = 0;
+    intervalID = setInterval(function() {
+        count++;
+        
+            if(count<=5){
+              document.getElementById("output").innerHTML =
+            "Interval Count: " + count;
+            }
+            else{
+               document.getElementById("output1").innerHTML =
+            "Interval Count stop : ";
+            }
+    }, 1000);
+}
+// Stop Interval
+function stopInterval() {
+    clearInterval(intervalID);
+    document.getElementById("endinterval").innerHTML =
+        "Interval Stopped";
+}
+</script>
 </body>
 </html>

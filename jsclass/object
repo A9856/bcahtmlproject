@@ -1,0 +1,1060 @@
+1. JavaScript Object
+
+A JavaScript Object is a collection of related data and functionality stored as key-value pairs. The data is represented by properties and the actions are represented by methods.
+
+JavaScript Object related data और functionality का collection होता है, जिसमें data को key-value pairs के रूप में store किया जाता है। Object के data को properties और उसके actions को methods कहा जाता है।
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+name   → property/key
+Adyut   → value
+age    → property/key
+21     → value
+course → property/key
+BCA    → value
+
+2. why use Object -> 
+Objects are used to group related information and functions together in a single structure.
+Objects का उपयोग related information और functions को एक ही structure में रखने के लिए किया जाता है।
+
+Example
+
+Student information:
+
+const student = {
+    name: "Adyut",
+    rollNo: 101,
+    course: "BCA",
+    marks: 85
+};
+
+//one student related all info store single object structure
+
+3. Object Properties -> An object property is a named value stored inside an object.
+Object Property object के अंदर store की गई named value होती है।
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+Property Access
+
+The two main ways to access an object's property in programming (like in JavaScript) are Dot notation and Bracket notation.
+
+1. Dot Notation -> You use a dot (.) followed by the property name. It is the most common, clean, and readable way to access properties.
+
+Syntax
+object.property
+const user = { name: "Alice", age: 25 };
+// Accessing property
+console.log(user.name); // Output: Alice
+
+2. Bracket Notation -> You use square brackets ([]) and pass the property name as a string. This method is more powerful and flexible.
+
+Syntax
+object["property"]
+
+const user = { 
+  name: "Alice", 
+  "home address": "123 Street" // Key with a space
+};
+
+// Accessing property with a space
+console.log(user["home address"]); // Output: 123 Street
+
+// Accessing property using a variable
+const key = "name";
+console.log(user[key]); // Output: Alice
+
+
+4. Object Methods ->An object method is a function stored as a property of an object.
+Object Method वह function है जो object की property के रूप में stored होता है।
+
+Example
+const student = {
+    name: "Adyut",
+    show: function() {
+        console.log("Student Name:", this.name);
+    }
+};
+
+student.show();
+
+5. this Object -> The this keyword refers to the object that is currently calling the method.
+this keyword उस object को refer करता है जो वर्तमान में method को call कर रहा है।
+
+Example
+const student = {
+    name: "Adyut",
+    showName: function() {
+        console.log(this.name);
+    }
+};
+student.showName();
+
+Easy Concept
+student.showName()
+       ↓
+     this
+       ↓
+    student
+       ↓
+ this.name
+       ↓
+     Adyut
+
+6. Object Display -> There are several ways to display the object directly.
+
+Method 1 –> console.log()
+const student = {
+    name: "Adyut",
+    age: 21
+};
+
+console.log(student);
+
+Output:
+
+{ name: "Adyut", age: 21 }
+Method 2 – Property Display
+console.log(student.name);
+console.log(student.age);
+
+Output:
+
+Adyut
+21
+Method 3 – document.write()
+<script>
+
+const student = {
+    name: "Adyut",
+    age: 21
+};
+
+document.write(student.name);
+
+</script>
+
+Output:
+
+Adyut
+
+JSON.stringify() -> You can use the JSON.stringify() method to convert a JavaScript object into a readable string.
+const student = {
+    name: "Adyut",
+    age: 21
+};
+console.log(JSON.stringify(student));
+
+Method 4 – innerHTML
+<h2 id="output"></h2>
+
+<script>
+
+const student = {
+    name: "Adyut",
+    age: 21
+};
+
+document.getElementById("output").innerHTML =
+    student.name + " - " + student.age;
+
+</script>
+
+Output:
+
+Adyut - 21
+
+toString() -> The toString() method is used to convert an object into a readable string format for display.
+
+class Student {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Overriding the default toString() method
+    toString() {
+        return `Student [Name: ${this.name}, Age: ${this.age}]`;
+    }
+}
+
+// Creating an object
+const s1 = new Student("Amit", 22);
+
+// Displaying the object (toString is called automatically when converted to a string)
+console.log(s1.toString()); // Output: Student [Name: Amit, Age: 22]
+console.log("Details: " + s1); // Output: Details: Student [Name: Amit, Age: 22]
+
+7. Object Literal - > An Object Literal is the simplest way to create an object by directly writing its properties and values inside { }.
+Object Literal object बनाने का सबसे simple तरीका है, जिसमें properties और values को directly { } के अंदर लिखा जाता है।
+
+Syntax
+const objectName = {
+    property1: value1,
+    property2: value2
+};
+
+Practical Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+console.log(student);
+
+8. Using the new Keyword - >The new keyword is used to create a new object instance.
+new keyword का उपयोग एक नया object instance बनाने के लिए किया जाता है।
+
+Syntax
+const objectName = new Object();
+
+Example
+const student = new Object();
+student.name = "Adyut";
+student.age = 21;
+student.course = "BCA";
+
+console.log(student);
+Output: { name: "Adyut", age: 21, course: "BCA" }
+
+const student = new Object({
+  name : "Adyut",
+age : 21,
+course : "BCA"
+});
+console.log(student);
+
+9. Object Constructor - > An Object Constructor is a function used to create multiple objects having the same structure and properties.
+
+Object Constructor एक function होता है जिसका उपयोग same structure वाले multiple objects बनाने के लिए किया जाता है।
+
+Example
+function Student(name, age, course) {
+    this.name = name;
+    this.age = age;
+    this.course = course;
+}
+
+const student1 = new Student("Adyut", 21, "BCA");
+const student2 = new Student("Rahul", 22, "BCA");
+console.log(student1);
+console.log(student2);
+Output
+Student {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+}
+
+Student {
+    name: "Rahul",
+    age: 22,
+    course: "BCA"
+}
+
+Important Concept
+Student Constructor
+       ↓
+   new Student()
+       ↓
+ ┌─────────────┐
+ │  student1   │
+ └─────────────┘
+
+Student Constructor
+       ↓
+   new Student()
+       ↓
+ ┌─────────────┐
+ │  student2   │
+ └─────────────┘
+
+10. Object.assign() -> Object.assign() copies enumerable properties from one or more source objects into a target object.
+
+Object.assign() एक या अधिक source objects की properties को target object में copy करने के लिए उपयोग किया जाता है।
+
+Syntax
+Object.assign(target, source);
+
+Practical Example
+const student = {
+    name: "Adyut"
+};
+
+const details = {
+    age: 21,
+    course: "BCA"
+};
+
+Object.assign(student, details);
+console.log(student);
+
+Output:
+{
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+}
+
+student = Target Object
+details = Source Object
+
+properties of details
+        ↓
+copy in student
+
+11. Object.create() -> Object.create() creates a new object using another object as its prototype.
+Object.create() एक नया object बनाता है और दिए गए object को उसके prototype के रूप में set करता है।
+
+Syntax
+Object.create(prototype);
+
+Practical Example
+const person = {
+    greet: function() {
+        console.log("Hello");
+    }
+};
+
+const student = Object.create(person);
+student.name = "Adyut";
+console.log(student.name);
+student.greet();
+
+Output:Adyut Hello
+English: student does not directly contain greet(), but it can access it through its prototype.
+
+
+12. Object.fromEntries() -> Object.fromEntries() creates an object from an iterable containing key-value pairs.
+
+Object.fromEntries() key-value pairs की list से एक नया object बनाता है।
+
+Example
+const entries = [
+    ["name", "Adyut"],
+    ["age", 21],
+    ["course", "BCA"]
+];
+
+const student = Object.fromEntries(entries);
+console.log(student);
+
+Output:
+{
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+}
+Easy Concept
+[["name", "Adyut"],
+ ["age", 21]]
+        ↓
+Object.fromEntries()
+        ↓
+{name: "Adyut", age: 21}
+
+Step 2  -> this Keyword
+
+13. this in Object Method
+When this is used inside an object method, it generally refers to the object that owns or calls that method.
+
+जब this को object method के अंदर use किया जाता है, तो यह सामान्यतः उस object को refer करता है जो उस method को call कर रहा है।
+
+Example
+const employee = {
+    name: "Adyut",
+    show: function() {
+        console.log(this.name);
+
+    }
+};
+
+employee.show();
+Output: Adyut
+
+Step 3 -> Object Iterations
+
+casual conversational - >"Object.keys(), Object.values(), and Object.entries() are very important for reading or iterating through object properties."
+
+Formal/Technical -> "Object.keys(), Object.values(), and Object.entries() are crucial for retrieving and iterating over object properties."
+
+14. Object.keys() -> Object.keys() returns an array containing the names of an object's own enumerable properties.
+
+Object.keys() object की own enumerable properties के property names/keys की array return करता है।
+
+Syntax
+Object.keys(object);
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+console.log(Object.keys(student));
+Output: ["name", "age", "course"]
+
+15. Object.values() - >"Object.values() returns an array containing the values of an object's own enumerable properties."
+Object.values() object की own enumerable properties की values की array return करता है।
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+console.log(Object.values(student));
+Output: ["Adyut", 21, "BCA"]
+
+16. Object.entries() - >Object.entries() returns an array containing the key-value pairs of an object's own enumerable properties.
+
+Object.entries() object की properties को key-value pair arrays के रूप में return करता है।
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+console.log(Object.entries(student));
+
+Output:[
+    ["name", "Adyut"],
+    ["age", 21],
+    ["course", "BCA"]
+]
+
+17. Iterating Object with Object.entries()
+
+"Object.entries() returns both the key and value, making it highly useful for iterating over an object." 
+
+Practical Example
+const student = {
+    name: "Adyut",
+    age: 21,
+    course: "BCA"
+};
+
+for (const [key, value] of Object.entries(student)) {
+
+    console.log(key + ":", value);
+
+}
+
+Output:
+
+name: Adyut
+age: 21
+course: BCA
+
+18. Object.groupBy()
+English Definition
+
+Object.groupBy() groups elements of an iterable into an object according to a value returned by a callback function.
+
+Hindi Definition
+
+Object.groupBy() किसी iterable के elements को callback function से प्राप्त value के आधार पर अलग-अलग groups में रखता है।
+
+Example
+const students = [
+    { name: "Adyut", course: "BCA" },
+    { name: "Rahul", course: "MCA" },
+    { name: "Aman", course: "BCA" },
+    { name: "Ravi", course: "MCA" }
+];
+
+const groups = Object.groupBy(
+    students,
+    student => student.course
+);
+
+console.log(groups);
+
+Conceptual output:
+
+{
+    BCA: [
+        { name: "Adyut", course: "BCA" },
+        { name: "Aman", course: "BCA" }
+    ],
+
+    MCA: [
+        { name: "Rahul", course: "MCA" },
+        { name: "Ravi", course: "MCA" }
+    ]
+}
+Hindi में
+Students
+   ↓
+course के आधार पर grouping
+   ↓
+ ┌────────────┐
+ │ BCA Group  │
+ └────────────┘
+
+ ┌────────────┐
+ │ MCA Group  │
+ └────────────┘
+
+Note: Object.groupBy() modern JavaScript feature है। बहुत पुराने browsers/environments में इसका support उपलब्ध न हो सकता है।
+
+Step 4 – Getters and Setters
+19. Object Accessors
+English Definition
+
+Getters and setters are special methods used to control how an object property is read and modified.
+
+Hindi Definition
+
+Getters और Setters special methods होते हैं जिनका उपयोग object की property को read और modify करने के तरीके को control करने के लिए किया जाता है।
+
+20. Getter – get
+English Definition
+
+A getter is a special method that is used to get or read a property value.
+
+Hindi Definition
+
+Getter एक special method है जिसका उपयोग property की value को read/get करने के लिए किया जाता है।
+
+Syntax
+get propertyName() {
+    return value;
+}
+Example
+const student = {
+
+    firstName: "Adyut",
+    lastName: "Khan",
+
+    get fullName() {
+        return this.firstName + " " + this.lastName;
+    }
+
+};
+
+console.log(student.fullName);
+
+Output:
+
+Adyut Khan
+Important
+
+Getter को function की तरह:
+
+student.fullName()
+
+नहीं लिखते।
+
+Getter को property की तरह:
+
+student.fullName
+
+access करते हैं।
+
+21. Setter – set
+English Definition
+
+A setter is a special method used to set or modify a property value.
+
+Hindi Definition
+
+Setter एक special method है जिसका उपयोग object की property की value को set या modify करने के लिए किया जाता है।
+
+Example
+const student = {
+
+    name: "",
+
+    set studentName(value) {
+        this.name = value;
+    }
+
+};
+
+student.studentName = "Adyut";
+
+console.log(student.name);
+
+Output:
+
+Adyut
+22. Getter and Setter Together
+const student = {
+
+    firstName: "Adyut",
+    lastName: "Khan",
+
+    get fullName() {
+        return this.firstName + " " + this.lastName;
+    },
+
+    set fullName(value) {
+
+        const parts = value.split(" ");
+
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+
+    }
+
+};
+
+console.log(student.fullName);
+
+student.fullName = "Rahul Sharma";
+
+console.log(student.fullName);
+
+Output:
+
+Adyut Khan
+Rahul Sharma
+Step 5 – Object Management
+23. Property Descriptors
+English Definition
+
+A property descriptor is an object that describes the characteristics of an object property, such as whether it can be changed, enumerated, or redefined.
+
+Hindi Definition
+
+Property Descriptor object की property की characteristics को describe करता है, जैसे property को change, enumerate या redefine किया जा सकता है या नहीं।
+
+Main descriptor attributes:
+
+value
+writable
+enumerable
+configurable
+get
+set
+24. Object.getOwnPropertyDescriptor()
+English Definition
+
+Object.getOwnPropertyDescriptor() returns the descriptor of a specified own property.
+
+Hindi Definition
+
+Object.getOwnPropertyDescriptor() किसी object की specified own property का descriptor return करता है।
+
+Syntax
+Object.getOwnPropertyDescriptor(object, property);
+Example
+const student = {
+    name: "Adyut"
+};
+
+console.log(
+    Object.getOwnPropertyDescriptor(student, "name")
+);
+
+Output में लगभग:
+
+{
+    value: "Adyut",
+    writable: true,
+    enumerable: true,
+    configurable: true
+}
+25. Object.defineProperty()
+English Definition
+
+Object.defineProperty() adds a new property or changes the attributes of an existing property.
+
+Hindi Definition
+
+Object.defineProperty() किसी object में नई property add कर सकता है या existing property के attributes को change कर सकता है।
+
+Syntax
+Object.defineProperty(object, property, descriptor);
+Practical Example
+const student = {};
+
+Object.defineProperty(student, "name", {
+
+    value: "Adyut",
+    writable: false
+
+});
+
+console.log(student.name);
+
+student.name = "Rahul";
+
+console.log(student.name);
+
+Output:
+
+Adyut
+Adyut
+Why?
+
+writable: false के कारण property की value change नहीं होगी।
+
+26. Adding or Changing Properties
+Add Property
+const student = {
+    name: "Adyut"
+};
+
+student.age = 21;
+
+console.log(student);
+
+Output:
+
+{
+    name: "Adyut",
+    age: 21
+}
+Change Property
+student.age = 22;
+
+अब:
+
+age = 22
+Step 6 – Object Protection
+
+JavaScript में object को unwanted changes से protect करने के लिए तीन important methods हैं:
+
+Object.preventExtensions()
+Object.seal()
+Object.freeze()
+27. Object.preventExtensions()
+English Definition
+
+Object.preventExtensions() prevents new properties from being added to an object.
+
+Hindi Definition
+
+Object.preventExtensions() object में नई properties add होने से रोकता है, लेकिन existing properties को generally modify या delete किया जा सकता है।
+
+Example
+const student = {
+    name: "Adyut"
+};
+
+Object.preventExtensions(student);
+
+student.age = 21;
+
+student.name = "Rahul";
+
+console.log(student);
+
+Conceptually:
+
+age → Add नहीं होगी
+name → Change हो सकती है
+28. Object.seal()
+English Definition
+
+Object.seal() prevents adding or deleting properties, but existing property values can generally still be changed if they are writable.
+
+Hindi Definition
+
+Object.seal() नई properties add करने और existing properties delete करने से रोकता है, लेकिन writable existing properties की values बदली जा सकती हैं।
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21
+};
+
+Object.seal(student);
+
+student.name = "Rahul";
+
+delete student.age;
+
+student.course = "BCA";
+
+console.log(student);
+
+Result:
+
+name change → Allowed
+delete       → Not allowed
+new property → Not allowed
+29. Object.freeze()
+English Definition
+
+Object.freeze() prevents adding, deleting, or changing properties of an object.
+
+Hindi Definition
+
+Object.freeze() object में properties को add, delete या modify करने से रोकता है।
+
+Example
+const student = {
+    name: "Adyut",
+    age: 21
+};
+
+Object.freeze(student);
+
+student.name = "Rahul";
+
+student.age = 25;
+
+student.course = "BCA";
+
+delete student.age;
+
+console.log(student);
+
+Object की original properties change नहीं होंगी।
+
+30. Protection Difference
+| Method                | Add | Delete | Change |
+| --------------------- | --: | -----: | -----: |
+| Normal Object         |   ✅ |      ✅ |      ✅ |
+| `preventExtensions()` |   ❌ |      ✅ |      ✅ |
+| `seal()`              |   ❌ |      ❌ |      ✅ |
+| `freeze()`            |   ❌ |      ❌ |      ❌ |
+
+
+Step 7 – Prototypes
+31. JavaScript Prototype
+English Definition
+
+A prototype is an object from which another object can inherit properties and methods.
+
+Hindi Definition
+
+Prototype एक ऐसा object है जिससे दूसरा object properties और methods को inherit कर सकता है।
+
+Important Concept
+
+JavaScript objects have a prototype chain through which inherited properties and methods can be accessed.
+
+Example
+const person = {
+
+    greet: function() {
+        console.log("Hello");
+    }
+
+};
+
+const student = Object.create(person);
+
+student.name = "Adyut";
+
+student.greet();
+
+Output:
+
+Hello
+
+student के अंदर directly greet() नहीं है, लेकिन वह अपने prototype person से इसे access करता है।
+
+32. Prototype Chain
+student
+   ↓
+student's prototype
+   ↓
+person
+   ↓
+Object.prototype
+   ↓
+null
+Hindi
+
+जब JavaScript को कोई property या method object में directly नहीं मिलती, तो वह prototype chain में ऊपर search कर सकती है।
+
+33. Constructor और Prototype
+function Student(name) {
+
+    this.name = name;
+
+}
+
+Student.prototype.show = function() {
+
+    console.log("Name:", this.name);
+
+};
+
+const student1 = new Student("Adyut");
+
+student1.show();
+
+Output:
+
+Name: Adyut
+Explanation
+
+English: show() is stored on the constructor's prototype and can be accessed by objects created using new Student().
+
+Hindi: show() constructor के prototype पर रखा गया है और new Student() से बनाए गए objects इसे access कर सकते हैं।
+
+34. Important Object Methods – Quick Notes
+
+| Method                              | English Meaning                  | Hindi Meaning                          |
+| ----------------------------------- | -------------------------------- | -------------------------------------- |
+| `Object.keys()`                     | Returns property names           | Property names की array                |
+| `Object.values()`                   | Returns property values          | Property values की array               |
+| `Object.entries()`                  | Returns key-value pairs          | Key-value pairs की array               |
+| `Object.assign()`                   | Copies properties                | Properties copy करता है                |
+| `Object.create()`                   | Creates object with prototype    | Prototype के साथ object बनाता है       |
+| `Object.fromEntries()`              | Creates object from entries      | Entries से object बनाता है             |
+| `Object.groupBy()`                  | Groups iterable elements         | Elements को groups में रखता है         |
+| `Object.getOwnPropertyDescriptor()` | Gets property descriptor         | Property का descriptor देता है         |
+| `Object.defineProperty()`           | Adds/changes property descriptor | Property/descriptor add/change करता है |
+| `Object.preventExtensions()`        | Prevents new properties          | नई properties रोकता है                 |
+| `Object.seal()`                     | Prevents add/delete              | Add और delete रोकता है                 |
+| `Object.freeze()`                   | Prevents modifications           | Add/delete/change रोकता है             |
+
+35. Object Accessibility
+
+Object की properties और methods को access करने के मुख्य तरीके:
+
+Dot Notation
+student.name;
+student.show();
+Bracket Notation
+student["name"];
+student["show"]();
+Dynamic Property Access
+const property = "name";
+
+console.log(student[property]);
+Hindi
+
+Bracket notation तब बहुत useful होती है जब property का नाम किसी variable में stored हो।
+
+36. Complete Object Practical
+
+यह program Object chapter के बहुत सारे concepts को एक साथ demonstrate करता है।
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Object Practical</title>
+</head>
+
+<body>
+
+<h2 id="output"></h2>
+
+<script>
+
+const student = {
+
+    name: "Adyut",
+    age: 21,
+    course: "BCA",
+
+    show: function() {
+
+        return this.name + " - " + this.course;
+
+    }
+
+};
+
+
+// Property Access
+console.log(student.name);
+
+console.log(student["age"]);
+
+
+// Object Method
+console.log(student.show());
+
+
+// Object Keys
+console.log(Object.keys(student));
+
+
+// Object Values
+console.log(Object.values(student));
+
+
+// Object Entries
+console.log(Object.entries(student));
+
+
+// Display Object
+document.getElementById("output").innerHTML =
+    student.name + " is studying " + student.course;
+
+
+</script>
+
+</body>
+
+</html>
+37. Complete Object Chapter – Exam Revision
+                    JAVASCRIPT OBJECT
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+      Properties        Methods           this
+          │                │                │
+      name, age        functions       current object
+          │
+          ↓
+    Object Creation
+          │
+    ┌─────┼─────────────┐
+    ↓     ↓             ↓
+ Literal  new      Constructor
+    │
+    ├── Object.assign()
+    ├── Object.create()
+    └── Object.fromEntries()
+    
+          ↓
+      Iteration
+          │
+    ┌─────┼─────────────┐
+    ↓     ↓             ↓
+  keys  values       entries
+          │
+          ↓
+       groupBy()
+
+          ↓
+    Accessors
+          │
+      ┌───┴───┐
+      ↓       ↓
+     get     set
+
+          ↓
+     Management
+          │
+     Descriptors
+          │
+   defineProperty()
+
+          ↓
+     Protection
+          │
+ ┌────────┼──────────┐
+ ↓        ↓          ↓
+prevent   seal      freeze
+
+          ↓
+      Prototype
+          │
+      Inheritance

@@ -1,0 +1,683 @@
+JavaScript Functions
+A function is a reusable block of code designed to perform a specific task. A function runs when it is called or invoked.
+Function code ka ek aisa block hota hai jisme hum kisi particular kaam ka code likhte hain. Is code ko hum baar-baar reuse kar sakte hain.
+
+Example:
+Agar hume 10 baar "Hello" print karna hai, to 10 baar console.log() likhne ke bajay ek function bana sakte hain aur use 10 baar call kar sakte hain.
+
+Basic Syntax
+function functionName() {
+    // code
+}
+
+function hello() {
+    console.log("Hello Student");
+}
+
+hello();
+Output
+Hello Student
+
+function hello()
+       ↓
+Function create hua
+       ↓
+hello()
+       ↓
+Function call hua
+       ↓
+"Hello Student"
+
+Sirf function banane se code execute nahi hota:
+
+Step 2: Calling / Invoking a Function 
+
+Calling a function means executing the code written inside the function.
+Function ko call karna matlab function ke andar likhe code ko run/execute karna.
+Syntax
+functionName();
+
+function welcome() {
+    console.log("Welcome to JavaScript");
+}
+welcome();
+
+Output: Welcome to JavaScript
+
+function hello() {
+    console.log("Hello");
+}
+hello();
+hello();
+hello();
+
+Output:Hello Hello Hello
+
+Step 3: Function Parameters
+
+A parameter is a variable/name written inside the parentheses of a function definition to receive a value.
+
+Function definition me parentheses () ke andar jo variable/name likhte hain, use parameter kehte hain.
+
+* Parameters are the names listed in the function definition.
+* Arguments are the real values passed to, and received by the function.
+
+Ab maan lo function ko bahar se value deni hai.
+
+Example:
+Syntax
+function functionName(parameter) {
+    // code
+}
+
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Adil");
+
+Output: Hello Adil
+
+Flow
+greet("Adil")
+      ↓
+"Adil" function ko diya
+      ↓
+name = "Adil"
+      ↓
+"Hello " + name
+      ↓
+Hello Adil
+
+function student(name, age) {
+    console.log("Name:", name);
+    console.log("Age:", age);
+}
+student("Adil", 22);
+
+Output:Name: Adil Age: 22
+
+Step 4: Function Arguments
+
+Parameter = name/variable written in function definition.
+Argument = actual value passed when calling the function.
+
+Parameter = function banate time jo variable likhte hain.
+Argument = function call karte time jo actual value dete hain.
+
+Yahan Parameter aur Argument ka difference bahut important hai.
+
+Example:
+
+function add(a, b) {
+    console.log(a + b);
+}
+add(10, 20);
+
+Function Definition
+       ↓
+function add(a, b)
+             ↑  ↑
+        Parameters
+
+Function Call
+       ↓
+add(10, 20)
+    ↑   ↑
+ Arguments
+
+function multiply(x, y) {
+    console.log(x * y);
+}
+
+multiply(5, 4);
+
+Output:20
+
+Here:x, y → Parameters 5, 4 → Arguments
+
+Step 5: Function Return Values
+
+The return statement is used to send a value back from a function to the code that called it.
+return function ke andar se value ko wapas caller ke paas bhejta hai.
+
+Ab tak hum function ke andar:console.log()use kar rahe the.Lekin kabhi-kabhi hume function se value wapas leni hoti hai.Iske liye return use hota hai.
+
+Syntax
+function functionName() {
+    return value;
+}
+
+function add() {
+    return 10 + 20;
+}
+
+let result = add();
+console.log(result);
+Output:30
+Flow
+add()
+ ↓
+10 + 20
+ ↓
+return 30
+ ↓
+result = 30
+ ↓
+console.log(result)
+ ↓
+30
+console.log() vs return
+console.log()
+
+Sirf value ko screen/console par display karta hai.
+
+function add() {
+    console.log(10 + 20);
+}
+
+add();
+Output: 30
+Lekin is value ko directly kisi variable me receive nahi kar rahe.
+
+return ->Value ko function ke bahar wapas bhejta hai.
+
+function add() {
+    return 10 + 20;
+}
+
+let result = add();
+console.log(result);
+Output: 30
+
+function test() {
+    return 10;
+    console.log("Hello");
+}
+console.log(test());
+Output: 10
+
+Step 6: Parameters + Arguments + Return Together
+
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+
+console.log(result);
+
+Output:30
+
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+let total = calculateTotal(500, 3);
+
+console.log("Total:", total);
+
+Output: Total: 1500
+
+Step 7: Function Expressions
+
+Ab function banane ka ek aur method hai.
+
+* Normal Function
+function add(a, b) {
+    return a + b;
+}
+
+* Function Expression
+
+A function expression is a function stored inside a variable.
+
+Jab hum function ko ek variable ke andar store karte hain, use function expression kehte hain.
+
+Syntax
+let variableName = function() {
+    // code
+};
+
+Example
+let greet = function() {
+    console.log("Hello Student");
+};
+greet();
+
+Output: Hello Student
+
+Function Expression with Parameters
+let add = function(a, b) {
+    return a + b;
+};
+
+let result = add(10, 20);
+console.log(result);
+Output: 30
+
+Step 8: Arrow Functions ->
+
+An arrow function is a shorter syntax for writing a function expression.
+Arrow function function expression likhne ka short form hai.
+
+Ab JavaScript function ko aur short way me likh sakte hain.
+
+Isme generally:
+
+function keyword hata sakte hain.
+
+Single expression me {} hata sakte hain.
+Single expression me return bhi hata sakte hain.
+
+Basic Arrow Function
+
+* Normal function:
+
+let add = function(a, b) {
+    return a + b;
+};
+
+* Arrow function:
+
+let add = (a, b) => {
+    return a + b;
+};
+
+Yahan:
+
+function keyword
+       ↓
+    removed
+
+(a, b)
+   ↓
+  =>
+(a, b) => 
+
+Shortest Form
+
+Agar function me sirf ek expression hai:
+
+let add = (a, b) => a + b;
+Ye internally conceptually:
+
+let add = function(a, b) {
+    return a + b;
+};
+
+jaisa kaam karta hai.
+
+Example
+let add = (a, b) => a + b;
+console.log(add(10, 20));
+
+Output: 30
+
+Arrow Function  3 Forms
+
+1. Normal Function
+function add(a, b) {
+    return a + b;
+}
+
+2. Function Expression
+let add = function(a, b) {
+    return a + b;
+};
+
+3. Arrow Function
+
+let add = (a, b) => {
+    return a + b;
+};
+
+4. Short Arrow Function
+let add = (a, b) => a + b;
+
+* Arrow Function: One Parameter
+
+Agar sirf one parameter hai, parentheses () bhi hata sakte hain.
+
+let square = x => x * x;
+console.log(square(5));
+Output: 25
+
+Ye equivalent hai:
+
+let square = (x) => {
+    return x * x;
+};
+
+Arrow Function: No Parameter
+
+Agar parameter nahi hai to () lagana zaroori hai.
+
+let hello = () => "Hello Student";
+console.log(hello());
+Output: Hello Student
+
+Arrow Function: Multiple Statements
+
+Agar function ke andar multiple statements hain, {} use karna padega.
+
+let calculate = (a, b) => {
+    let sum = a + b;
+    return sum;
+};
+
+console.log(calculate(10, 20));
+
+Output: 30
+
+1. What is a Function?
+English Definition
+
+A function in JavaScript is a reusable block of code designed to perform a particular task. A function is defined using the function keyword, followed by a function name, parentheses ( ), and curly brackets { }. Optional parameters are written inside the parentheses, and the code to be executed is written inside the curly brackets. A function can also return an optional value to the code that called it.
+
+हिंदी Definition
+
+Function JavaScript में code का एक reusable block होता है, जिसे किसी particular task को करने के लिए बनाया जाता है। Function बनाने के लिए function keyword, उसके बाद function name, parentheses ( ) और curly brackets { } का उपयोग किया जाता है। Function को value देने के लिए parentheses के अंदर parameters लिखे जाते हैं और execute होने वाला code { } के अंदर लिखा जाता है। Function जरूरत पड़ने पर return statement की मदद से कोई value वापस भी भेज सकता है।
+
+आसान भाषा में
+
+Function = एक ऐसा code block जिसे एक बार बनाकर जरूरत के अनुसार बार-बार call करके चला सकते हैं।
+
+2. Why Use Functions?
+
+Functions का सबसे बड़ा फायदा है कि एक ही code को बार-बार लिखने की जरूरत नहीं होती।
+
+Advantages / Uses of Functions
+1. Code Reusability
+
+English: A function allows us to reuse the same code multiple times.
+
+Hindi: एक ही code को बार-बार इस्तेमाल कर सकते हैं।
+
+function hello() {
+    console.log("Hello Student");
+}
+
+hello();
+hello();
+hello();
+2. Avoid Code Repetition
+
+English: Functions reduce repeated code.
+
+Hindi: बार-बार same code लिखने की जरूरत नहीं पड़ती।
+
+बिना function:
+
+console.log(10 + 20);
+console.log(10 + 20);
+console.log(10 + 20);
+
+Function के साथ:
+
+function add() {
+    console.log(10 + 20);
+}
+
+add();
+add();
+add();
+3. Code Organization
+
+English: Functions divide a large program into small and manageable blocks.
+
+Hindi: बड़े program को छोटे-छोटे parts में divide कर सकते हैं।
+
+Large Program
+     ↓
+ ┌───────────┐
+ │ Login     │
+ ├───────────┤
+ │ Calculate │
+ ├───────────┤
+ │ Print     │
+ └───────────┘
+4. Easy Debugging
+
+English: Functions make it easier to find and fix errors.
+
+Hindi: अगर error आता है तो पता लगाना आसान होता है कि problem किस function में है।
+
+5. Easy Maintenance
+
+English: Changes can be made in one function instead of changing the same code at many places.
+
+Hindi: Code में change करना आसान होता है क्योंकि एक ही जगह function में modification कर सकते हैं।
+
+6. Modularity
+
+English: Functions divide a program into independent modules.
+
+Hindi: Program को अलग-अलग logical modules में divide किया जा सकता है।
+
+3. Disadvantages / Limitations of Functions
+
+Functions के advantages ज्यादा हैं, लेकिन कुछ limitations भी हो सकती हैं।
+
+1. Extra Function Calls
+
+English: Calling many small functions can add some execution overhead.
+
+Hindi: बहुत ज्यादा छोटे-छोटे functions call करने पर थोड़ा extra execution overhead हो सकता है।
+
+2. More Functions Can Increase Complexity
+
+English: A program with too many poorly organized functions can become difficult to understand.
+
+Hindi: अगर functions को properly organize नहीं किया गया तो program समझना difficult हो सकता है।
+
+3. Parameter Management
+
+English: Functions with many parameters can become difficult to use and maintain.
+
+Hindi: बहुत ज्यादा parameters वाले functions को manage करना मुश्किल हो सकता है।
+
+Exam point: Functions के advantages disadvantages लिखते समय मुख्य focus reusability, code repetition, modularity, debugging और maintenance पर रखें।
+
+4. What Does a Function Look Like?
+
+JavaScript में basic function का structure इस प्रकार होता है:
+
+function functionName(parameter1, parameter2) {
+    // code to be executed
+}
+Function के मुख्य Parts
+function     add       (a, b)       {
+   ↓          ↓           ↓          ↓
+keyword      name     parameters   body
+                                      ↓
+                                    code
+                                   }
+
+Function Invocation
+Function invocation means calling a function to execute the code inside it.
+A function is executed when it is called or invoked.
+
+. Function Parameters
+
+Parameters are variables or names written inside the parentheses of a function definition. They are used to receive values from the function call.
+
+Function definition के parentheses ( ) के अंदर लिखे गए variables/names को parameters कहते हैं। ये function को मिलने वाली values को receive करते हैं।
+
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+* One Parameter Function
+
+function square(number) {
+    return number * number;
+}
+
+let result = square(5);
+console.log(result);
+Output:25
+
+11. Multiple Parameters Function
+
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+console.log(result);
+Output: 30
+
+12. Function Arguments
+Arguments are the actual values passed to a function when it is called.
+Function को call करते समय जो actual values दी जाती हैं, उन्हें arguments कहते हैं।
+
+function add(a, b) {
+    return a + b;
+}
+
+add(10, 20);
+
+Parameter = Function create time inside parantheses variable
+Argument = Function calling time actual value
+
+13. Function Return
+
+The return statement sends a value from a function back to the code that called the function.
+return statement function के अंदर से value/result को वापस caller के पास भेजता है।
+
+Example
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+console.log(result);
+
+Output: 30
+
+14. Function Without Return
+
+function hello() {
+    console.log("Hello Student");
+}
+
+hello();
+
+15. Function With Return
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+console.log(result);
+
+यह function result वापस देता है।
+
+Difference
+console.log()
+     ↓
+Screen/Console पर दिखाता है
+
+return
+     ↓
+Value वापस भेजता है
+
+16. One Parameter + Return
+function square(n) {
+    return n * n;
+}
+
+console.log(square(5));
+
+Output: 25
+
+17. Multiple Parameters + Return
+function multiply(a, b) {
+    return a * b;
+}
+
+console.log(multiply(5, 4));
+Output:20, 
+
+18. Function Expression
+A function expression is a function that is stored in a variable.
+जब हम किसी function को एक variable में store करते हैं, तो उसे function expression कहते हैं।
+
+Syntax
+let variableName = function(parameters) {
+    // code
+};
+
+Example
+let add = function(a, b) {
+    return a + b;
+};
+
+console.log(add(10, 20));
+Output: 30
+
+19. Arrow Function
+
+An arrow function is a shorter syntax for writing a function expression. It uses the => arrow instead of the function keyword.
+
+Arrow function, function expression को लिखने का short form है। इसमें function keyword की जगह => arrow operator का उपयोग किया जाता है।
+
+Normal Function Expression
+let add = function(a, b) {
+    return a + b;
+};
+
+Arrow Function
+let add = (a, b) => {
+    return a + b;
+};
+
+More Short
+let add = (a, b) => a + b;
+
+Output:
+
+console.log(add(10, 20));
+30
+
+20. Arrow Function के Basic Forms
+
+No Parameter
+let hello = () => {
+    console.log("Hello");
+};
+
+hello();
+
+One Parameter
+let square = n => n * n;
+console.log(square(5));
+Output: 25
+
+Multiple Parameters
+let add = (a, b) => a + b;
+console.log(add(10, 20));
+
+Output:30
+
+// Function Definition
+function calculateTotal(price, quantity) {
+
+    // price and quantity are parameters
+    let total = price * quantity;
+
+    // Return the result
+    return total;
+}
+
+// Function Invocation
+let result = calculateTotal(500, 3);
+
+// 500 and 3 are arguments
+
+console.log("Total:", result);
