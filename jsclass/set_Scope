@@ -1,0 +1,969 @@
+
+1. What is a Set?
+
+A Set in JavaScript is a collection of unique values. A Set does not allow duplicate elements.
+
+Set JavaScript का एक collection object है जिसमें केवल unique values store होती हैं। अगर same value को दोबारा add किया जाए, तो वह duplicate के रूप में store नहीं होती।
+
+Example
+const numbers = new Set([10, 20, 30, 20, 10]);
+
+console.log(numbers);
+Output
+Set(3) {10, 20, 30}
+
+Explanation:
+10 और 20 दोबारा दिए गए थे, लेकिन Set ने उन्हें duplicate के रूप में store नहीं किया।
+
+2. Why Use Set?
+English
+
+Set is mainly used when we need to store unique values and remove duplicate data.
+
+Hindi
+
+Set का मुख्य उपयोग तब होता है जब हमें duplicate values हटाकर केवल unique values रखनी हों।
+
+Example
+const names = ["Adil", "Rahul", "Adil", "Aman", "Rahul"];
+
+const uniqueNames = new Set(names);
+
+console.log(uniqueNames);
+Output
+Set(3) {"Adil", "Rahul", "Aman"}
+3. Creating a Set
+
+Set बनाने के लिए new Set() constructor का उपयोग किया जाता है।
+
+Syntax
+const setName = new Set();
+Practical
+const students = new Set();
+
+console.log(students);
+Output
+Set(0) {}
+Hindi
+
+यह एक empty Set create करता है।
+
+4. new Set() — Empty Set
+English Definition
+
+new Set() creates a new empty Set object.
+
+Hindi Definition
+
+new Set() एक नया खाली Set object बनाता है।
+
+const numbers = new Set();
+
+console.log(numbers);
+
+Output:
+
+Set(0) {}
+5. Create Set with Initial Values
+
+हम new Set() में array या iterable values देकर Set को directly create कर सकते हैं।
+
+Syntax
+const setName = new Set(iterable);
+Practical
+const numbers = new Set([10, 20, 30, 20, 10]);
+
+console.log(numbers);
+
+Output:
+
+Set(3) {10, 20, 30}
+Hindi
+
+Set automatically duplicate values को remove कर देता है।
+
+6. add() Method
+English Definition
+
+The add() method adds a new value to a Set.
+
+Hindi Definition
+
+add() method का उपयोग Set में नई value जोड़ने के लिए किया जाता है।
+
+Syntax
+setName.add(value);
+Practical
+const numbers = new Set();
+
+numbers.add(10);
+numbers.add(20);
+numbers.add(30);
+
+console.log(numbers);
+Output
+Set(3) {10, 20, 30}
+Adding Duplicate Value
+const numbers = new Set();
+
+numbers.add(10);
+numbers.add(20);
+numbers.add(10);
+
+console.log(numbers);
+
+Output:
+
+Set(2) {10, 20}
+Hindi
+
+10 को दो बार add किया गया, लेकिन Set ने उसे केवल एक बार रखा।
+
+7. Adding Different Data Types
+
+Set में अलग-अलग types की values रख सकते हैं।
+
+const data = new Set();
+
+data.add(10);
+data.add("Adil");
+data.add(true);
+data.add(null);
+
+console.log(data);
+
+Output:
+
+Set(4) {10, "Adil", true, null}
+8. Set Allows Objects and Arrays
+
+Set में objects और arrays भी values के रूप में रखे जा सकते हैं।
+
+const data = new Set();
+
+data.add([10, 20]);
+data.add({ name: "Adil" });
+
+console.log(data);
+9. Listing Set Elements
+
+Set के elements को देखने के लिए हम कई तरीके use कर सकते हैं।
+
+9.1 for...of
+English
+
+for...of is used to iterate through the values of a Set.
+
+Hindi
+
+for...of loop का उपयोग Set की सभी values को एक-एक करके प्राप्त करने के लिए किया जाता है।
+
+Syntax
+for (let value of setName) {
+    // code
+}
+Practical
+const numbers = new Set([10, 20, 30, 40]);
+
+for (let value of numbers) {
+    console.log(value);
+}
+Output
+10
+20
+30
+40
+10. forEach() with Set
+English Definition
+
+forEach() executes a function once for every value in the Set.
+
+Hindi Definition
+
+forEach() Set की प्रत्येक value के लिए एक function को execute करता है।
+
+Syntax
+setName.forEach(function(value) {
+    // code
+});
+Practical
+const names = new Set(["Adil", "Rahul", "Aman"]);
+
+names.forEach(function(name) {
+    console.log(name);
+});
+Output
+Adil
+Rahul
+Aman
+11. Set size Property
+English Definition
+
+The size property returns the number of unique elements in a Set.
+
+Hindi Definition
+
+size property Set के अंदर मौजूद unique elements की संख्या बताती है।
+
+Syntax
+setName.size
+Practical
+const numbers = new Set([10, 20, 30, 20, 10]);
+
+console.log(numbers.size);
+Output
+3
+12. has() Method
+English Definition
+
+The has() method checks whether a value exists in the Set.
+
+Hindi Definition
+
+has() method check करता है कि कोई particular value Set के अंदर मौजूद है या नहीं।
+
+Syntax
+setName.has(value);
+Practical
+const numbers = new Set([10, 20, 30]);
+
+console.log(numbers.has(20));
+console.log(numbers.has(50));
+Output
+true
+false
+13. delete() Method
+English Definition
+
+The delete() method removes a specified value from a Set.
+
+Hindi Definition
+
+delete() method Set से किसी particular value को remove करता है।
+
+Syntax
+setName.delete(value);
+Practical
+const numbers = new Set([10, 20, 30]);
+
+numbers.delete(20);
+
+console.log(numbers);
+Output
+Set(2) {10, 30}
+Return Value
+
+delete() returns:
+
+true → value successfully removed.
+false → value did not exist.
+const numbers = new Set([10, 20, 30]);
+
+console.log(numbers.delete(20));
+console.log(numbers.delete(50));
+
+Output:
+
+true
+false
+14. clear() Method
+English Definition
+
+The clear() method removes all elements from a Set.
+
+Hindi Definition
+
+clear() method Set के सभी elements को remove कर देता है।
+
+Syntax
+setName.clear();
+Practical
+const numbers = new Set([10, 20, 30]);
+
+numbers.clear();
+
+console.log(numbers);
+
+Output:
+
+Set(0) {}
+15. values() Method
+English Definition
+
+The values() method returns an iterator containing all values of the Set.
+
+Hindi Definition
+
+values() method Set की सभी values का iterator return करता है।
+
+Syntax
+setName.values();
+Practical
+const numbers = new Set([10, 20, 30]);
+
+const values = numbers.values();
+
+for (let value of values) {
+    console.log(value);
+}
+
+Output:
+
+10
+20
+30
+16. keys() Method
+English Definition
+
+The keys() method returns an iterator containing the values of a Set.
+
+Hindi Definition
+
+Set में keys() method भी Set की values का iterator return करता है।
+
+Syntax
+setName.keys();
+Practical
+const numbers = new Set([10, 20, 30]);
+
+for (let value of numbers.keys()) {
+    console.log(value);
+}
+
+Output:
+
+10
+20
+30
+Important
+
+Object में:
+
+keys → keys
+values → values
+
+लेकिन Set में:
+
+keys() → values
+values() → values
+
+क्योंकि Set में traditional key-value pairs नहीं होते।
+
+17. entries() Method
+English Definition
+
+The entries() method returns an iterator containing [value, value] pairs for each Set element.
+
+Hindi Definition
+
+entries() method प्रत्येक Set element के लिए [value, value] pair का iterator return करता है।
+
+Syntax
+setName.entries();
+Practical
+const numbers = new Set([10, 20, 30]);
+
+for (let entry of numbers.entries()) {
+    console.log(entry);
+}
+
+Output:
+
+[10, 10]
+[20, 20]
+[30, 30]
+Why [value, value]?
+
+Set में separate key नहीं होती। इसलिए entries() compatibility के लिए:
+
+[value, value]
+
+return करता है।
+
+18. Set.prototype[Symbol.iterator]
+English
+
+A Set is iterable, so it can directly be used with for...of, spread syntax, and other iterable operations.
+
+Hindi
+
+Set एक iterable object है, इसलिए इसे for...of और spread operator ... के साथ directly use कर सकते हैं।
+
+Practical
+const numbers = new Set([10, 20, 30]);
+
+for (let number of numbers) {
+    console.log(number);
+}
+19. Convert Set to Array
+
+Set को Array में convert करने के लिए spread operator या Array.from() use कर सकते हैं।
+
+Method 1 — Spread Operator
+const numbers = new Set([10, 20, 30]);
+
+const arr = [...numbers];
+
+console.log(arr);
+
+Output:
+
+[10, 20, 30]
+Method 2 — Array.from()
+const numbers = new Set([10, 20, 30]);
+
+const arr = Array.from(numbers);
+
+console.log(arr);
+20. Convert Array to Set
+const numbers = [10, 20, 30, 20, 10];
+
+const uniqueNumbers = new Set(numbers);
+
+console.log(uniqueNumbers);
+
+Output:
+
+Set(3) {10, 20, 30}
+
+| Method / Property | English                          | Hindi                                |
+| ----------------- | -------------------------------- | ------------------------------------ |
+| `new Set()`       | Creates Set                      | Set बनाता है                         |
+| `add()`           | Adds value                       | Value जोड़ता है                      |
+| `has()`           | Checks value                     | Value मौजूद है या नहीं check करता है |
+| `delete()`        | Removes one value                | एक value हटाता है                    |
+| `clear()`         | Removes all values               | सभी values हटाता है                  |
+| `size`            | Number of values                 | Elements की संख्या                   |
+| `values()`        | Returns value iterator           | Values का iterator                   |
+| `keys()`          | Returns value iterator           | Values का iterator                   |
+| `entries()`       | Returns `[value,value]` iterator | Value pairs का iterator              |
+| `forEach()`       | Iterates values                  | प्रत्येक value पर function चलाता है  |
+
+21. JavaScript Set Logical Methods
+
+Modern JavaScript में Set के लिए 7 important set-operation methods उपलब्ध हैं:
+
+union()
+difference()
+intersection()
+isDisjointFrom()
+isSubsetOf()
+isSupersetOf()
+symmetricDifference()
+
+इन methods का उपयोग दो Sets के बीच mathematical set operations करने के लिए किया जाता है।
+
+22. union()
+English Definition
+
+union() returns a new Set containing all unique elements from both Sets.
+
+Hindi Definition
+
+union() दो Sets के सभी unique elements को combine करके एक नया Set return करता है।
+
+Mathematical Concept
+A ∪ B
+Syntax
+setA.union(setB);
+Practical
+const A = new Set([1, 2, 3]);
+const B = new Set([3, 4, 5]);
+
+const result = A.union(B);
+
+console.log(result);
+Output
+Set(5) {1, 2, 3, 4, 5}
+Easy Logic
+A = 1 2 3
+B =     3 4 5
+--------------
+    1 2 3 4 5
+
+Duplicate 3 केवल एक बार रहेगा।
+
+23. difference()
+English Definition
+
+difference() returns a new Set containing elements that exist in the first Set but not in the second Set.
+
+Hindi Definition
+
+difference() पहले Set के वे elements return करता है जो दूसरे Set में मौजूद नहीं हैं।
+
+Syntax
+setA.difference(setB);
+Practical
+const A = new Set([1, 2, 3, 4]);
+const B = new Set([3, 4, 5, 6]);
+
+const result = A.difference(B);
+
+console.log(result);
+Output
+Set(2) {1, 2}
+Logic
+A = 1 2 3 4
+B =     3 4 5 6
+
+A - B = 1 2
+Important
+
+Direction matters:
+
+A.difference(B)
+
+और
+
+B.difference(A)
+
+का result अलग हो सकता है।
+
+24. intersection()
+English Definition
+
+intersection() returns a new Set containing elements common to both Sets.
+
+Hindi Definition
+
+intersection() दोनों Sets में common elements को return करता है।
+
+Syntax
+setA.intersection(setB);
+Practical
+const A = new Set([1, 2, 3, 4]);
+const B = new Set([3, 4, 5, 6]);
+
+const result = A.intersection(B);
+
+console.log(result);
+Output
+Set(2) {3, 4}
+Logic
+A = 1 2 3 4
+B =     3 4 5 6
+        ↑ ↑
+      Common
+25. isDisjointFrom()
+English Definition
+
+isDisjointFrom() checks whether two Sets have no elements in common.
+
+Hindi Definition
+
+isDisjointFrom() check करता है कि दोनों Sets में कोई भी common element है या नहीं।
+
+अगर common element नहीं है → true
+
+अगर common element है → false
+
+Syntax
+setA.isDisjointFrom(setB);
+Practical
+const A = new Set([1, 2, 3]);
+const B = new Set([4, 5, 6]);
+
+console.log(A.isDisjointFrom(B));
+Output
+true
+
+क्योंकि दोनों में कोई common value नहीं है।
+
+दूसरा Example
+const A = new Set([1, 2, 3]);
+const B = new Set([3, 4, 5]);
+
+console.log(A.isDisjointFrom(B));
+
+Output:
+
+false
+
+क्योंकि 3 दोनों में मौजूद है।
+
+26. isSubsetOf()
+English Definition
+
+isSubsetOf() checks whether every element of the first Set is also present in the second Set.
+
+Hindi Definition
+
+isSubsetOf() check करता है कि पहले Set के सभी elements दूसरे Set में मौजूद हैं या नहीं।
+
+Syntax
+setA.isSubsetOf(setB);
+Example
+const A = new Set([1, 2]);
+const B = new Set([1, 2, 3, 4]);
+
+console.log(A.isSubsetOf(B));
+Output
+true
+Why?
+A = 1 2
+B = 1 2 3 4
+
+A की हर value B में मौजूद है।
+
+False Example
+const A = new Set([1, 5]);
+const B = new Set([1, 2, 3, 4]);
+
+console.log(A.isSubsetOf(B));
+
+Output:
+
+false
+
+क्योंकि 5, B में नहीं है।
+
+27. isSupersetOf()
+English Definition
+
+isSupersetOf() checks whether the first Set contains every element of the second Set.
+
+Hindi Definition
+
+isSupersetOf() check करता है कि पहले Set में दूसरे Set के सभी elements मौजूद हैं या नहीं।
+
+Syntax
+setA.isSupersetOf(setB);
+Practical
+const A = new Set([1, 2, 3, 4]);
+const B = new Set([1, 2]);
+
+console.log(A.isSupersetOf(B));
+Output
+true
+Logic
+A = 1 2 3 4
+B = 1 2
+
+A के अंदर B की सभी values हैं।
+
+28. symmetricDifference()
+English Definition
+
+symmetricDifference() returns a new Set containing elements that exist in either Set but not in both Sets.
+
+Hindi Definition
+
+symmetricDifference() उन elements को return करता है जो किसी एक Set में हैं लेकिन दोनों Sets में common नहीं हैं।
+
+Syntax
+setA.symmetricDifference(setB);
+Practical
+const A = new Set([1, 2, 3, 4]);
+const B = new Set([3, 4, 5, 6]);
+
+const result = A.symmetricDifference(B);
+
+console.log(result);
+Output
+Set(4) {1, 2, 5, 6}
+Logic
+A = 1 2 3 4
+B =     3 4 5 6
+
+Common = 3 4
+
+Result = 1 2 5 6
+
+यानि common elements हटाकर बाकी unique elements मिलते हैं।
+
+29. Seven Logical Set Methods — Easy Table
+
+| Method                  | Simple English                   | आसान Hindi                      |
+| ----------------------- | -------------------------------- | ------------------------------- |
+| `union()`               | All elements of A and B          | दोनों के सभी unique elements    |
+| `difference()`          | A elements not in B              | A में हैं, B में नहीं           |
+| `intersection()`        | Common elements                  | दोनों में common                |
+| `isDisjointFrom()`      | No common elements?              | कोई common element नहीं है?     |
+| `isSubsetOf()`          | Is A completely inside B?        | क्या A की सभी values B में हैं? |
+| `isSupersetOf()`        | Does A completely contain B?     | क्या A में B की सभी values हैं? |
+| `symmetricDifference()` | Elements in either, but not both | दोनों के अलग-अलग elements       |
+
+
+30. Set Logical Methods को एक Example से समझें
+
+मान लेते हैं:
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+union()
+{1, 2, 3, 4, 5, 6}
+difference()
+A.difference(B)
+= {1, 2}
+intersection()
+{3, 4}
+symmetricDifference()
+{1, 2, 5, 6}
+
+और:
+
+A.isDisjointFrom(B) → false
+
+क्योंकि 3, 4 common हैं।
+
+31. Complete Set Practical
+
+नीचे एक ही program में मुख्य Set concepts दिए गए हैं।
+
+// Create Set
+const students = new Set();
+
+// Add elements
+students.add("Adil");
+students.add("Rahul");
+students.add("Aman");
+students.add("Adil"); // Duplicate
+
+// Display Set
+console.log("Students:", students);
+
+// Size
+console.log("Total Students:", students.size);
+
+// Check value
+console.log("Is Adil present?", students.has("Adil"));
+console.log("Is Ravi present?", students.has("Ravi"));
+
+// Listing elements
+console.log("Student Names:");
+
+for (let student of students) {
+    console.log(student);
+}
+
+// Delete element
+students.delete("Rahul");
+
+console.log("After Delete:", students);
+
+// Clear all elements
+// students.clear();
+
+// Final Set
+console.log("Final Set:", students);
+Output
+Students: Set(3) {"Adil", "Rahul", "Aman"}
+
+Total Students: 3
+
+Is Adil present? true
+
+Is Ravi present? false
+
+Student Names:
+Adil
+Rahul
+Aman
+
+After Delete:
+Set(2) {"Adil", "Aman"}
+32. Practical — Remove Duplicate Values from Array
+
+यह Set का सबसे common real-world use है।
+
+English
+
+Set can be used to remove duplicate values from an array.
+
+Hindi
+
+Set का उपयोग Array से duplicate values हटाकर unique values प्राप्त करने के लिए किया जा सकता है।
+
+const numbers = [10, 20, 10, 30, 20, 40, 30];
+
+const uniqueNumbers = [...new Set(numbers)];
+
+console.log("Original:", numbers);
+console.log("Unique:", uniqueNumbers);
+Output
+Original: [10, 20, 10, 30, 20, 40, 30]
+
+Unique: [10, 20, 30, 40]
+33. WeakSet
+
+अब Set का advanced concept है WeakSet.
+
+English Definition
+
+A WeakSet is a collection that stores only objects and holds them weakly, allowing garbage collection when those objects are no longer reachable elsewhere.
+
+Hindi Definition
+
+WeakSet एक special collection है जो केवल objects को store करता है और objects को weakly reference करता है, जिससे object की जरूरत समाप्त होने पर garbage collector उसे memory से remove कर सकता है।
+
+Syntax
+const weakSet = new WeakSet();
+34. Create WeakSet
+const weakSet = new WeakSet();
+
+console.log(weakSet);
+
+Output:
+
+WeakSet {}
+35. WeakSet में केवल Objects
+Valid
+const weakSet = new WeakSet();
+
+const user1 = {
+    name: "Adil"
+};
+
+weakSet.add(user1);
+
+console.log(weakSet.has(user1));
+
+Output:
+
+true
+Invalid
+const weakSet = new WeakSet();
+
+weakSet.add(10);
+
+यह error देगा क्योंकि WeakSet में primitive values जैसे:
+
+number
+string
+boolean
+null
+undefined
+
+store नहीं किए जा सकते।
+
+36. WeakSet add()
+Definition
+
+add() adds an object to the WeakSet.
+
+Hindi
+
+add() WeakSet में object add करता है।
+
+Syntax
+weakSet.add(object);
+Practical
+const users = new WeakSet();
+
+const user1 = {
+    name: "Adil"
+};
+
+users.add(user1);
+
+console.log(users.has(user1));
+
+Output:
+
+true
+37. WeakSet has()
+Definition
+
+has() checks whether a specific object exists in the WeakSet.
+
+Hindi
+
+has() check करता है कि particular object WeakSet में मौजूद है या नहीं।
+
+Syntax
+weakSet.has(object);
+Practical
+const users = new WeakSet();
+
+const user1 = {
+    name: "Adil"
+};
+
+users.add(user1);
+
+console.log(users.has(user1));
+
+Output:
+
+true
+38. WeakSet delete()
+Definition
+
+delete() removes an object from the WeakSet.
+
+Hindi
+
+delete() WeakSet से किसी object को remove करता है।
+
+Syntax
+weakSet.delete(object);
+Practical
+const users = new WeakSet();
+
+const user1 = {
+    name: "Adil"
+};
+
+users.add(user1);
+
+console.log(users.has(user1));
+
+users.delete(user1);
+
+console.log(users.has(user1));
+
+Output:
+
+true
+false
+39. WeakSet clear()?
+Important
+
+WeakSet में clear() method नहीं होता।
+
+English
+
+WeakSet does not provide a clear() method.
+
+Hindi
+
+WeakSet के अंदर सभी objects को एक साथ हटाने के लिए clear() method available नहीं है।
+
+40. WeakSet में size?
+Important
+
+WeakSet में size property नहीं होती।
+
+const ws = new WeakSet();
+
+console.log(ws.size);
+
+Output:
+
+undefined
+Why?
+
+WeakSet के elements को enumerate/list नहीं किया जा सकता।
+
+41. WeakSet में for...of?
+
+WeakSet iterable नहीं है।
+
+इसलिए:
+
+const ws = new WeakSet();
+
+for (let item of ws) {
+    console.log(item);
+}
+
+यह काम नहीं करेगा।
+
+English
+
+A WeakSet cannot be directly iterated using for...of.
+
+Hindi
+
+WeakSet को for...of से directly list नहीं किया जा सकता।

@@ -195,10 +195,8 @@ Output:
 Apple - Mango - Banana
 
 10. pop()
-Definition
 
 pop() removes and returns the last element of an array.
-
 pop() array के last element को remove करता है और removed element return करता है।
 
 let fruits = ["Apple", "Mango", "Banana"];
@@ -210,27 +208,17 @@ Output:Banana / ["Apple", "Mango"]
 
 11. push()
 push() adds one or more elements to the end of an array and returns the new length.
-
 push() array के अंत में नया element add करता है और नई length return करता है।
 
 let fruits = ["Apple", "Mango"];
-
 let result = fruits.push("Banana");
 
 console.log(fruits);
 console.log(result);
-
-Output:
-
-["Apple", "Mango", "Banana"]
+Output:["Apple", "Mango", "Banana"]
 3
 12. shift()
-Definition
-
 shift() removes and returns the first element of an array.
-
-Hindi
-
 shift() array के first element को remove करता है।
 
 let fruits = ["Apple", "Mango", "Banana"];
@@ -254,7 +242,7 @@ unshift() array के beginning में elements add करता है।
 
 let fruits = ["Mango", "Banana"];
 
-fruits.unshift("Apple");
+fruits.unshift("Apple","oranage");
 
 console.log(fruits);
 
@@ -291,9 +279,6 @@ false
 Definition
 
 The delete operator removes an element property from an array but does not shift the remaining elements.
-
-Hindi
-
 delete array के element को remove करता है, लेकिन बाकी elements की indexing automatically shift नहीं करता।
 
 let fruits = ["Apple", "Mango", "Banana"];
@@ -337,15 +322,10 @@ b = [30,40]
 remain unchanged.
 
 17. copyWithin()
-Definition
-
 copyWithin() copies part of an array to another position within the same array.
-
-Hindi
-
 copyWithin() उसी array के elements को दूसरी position पर copy करता है।
 
-let arr = [1, 2, 3, 4, 5];
+let arr = [1, 2, 3, 4, 5,6, 7];
 
 arr.copyWithin(0, 3);
 
@@ -359,15 +339,16 @@ Meaning:
 
 copyWithin(target, start)
 18. flat()
-Definition
+
 
 flat() creates a new array by flattening nested arrays.
 
-Hindi
-
 flat() nested array को एक level या specified depth तक flat करता है।
 
-let arr = [1, 2, [3, 4], [5, 6]];
+let arr = [1, 2,
+     [3, 4],
+      [5, 6]
+    ];
 
 console.log(arr.flat());
 
@@ -377,25 +358,26 @@ Output:
 
 Multiple levels:
 
-let arr = [1, [2, [3, 4]]];
+let arr = [1, 
+    [2, 
+        [3, 4]
+    ],
+    [5,6]
+];
 
 console.log(arr.flat(2));
 
 Output:
 
 [1, 2, 3, 4]
+
 19. slice()
-Definition
-
 slice() extracts a portion of an array and returns a new array without changing the original array.
-
-Hindi
-
 slice() array के किसी portion को निकालकर नया array return करता है। Original array change नहीं होता।
 
 let fruits = ["Apple", "Mango", "Banana", "Orange"];
 
-let result = fruits.slice(1, 3);
+let fruits = fruits.slice(1, 3);
 
 console.log(result);
 console.log(fruits);
@@ -411,16 +393,13 @@ slice(start, end)
 end index include नहीं होता।
 
 20. splice()
-Definition
 
 splice() can add, remove, or replace elements in an array.
-
-Hindi
-
 splice() array में elements को remove, add या replace कर सकता है और original array को modify करता है।
 
-Syntax
+Syntax 1,
 array.splice(start, deleteCount, item1, item2);
+
 Remove
 let fruits = ["Apple", "Mango", "Banana", "Orange"];
 
@@ -441,18 +420,16 @@ console.log(fruits);
 Output:
 
 ["Apple", "Mango", "Banana", "Orange"]
-21. toSpliced()
-Definition
 
+21. toSpliced()
 toSpliced() performs the same kind of add/remove/replace operation as splice(), but returns a new array without modifying the original array.
 
+syntax -> index,value (add means replace);
+
 let fruits = ["Apple", "Mango", "Banana"];
-
-let newFruits = fruits.toSpliced(1, 1, "Orange");
-
+let newFruits = fruits.toSpliced(1, "Orange");
 console.log(fruits);
 console.log(newFruits);
-
 Output:
 
 ["Apple", "Mango", "Banana"]
@@ -461,7 +438,9 @@ Output:
 Difference
 splice()     → Original array changes
 toSpliced()  → New array, original remains same
+
 PART C — ARRAY SEARCH METHODS
+
 22. indexOf()
 Definition
 
@@ -497,12 +476,7 @@ Output:
 
 3
 24. includes()
-Definition
-
 includes() checks whether an array contains a specified value and returns true or false.
-
-Hindi
-
 यह check करता है कि array में specified value मौजूद है या नहीं।
 
 let fruits = ["Apple", "Mango", "Banana"];
@@ -510,10 +484,8 @@ let fruits = ["Apple", "Mango", "Banana"];
 console.log(fruits.includes("Mango"));
 console.log(fruits.includes("Orange"));
 
-Output:
+Output:true,false
 
-true
-false
 25. find()
 Definition
 
@@ -598,12 +570,9 @@ findIndex()	first matching index
 findLast()	last matching element
 findLastIndex()	last matching index
 PART D — ARRAY SORTING
+
 29. sort()
-Definition
-
 sort() sorts the elements of an array in place and returns the sorted array.
-
-Hindi
 
 sort() array के elements को sort करता है और original array को modify करता है।
 
@@ -630,28 +599,22 @@ console.log(numbers);
 
 Expected numeric order नहीं मिलेगा।
 
-Correct Numeric Sort
-let numbers = [100, 5, 25, 10];
+Correct Numeric Sort  //note test
 
+let numbers = [100, 5, 25, 10];
 numbers.sort(function(a, b) {
     return a - b;
 });
+console.log(numbers);Output:[5, 10, 25, 100]
 
-console.log(numbers);
-
-Output:
-
-[5, 10, 25, 100]
-Descending
+Descending   //note test
 numbers.sort(function(a, b) {
     return b - a;
 });
+
 31. reverse()
-Definition
 
 reverse() reverses the order of elements in an array and modifies the original array.
-
-Hindi
 
 reverse() array के elements का order उल्टा कर देता है।
 
@@ -664,8 +627,8 @@ console.log(numbers);
 Output:
 
 [5, 4, 3, 2, 1]
+
 32. toSorted()
-Definition
 
 toSorted() returns a new sorted array without changing the original array.
 
@@ -683,6 +646,7 @@ Output:
 [30, 10, 20]
 
 [10, 20, 30]
+
 33. toReversed()
 Definition
 
@@ -700,54 +664,30 @@ Output:
 [1, 2, 3, 4]
 
 [4, 3, 2, 1]
+
 34. Sorting Objects
-
-Objects के array को किसी property के आधार पर sort कर सकते हैं।
-
 let students = [
     {name: "Rahul", marks: 70},
     {name: "Aman", marks: 90},
     {name: "Vikas", marks: 60}
 ];
-
 students.sort(function(a, b) {
     return a.marks - b.marks;
 });
-
 console.log(students);
-
-Marks के ascending order में:
 
 Vikas → 60
 Rahul → 70
 Aman  → 90
-35. Random Sort
-
-Random order के लिए:
-
-let numbers = [1, 2, 3, 4, 5];
-
-numbers.sort(function() {
-    return Math.random() - 0.5;
-});
-
-console.log(numbers);
-
-Note: यह simple random-shuffle demonstration है; production-quality unbiased shuffle के लिए Fisher–Yates algorithm बेहतर है।
 
 36. Math.min()
-Definition
 
 Math.min() returns the smallest number among the supplied values.
 
 let numbers = [10, 5, 30, 2];
-
 console.log(Math.min(...numbers));
-
 Output:
-
 2
-
 यहाँ ...numbers spread syntax है।
 
 37. Math.max()
@@ -756,103 +696,62 @@ let numbers = [10, 5, 30, 2];
 console.log(Math.max(...numbers));
 
 Output:
-
 30
-38. Home-made min()
 
-Array में loop लगाकर minimum निकाल सकते हैं:
-
-let numbers = [10, 5, 30, 2];
-
-let min = numbers[0];
-
-for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] < min) {
-        min = numbers[i];
-    }
-}
 
 console.log(min);
-
 Output:
-
 2
-39. Home-made max()
-let numbers = [10, 5, 30, 2];
-
-let max = numbers[0];
-
-for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-        max = numbers[i];
-    }
-}
 
 console.log(max);
-
 Output:
-
 30
-PART E — ARRAY ITERATION
-Iteration Definition
-English
+
+ARRAY ITERATION
 
 Array iteration means visiting or processing each element of an array one by one. JavaScript provides loops and array methods such as forEach(), map(), filter(), reduce(), some(), and every() for array iteration.
-
-Hindi
 
 Array iteration का अर्थ है array के प्रत्येक element को एक-एक करके access या process करना।
 
 Array के कई iterative methods callback function लेते हैं।
 
 40. for...of
-Definition
 
 for...of iterates over the values of an array.
 
 let fruits = ["Apple", "Mango", "Banana"];
-
 for (let fruit of fruits) {
     console.log(fruit);
 }
-
 Output:
-
 Apple
 Mango
 Banana
-याद रखें
 for...of → values
+
 41. for...in
-Definition
 
 for...in iterates over the enumerable property keys/indexes.
-
 let fruits = ["Apple", "Mango", "Banana"];
-
 for (let index in fruits) {
     console.log(index);
 }
 
 Output:
-
 0
 1
 2
-याद रखें
+
 for...in → index/key
 for...of → value
+
 42. forEach()
-Definition
 
 forEach() executes a callback function once for each array element.
-
-Hindi
 
 forEach() array के प्रत्येक element पर दिए गए function को execute करता है।
 
 let numbers = [10, 20, 30];
-
 numbers.forEach(function(value) {
     console.log(value);
 });
@@ -862,30 +761,21 @@ Output:
 10
 20
 30
+
 43. map()
-Definition
-
 map() creates a new array by applying a function to every element.
-
-Hindi
-
 map() प्रत्येक element पर operation करके एक नया array बनाता है।
 
 let numbers = [10, 20, 30];
-
 let result = numbers.map(function(value) {
     return value * 2;
 });
-
 console.log(result);
-
 Output:
-
 [20, 40, 60]
-याद रखें
 map() → नया modified array
+
 44. flatMap()
-Definition
 
 flatMap() maps each element and then flattens the result by one level.
 
@@ -900,33 +790,25 @@ console.log(result);
 Output:
 
 [1, 2, 2, 4, 3, 6]
+
 45. filter()
-Definition
 
 filter() creates a new array containing elements that satisfy a condition.
-
-Hindi
 
 filter() condition को satisfy करने वाले elements का नया array बनाता है।
 
 let numbers = [10, 15, 20, 25, 30];
-
 let result = numbers.filter(function(value) {
     return value >= 20;
 });
-
 console.log(result);
-
 Output:
 
 [20, 25, 30]
+
 46. reduce()
-Definition
 
 reduce() reduces all array elements to a single accumulated value.
-
-Hindi
-
 reduce() array के सभी elements को process करके एक single result/value बनाता है।
 
 Sum Example
@@ -948,8 +830,8 @@ Flow:
 10 + 20 = 30
 30 + 30 = 60
 60 + 40 = 100
+
 47. reduceRight()
-Definition
 
 reduceRight() works like reduce(), but processes elements from right to left.
 
@@ -964,40 +846,33 @@ console.log(result);
 Output:
 
 10
+
 48. every()
-Definition
 
 every() returns true if all elements satisfy the given condition; otherwise it returns false.
 
 let marks = [60, 70, 80, 90];
-
 let result = marks.every(function(mark) {
     return mark >= 33;
 });
 
 console.log(result);
-
 Output:
 
 true
-याद रखें
+
 every() → क्या सभी satisfy करते हैं?
+
 49. some()
-Definition
 
 some() returns true if at least one element satisfies the condition.
-
 let marks = [20, 40, 60, 80];
-
 let result = marks.some(function(mark) {
     return mark < 33;
 });
 
 console.log(result);
-
-Output:
-
-true
+Output:true
 
 क्योंकि कम से कम एक mark 33 से कम है।
 
@@ -1005,16 +880,12 @@ Difference
 every() → सभी
 some()  → कम से कम एक
 PART F — ARRAY CREATION / ITERATOR METHODS
+
 50. Array.from()
-Definition
-
 Array.from() creates a new array from an iterable or array-like object.
-
-Hindi
-
 Array.from() iterable या array-like object से नया array बनाता है।
 
-let str = "ADIL";
+let str = "Apcs";
 
 let arr = Array.from(str);
 

@@ -1,0 +1,588 @@
+1. JavaScript Date Object --> 
+A JavaScript Date object represents a specific date and time and provides methods for creating, accessing, formatting, and modifying date and time values.
+
+JavaScript Date object किसी specific date और time को represent करता है और इसके methods का उपयोग date और time को create, read, display और change करने के लिए किया जाता है।
+
+Basic Syntax
+new Date()
+Example
+const today = new Date();
+console.log(today);
+
+2. Creating Date Objects
+
+Date objects are created using the new Date() constructor.
+
+Date object को new Date() constructor की सहायता से create किया जाता है।
+
+JavaScript in Date object main 9 forms :
+
+1. new Date()
+2. new Date(dateString)
+3. new Date(year, month)
+4. new Date(year, month, day)
+5. new Date(year, month, day, hours)
+6. new Date(year, month, day, hours, minutes)
+7. new Date(year, month, day, hours, minutes, seconds)
+8. new Date(year, month, day, hours, minutes, seconds, milliseconds)
+9. new Date(milliseconds)
+
+3. new Date()
+
+new Date() creates a Date object containing the current date and time.
+new Date() current date और current time का Date object create करता है।
+
+Syntax
+new Date()
+
+Practical
+const date = new Date();
+console.log(date);
+
+4. new Date(dateString)
+
+new Date(dateString) creates a Date object from a date string.
+new Date(dateString) दिए गए date string से Date object create करता है।
+
+Syntax
+new Date(dateString)
+
+Practical
+const date = new Date("2026-10-04");
+console.log(date);
+or
+const date = new Date("October 4, 2026");
+console.log(date);
+
+5. new Date(year, month)
+
+Creates a Date object using the specified year and month.
+Specified year और month का उपयोग करके Date object create करता है।
+
+Syntax
+new Date(year, month)
+
+Example
+const date = new Date(2026, 9);
+
+console.log(date);
+
+6. new Date(year, month, day)
+
+Creates a Date object using year, month, and day.
+Year, month और day देकर specific date का Date object create किया जाता है।
+
+Syntax
+new Date(year, month, day)
+
+Practical
+const date = new Date(2026, 9, 4);
+console.log(date);
+
+
+7. new Date(year, month, day, hours)
+Creates a Date object using year, month, day, and hour.
+Year, month, day और hour देकर date और hour वाला Date object create किया जाता है।
+
+Syntax
+new Date(year, month, day, hours)
+
+Practical
+const date = new Date(2026, 9, 4, 10);
+console.log(date);
+
+8. new Date(year, month, day, hours, minutes)
+
+Creates a Date object using year, month, day, hours, and minutes.
+Year, month, day, hours और minutes देकर Date object create किया जाता है।
+
+Syntax
+
+new Date(year, month, day, hours, minutes)
+
+Practical
+const date = new Date(2026, 9, 4, 10, 30);
+console.log(date);
+
+9. new Date(year, month, day, hours, minutes, seconds)
+
+Creates a Date object using year, month, day, hours, minutes, and seconds.
+Year, month, day, hours, minutes और seconds देकर Date object create किया जाता है।
+
+Syntax
+new Date(year, month, day, hours, minutes, seconds)
+
+Practical
+const date = new Date(2026, 9, 4, 10, 30, 45);
+console.log(date);
+
+10. new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+Creates a Date object using year, month, day, hours, minutes, seconds, and milliseconds.
+Year, month, day, hours, minutes, seconds और milliseconds देकर complete date-time object create किया जाता है।
+
+Syntax
+
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+const date = new Date(
+    2026,
+    9,
+    4,
+    10,
+    30,
+    45,
+    500
+);
+
+console.log(date);
+
+Here :
+
+2026 → Year
+9    → October
+4    → Day
+10   → Hours
+30   → Minutes
+45   → Seconds
+500  → Milliseconds
+
+11. new Date(milliseconds)
+
+new Date(milliseconds) creates a Date object using the number of milliseconds elapsed since January 1, 1970 UTC.
+new Date(milliseconds) 1 January 1970 UTC से बीते हुए milliseconds के आधार पर Date object create करता है।
+
+Syntax
+
+new Date(milliseconds)
+
+Practical
+const date = new Date(0);
+console.log(date);
+
+January 1, 1970
+
+Example
+const date = new Date(1000);
+console.log(date);
+
+12. Date Input Formats
+There are generally 3 types of JavaScript date input formats.
+JavaScript में date को अलग-अलग formats में दिया जा सकता है।
+
+Main formats:
+
+ISO Date
+Short Date
+Long Date
+
+13. ISO Date
+
+ISO date is a standardized date format commonly written as YYYY-MM-DD.
+ISO Date एक standardized date format है जिसमें date को सामान्यतः YYYY-MM-DD format में लिखा जाता है।
+
+Example
+const date = new Date("2015-03-25");
+
+console.log(date);
+
+Format:
+
+YYYY - MM - DD
+2015 - 03 - 25
+याद रखें
+YYYY → Year
+MM   → Month
+DD   → Day
+
+14. Short Date
+
+A short date is a compact date format such as MM/DD/YYYY.
+Short Date date को छोटे format में represent करता है, जैसे MM/DD/YYYY.
+
+Example
+const date = new Date("03/25/2015");
+
+console.log(date);
+
+Format:
+
+MM / DD / YYYY
+03 / 25 / 2015
+
+Note: Short-date parsing environment/locale dependent हो सकती है। इसलिए reliable code में ISO format (YYYY-MM-DD) prefer करना बेहतर है।
+
+15. Long Date
+
+A long date uses a month name together with the day and year.
+Long Date में month का नाम, day और year लिखा जाता है।
+
+Examples
+new Date("Mar 25 2015");
+
+या:
+
+new Date("25 Mar 2015");
+
+
+16. JavaScript Date Get Methods
+
+Date getter methods are used to retrieve individual parts of a Date object, such as year, month, day, hour, minute, and second.
+
+Date getter methods का उपयोग Date object से अलग-अलग parts जैसे year, month, day, hour, minute और second को प्राप्त करने के लिए किया जाता है।
+
+17. getFullYear()
+getFullYear() returns the year as a four-digit number.
+getFullYear() year को चार digit number के रूप में return करता है।
+
+Syntax
+
+date.getFullYear()
+
+Practical
+const date = new Date("2026-10-04");
+console.log(date.getFullYear());
+Output:
+
+2026
+
+18. getMonth()
+
+getMonth() returns the month as a number from 0 to 11.
+getMonth() month को 0 से 11 के बीच number के रूप में return करता है।
+
+Syntax
+date.getMonth()
+Example
+const date = new Date("2026-10-04");
+console.log(date.getMonth());
+Output:
+9
+
+19. getDate()
+getDate() returns the day of the month as a number from 1 to 31.
+getDate() month की date/day को 1 से 31 के बीच number के रूप में return करता है।
+
+Syntax
+date.getDate()
+
+Example
+const date = new Date("2026-10-04");
+console.log(date.getDate());
+Output:
+4
+
+20. getDay()
+getDay() returns the weekday as a number from 0 to 6.
+getDay() week के दिन को 0 से 6 के बीच number के रूप में return करता है।
+
+0 → Sunday
+1 → Monday
+2 → Tuesday
+3 → Wednesday
+4 → Thursday
+5 → Friday
+6 → Saturday
+Syntax
+
+date.getDay()
+Example
+const date = new Date("2026-10-04");
+console.log(date.getDay());
+
+4 October 2026 Sunday है, इसलिए output:
+0
+Important Difference
+getDate() → Month की date
+getDay()  → Week का day
+
+21. getHours()
+
+getHours() returns the hour from 0 to 23.
+getHours() hour को 0 से 23 के बीच return करता है।
+
+Syntax
+date.getHours()
+Example
+
+const date = new Date(2026, 9, 4, 15);
+console.log(date.getHours());
+Output:
+15
+
+22. getMinutes()
+getMinutes() returns the minutes from 0 to 59.
+getMinutes() minutes को 0 से 59 के बीच return करता है।
+
+Syntax
+date.getMinutes()
+
+Example
+
+const date = new Date(2026, 9, 4, 15, 30);
+console.log(date.getMinutes());
+Output:
+30
+
+23. getSeconds()
+getSeconds() returns seconds from 0 to 59.
+getSeconds() seconds को 0 से 59 के बीच return करता है।
+
+Syntax
+date.getSeconds()
+
+Example
+const date = new Date(2026, 9, 4, 15, 30, 45);
+console.log(date.getSeconds());
+Output:
+45
+
+24. getMilliseconds()
+getMilliseconds() returns milliseconds from 0 to 999.
+getMilliseconds() milliseconds को 0 से 999 के बीच return करता है।
+
+Syntax
+date.getMilliseconds()
+
+Example
+const date = new Date(
+    2026,
+    9,
+    4,
+    15,
+    30,
+    45,
+    500
+);
+
+console.log(date.getMilliseconds());
+
+Output:
+
+500
+
+25. getTime()
+
+getTime() returns the number of milliseconds since January 1, 1970 UTC.
+getTime() 1 January 1970 UTC से लेकर दिए गए Date तक के total milliseconds return करता है।
+
+Syntax
+date.getTime()
+
+Practical
+const date = new Date("1970-01-01T00:00:01Z");
+console.log(date.getTime());
+Output:
+1000
+
+1000 milliseconds = 1 second
+
+27. JavaScript Date Set Methods
+
+Date setter methods are used to modify individual parts of a Date object.
+Date setter methods का उपयोग Date object के अलग-अलग parts जैसे year, month, date, hour आदि को change/modify करने के लिए किया जाता है।
+
+main methods:
+
+setFullYear()
+setMonth()
+setDate()
+setHours()
+setMinutes()
+setSeconds()
+setMilliseconds()
+setTime()
+28. setFullYear()
+English Definition
+
+setFullYear() sets the year of a Date object.
+
+Hindi Definition
+
+setFullYear() Date object का year set/change करता है।
+
+Syntax
+date.setFullYear(year)
+Example
+const date = new Date();
+
+date.setFullYear(2030);
+
+console.log(date);
+
+अब date का year 2030 हो जाएगा।
+
+29. setMonth()
+setMonth() sets the month of a Date object using a value from 0 to 11.
+setMonth() Date object का month set/change करता है और month की value 0 से 11 होती है।
+
+Syntax
+date.setMonth(month)
+Example
+const date = new Date();
+
+date.setMonth(0);
+
+console.log(date);
+
+30. setDate()
+setDate() sets the day of the month.
+setDate() month की date/day को set/change करता है।
+
+Syntax
+date.setDate(day)
+
+Example
+const date = new Date();
+date.setDate(15);
+console.log(date);
+
+31. setHours()
+
+setHours() sets the hour of a Date object.
+setHours() Date object का hour set/change करता है।
+
+Syntax
+date.setHours(hours)
+
+Example
+const date = new Date();
+date.setHours(10);
+console.log(date);
+
+32. setMinutes()
+setMinutes() sets the minutes of a Date object.
+setMinutes() Date object के minutes को set/change करता है।
+
+Syntax
+date.setMinutes(minutes)
+
+Example
+const date = new Date();
+date.setMinutes(30);
+console.log(date);
+
+33. setSeconds()
+setSeconds() sets the seconds of a Date object.
+setSeconds() Date object के seconds को set/change करता है।
+
+Syntax
+date.setSeconds(seconds)
+
+Example
+const date = new Date();
+date.setSeconds(45);
+console.log(date);
+
+34. setMilliseconds()
+
+setMilliseconds() sets the milliseconds of a Date object.
+setMilliseconds() Date object के milliseconds को set/change करता है।
+
+Syntax
+date.setMilliseconds(milliseconds)
+
+Example
+const date = new Date();
+date.setMilliseconds(500);
+console.log(date);
+
+35. setTime()
+setTime() sets the Date object using the number of milliseconds since January 1, 1970 UTC.
+setTime() 1 January 1970 UTC से दिए गए milliseconds के आधार पर Date object का time set करता है।
+
+Syntax
+date.setTime(milliseconds)
+
+Example
+const date = new Date();
+date.setTime(0);
+console.log(date);
+यह date को Unix epoch के beginning पर set कर देगा।
+
+Creating Date
+new Date()
+new Date(dateString)
+new Date(year, month)
+new Date(year, month, day)
+new Date(year, month, day, hours)
+new Date(year, month, day, hours, minutes)
+new Date(year, month, day, hours, minutes, seconds)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+new Date(milliseconds)
+Get
+getFullYear()    → Year
+getMonth()       → Month 0–11
+getDate()        → Date 1–31
+getDay()         → Weekday 0–6
+getHours()       → Hours 0–23
+getMinutes()     → Minutes 0–59
+getSeconds()     → Seconds 0–59
+getMilliseconds()→ Milliseconds 0–999
+getTime()        → Milliseconds from 1 Jan 1970 UTC
+Set
+setFullYear()     → Year change
+setMonth()        → Month change
+setDate()         → Date change
+setHours()        → Hours change
+setMinutes()      → Minutes change
+setSeconds()      → Seconds change
+setMilliseconds() → Milliseconds change
+setTime()         → Timestamp change
+
+JavaScript Date Methods and Properties
+Revised April 2026
+
+Name	        Description
+new Date()	- >Creates a new Date object
+constructor	Creates a new Date object
+constructor	Returns the function that created the Date prototype
+getDate()	- >Returns the day of the month (from 1-31)
+getDay()	- >Returns the day of the week (from 0-6)
+getFullYear()	- >Returns the year
+getHours()	- >Returns the hour (from 0-23)
+getMilliseconds()	- >Returns the milliseconds (from 0-999)
+getMinutes()	- >Returns the minutes (from 0-59)
+getMonth()	- >Returns the month (from 0-11)
+getSeconds()	- >Returns the seconds (from 0-59)
+getTime()	- >Returns the number of milliseconds since midnight Jan 1 1970, and a specified date
+getTimezoneOffset()	- >Returns the time difference between UTC time and local time, in minutes
+getUTCDate()	- >Returns the day of the month, according to universal time (from 1-31)
+getUTCDay()	- >Returns the day of the week, according to universal time (from 0-6)
+getUTCFullYear()	- >Returns the year, according to universal time
+getUTCHours()	- >Returns the hour, according to universal time (from 0-23)
+getUTCMilliseconds()	- >Returns the milliseconds, according to universal time (from 0-999)
+getUTCMinutes()	- >Returns the minutes, according to universal time (from 0-59)
+getUTCMonth()	- >Returns the month, according to universal time (from 0-11)
+getUTCSeconds()	- >Returns the seconds, according to universal time (from 0-59)
+getYear()	- >Deprecated. Use the getFullYear() method instead
+now()	- >Returns the number of milliseconds since midnight Jan 1, 1970
+parse()	- >Parses a date string and returns the number of milliseconds since January 1, 1970
+prototype	Allows you to add properties and methods to an object
+setDate()	- >Sets the day of the month of a date object
+setFullYear()	- >Sets the year of a date object
+setHours()	- >Sets the hour of a date object
+setMilliseconds()	- >Sets the milliseconds of a date object
+setMinutes()	- >Set the minutes of a date object
+setMonth()	- >Sets the month of a date object
+setSeconds()	- >Sets the seconds of a date object
+setTime()	- >Sets a date to a specified number of milliseconds after/before January 1, 1970
+setUTCDate()	- >Sets the day of the month of a date object, according to universal time
+setUTCFullYear()	- >Sets the year of a date object, according to universal time
+setUTCHours()	- >Sets the hour of a date object, according to universal time
+setUTCMilliseconds()	- >Sets the milliseconds of a date object, according to universal time
+setUTCMinutes()	- >Set the minutes of a date object, according to universal time
+setUTCMonth()	- >Sets the month of a date object, according to universal time
+setUTCSeconds()	- >Set the seconds of a date object, according to universal time
+setYear()	- >Deprecated. Use the setFullYear() method instead
+toDateString()	- >Converts the date portion of a Date object into a readable string
+toGMTString()	- >Deprecated. Use the toUTCString() method instead
+toISOString()	- >Returns the date as a string, using the ISO standard
+toJSON()	- >Returns the date as a string, formatted as a JSON date
+toLocaleDateString()	- >Returns the date portion of a Date object as a string, using locale conventions
+toLocaleTimeString()	- >Returns the time portion of a Date object as a string, using locale conventions
+toLocaleString()	- >Converts a Date object to a string, using locale conventions
+toString()	- >Converts a Date object to a string
+toTimeString()	- >Converts the time portion of a Date object to a string
+toUTCString()	- >Converts a Date object to a string, according to universal time
+UTC()	- >Returns the number of milliseconds in a date since midnight of January 1, 1970, according to UTC time
+valueOf()	- >Returns the primitive value of a Date object
